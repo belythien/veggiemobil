@@ -1,0 +1,149 @@
+$boxshadow: 0 1em 1em rgba(0, 0, 0, 0.6);
+$brown: #7b4129;
+$dark: darken($brown, 30%);
+$red: #E2023B;
+$green: #66B331;
+$primary: $green;
+
+* {
+    font-family: 'Comfortaa', Helvetica, Arial;
+}
+
+body {
+    background: url('img/wood.jpg') fixed center center;
+    background-size: cover;
+
+    a {
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $red;
+        text-decoration: none;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+div.shadow,
+.shadow {
+    box-shadow: $boxshadow !important;
+}
+
+.navbar {
+    box-shadow: $boxshadow;
+    font-size: 18px !important;
+
+    .nav-link {
+        color: $green !important;
+        font-size: 130%;
+    }
+
+    .nav-link:hover {
+        color: $red !important;
+    }
+}
+
+.card {
+    box-shadow: $boxshadow;
+
+    .card-header {
+        background: none;
+        border: none;
+        color: $green;
+        font-size: 1.6em;
+        font-weight: bold;
+        padding: 2rem 1.25rem
+    }
+
+    .card-header-green {
+        background-color: $green !important;
+        color: white !important;
+    }
+}
+
+.bg-dark-transparent {
+    background: rgba($dark, 0.8);
+}
+
+footer {
+    color: lighten($brown, 15%);
+
+    a {
+        color: lighten($brown, 20%);
+        padding: 0 0.5em;
+    }
+
+    a:hover {
+        color: lighten($brown, 30%);
+        text-decoration: none;
+    }
+}
+
+.welcome-navi {
+    a {
+        font-size: 150%;
+        font-weight: bold;
+    }
+}
+
+.welcome-image {
+    box-shadow: $boxshadow;
+    background-size: cover;
+    height: 300px;
+    position: absolute;
+    width: 300px;
+    z-index: 0
+}
+
+input[type=radio], input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4px;
+}
+
+.box {
+    border: 1px solid $green;
+    border-radius: 4px;
+
+    .box-header {
+        background: $green;
+        border-radius: 4px 4px 0 0;
+        color: #fff;
+        font-size: 16px;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .box-body {
+        border-radius: 0 0 4px 4px;
+        //padding: 0.75rem 1.25rem 0;
+    }
+
+    .box-footer {
+        background: rgba($green, 0.2);
+        border-radius: 0 0 4px 4px;
+        color: #fff;
+        font-size: 16px;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+.alternating:nth-of-type(even) {
+    background-color: rgba($green, 0.2);
+}
+
+.wi0 {   z-index:  9;  top: calc(0px - 12%);   left: calc(0px - 30%);  }
+.wi1 {   z-index:  6;  top: calc(0px - 36%);   left: calc(0px + 10%);  }
+.wi2 {   z-index:  8;  top: calc(0px - 29%);   left: calc(0px + 47%);  }
+.wi3 {   z-index:  9;  top: calc(0px - 17%);   left: calc(0px + 88%);  }
+
+.wi4 {   z-index:  8;  top: calc(0px + 25%);   left: calc(0px + 98%);  }
+.wi5 {   z-index:  6;  top: calc(0px + 66%);   left: calc(0px + 86%);  }
+
+.wi6 {   z-index:  3;  top: calc(0px + 94%);   left: calc(0px + 45%);  }
+.wi7 {   z-index:  6;  top: calc(0px + 87%);   left: calc(0px + 04%);  }
+.wi8 {   z-index:  8;  top: calc(0px + 67%);   left: calc(0px - 34%);  }
+.wi9 {   z-index:  6;  top: calc(0px + 26%);   left: calc(0px - 40%);  }

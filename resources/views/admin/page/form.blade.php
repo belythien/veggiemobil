@@ -1,0 +1,5 @@
+@include('admin.form.col', ['field' => 'title',       'size' => 12, 'type' => 'text' ])
+@include('admin.form.col', ['field' => 'text',        'size' => 12, 'type' => 'textarea' ])
+@include('admin.form.col', ['field' => 'live',        'size' => 4,  'type' => 'radio' ])
+@include('admin.form.col', ['field' => 'publication', 'size' => 4,  'type' => 'date' ])
+@include('admin.form.col', ['field' => 'expiration',  'size' => 4,  'type' => 'date' ])
