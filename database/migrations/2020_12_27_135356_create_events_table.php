@@ -4,24 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePicturesTable extends Migration {
+class CreateEventsTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create( 'pictures', function ( Blueprint $table ) {
+        Schema::create( 'events', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
             $table->string( 'slug' );
-            $table->string( 'title' )->nullable();
+            $table->string( 'title' );
             $table->text( 'text' )->nullable();
-            $table->string( 'filename' );
+            $table->date( 'date_from' )->nullable();
+            $table->date( 'date_to' )->nullable();
             $table->boolean( 'live' )->default( 1 );
-            $table->boolean( 'welcome' )->default( 0 );
-            $table->integer( 'filesize' )->nullable();
-            $table->integer( 'width' )->nullable();
-            $table->integer( 'height' )->nullable();
+            $table->string( 'external_url' )->nullable();
+            $table->date( 'publication' )->nullable();
+            $table->date( 'expiration' )->nullable();
             $table->timestamps();
         } );
     }
@@ -32,6 +32,6 @@ class CreatePicturesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists( 'pictures' );
+        Schema::dropIfExists( 'events' );
     }
 }

@@ -21,9 +21,14 @@ Route::name( 'admin.' )->group( function () {
     Route::get( '/dashboard', 'DashboardController@index' )->name( 'dashboard' );
 
     Route::resource( 'dish', 'DishController' );
+    Route::resource( 'event', 'EventController' );
     Route::resource( 'menu', 'MenuController' );
     Route::resource( 'page', 'PageController' );
     Route::resource( 'picture', 'PictureController' );
+    Route::post( 'picture/{picture}/toggle-live', 'PictureController@toggleLive' )->name( 'picture.toggle-live' );
+    Route::post( 'picture/{picture}/toggle-welcome', 'PictureController@toggleWelcome' )->name( 'picture.toggle-welcome' );
 } );
+
+Route::get( '/picture/{picture}', 'PictureController@show' )->name( 'picture.show' );
 
 Route::get( '/{slug}', 'PageController@display' )->name( 'page.display' );

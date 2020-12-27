@@ -15,7 +15,7 @@ class CreateDishesTable extends Migration {
             $table->bigIncrements( 'id' );
             $table->string( 'slug' );
             $table->string( 'title' );
-            $table->text( 'text' );
+            $table->text( 'text' )->nullable();
             $table->boolean( 'live' )->default( 0 );
             $table->date( 'publication' )->nullable();
             $table->date( 'expiration' )->nullable();

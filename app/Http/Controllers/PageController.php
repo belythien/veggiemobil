@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use App\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -24,7 +25,7 @@ class PageController extends Controller {
      */
     public function index() {
         $pages = Page::paginate( 20 );
-        return view( 'admin.page.index', [ 'models' => $pages ] );
+        return view( 'admin.page.index', [ 'models' => $pages, 'class' => 'page' ] );
     }
 
     /**
@@ -33,7 +34,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.page.create' );
+        return view( 'admin.create', ['class' => 'page'] );
     }
 
     /**
@@ -54,7 +55,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Page $page ) {
-        return view( $page->template, [ 'page' => $page ] );
+        return redirect( route( 'page.display', [ 'slug' => $page->slug, 'class' => 'page' ] ) );
     }
 
     /**
@@ -64,7 +65,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit( Page $page ) {
-        return view( 'admin.page.edit', [ 'model' => $page ] );
+        return view( 'admin.edit', [ 'model' => $page, 'class' => 'page' ] );
     }
 
     /**
@@ -76,7 +77,7 @@ class PageController extends Controller {
      */
     public function update( Request $request, Page $page ) {
         $page->updatePage( $request );
-        return redirect( route( 'page.show', [ 'page' => $page ] ) );
+        return redirect( route( 'admin.page.show', [ 'page' => $page ] ) );
     }
 
     /**
@@ -92,16 +93,6 @@ class PageController extends Controller {
     }
 
     public function display( $slug ) {
-
-//        foreach( File::allFiles( public_path() . '/img/' ) as $image ) {
-//            echo $image->getFilenameWithoutExtension() . "<br>";
-//            echo $image->getSize() . "<br>";
-//            echo getimagesize($image)[0] . "x" . getimagesize($image)[1] .  "<br>";
-//            echo "<hr>";
-//        }
-//        exit;
-
-
         $page = Page::where( 'slug', $slug )->first();
         if( !empty( $page ) ) {
             return view( $page->template, [ 'page' => $page ] );

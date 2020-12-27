@@ -13,8 +13,18 @@ class Picture extends Model {
 
     /* === SCOPE === */
 
-    public function scopeWelcome( $query ) {
-        return $query->where( 'welcome', 1 );
+    public function scopeOnWelcomePage( $query ) {
+        return $query->where( 'live', 1 )->where( 'welcome', 1 );
+    }
+
+    public function scopeLive( $query ) {
+        return $query->where( 'live', 1 );
+    }
+
+    /* === RELATIONS === */
+
+    public function dishes() {
+        return $this->morphedByMany(Dish::class, 'picturable');
     }
 
     /* === CRUD === */

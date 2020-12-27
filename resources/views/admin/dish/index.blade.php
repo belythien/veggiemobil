@@ -4,20 +4,13 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">{{ __('Gerichte') }}
-                    <div class="float-right">
-                        <a class="btn btn-sm btn-success" href="{{route('admin.dish.create')}}"><i
-                                class="fa fa-plus-circle fa-fw"
-                            ></i> {{__('Neues Gericht')}}</a>
-                    </div>
-                </div>
-                <div class="card-body">
+                @component('component.index', ['class' => $class, 'models' => $models])
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Slug</th>
-                                <th>Inhalt</th>
+                                <th>Text</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -29,18 +22,18 @@
                                     <td>{{$model->slug}}</td>
                                     <td>
                                         <a class="font-weight-bold"
-                                           href="{{route('admin.dish.edit', ['dish' => $model])}}"
+                                           href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
                                         >{{$model->title}}</a>
                                         <div>{!! $model->text !!}</div>
                                     </td>
-                                    <td>
+                                    <td style="max-width: 200px">
                                         @foreach($model->pictures as $picture)
-                                            <img src="{{url('/img/' . $picture->filename)}}" class="img-thumbnail" width="300" alt="">
+                                            @include('inc.picture', ['image' => $picture])
                                         @endforeach
                                     </td>
                                     <td class="text-right">
                                         <div class="btn-group">
-                                            <a href="{{route('admin.dish.edit', ['dish' => $model])}}"
+                                            <a href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
                                                class="btn btn-sm btn-success"
                                             ><i
                                                     class="fa fa-edit fa-fw"
@@ -54,7 +47,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
+                @endcomponent
             </div>
         </div>
     </div>

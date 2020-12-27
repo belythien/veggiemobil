@@ -21,7 +21,7 @@ class DishController extends Controller {
      */
     public function index() {
         $dishes = Dish::paginate( 20 );
-        return view( 'admin.dish.index', [ 'models' => $dishes ] );
+        return view( 'admin.dish.index', [ 'models' => $dishes, 'class' => 'dish' ] );
     }
 
     /**
@@ -30,7 +30,7 @@ class DishController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.dish.create' );
+        return view( 'admin.create', [ 'class' => 'dish' ] );
     }
 
     /**
@@ -51,7 +51,7 @@ class DishController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Dish $dish ) {
-        return view( 'dish', [ 'dish' => $dish ] );
+        return view( 'dish', [ 'dish' => $dish, 'class' => 'dish' ] );
     }
 
     /**
@@ -61,7 +61,7 @@ class DishController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit( Dish $dish ) {
-        return view( 'admin.dish.edit', [ 'model' => $dish ] );
+        return view( 'admin.edit', [ 'model' => $dish, 'class' => 'dish' ] );
     }
 
     /**

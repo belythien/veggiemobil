@@ -21,7 +21,7 @@ class PictureController extends Controller {
      */
     public function index() {
         $pictures = Picture::paginate( 20 );
-        return view( 'admin.picture.index', [ 'models' => $pictures ] );
+        return view( 'admin.picture.index', [ 'models' => $pictures, 'class' => 'picture' ] );
     }
 
     /**
@@ -30,7 +30,7 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.picture.create' );
+        return view( 'admin.create', [ 'class' => 'picture' ] );
     }
 
     /**
@@ -51,7 +51,7 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Picture $picture ) {
-        return view( $picture->template, [ 'picture' => $picture ] );
+        return view( 'picture', [ 'picture' => $picture, 'class' => 'picture' ] );
     }
 
     /**
@@ -61,7 +61,7 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit( Picture $picture ) {
-        return view( 'admin.picture.edit', [ 'model' => $picture ] );
+        return view( 'admin.edit', [ 'model' => $picture, 'class' => 'picture' ] );
     }
 
     /**
@@ -87,4 +87,24 @@ class PictureController extends Controller {
         $picture->delete();
         return redirect()->back()->with( 'success', 'Bild <strong>' . $name . '</strong> gelöscht' );
     }
+
+    public function toggleLive( Picture $picture ) {
+        $picture->live = !$picture->live;
+        $picture->save();
+        return view( 'inc.boolean', [
+            'value'    => $picture->live,
+            'icPostTo' => route( 'admin.picture.toggle-live', [ 'picture' => $picture ] )
+        ] );
+    }
+
+    public function toggleWelcome( Picture $picture ) {
+        $picture->welcome = !$picture->welcome;
+        $picture->save();
+        return view( 'inc.boolean', [
+            'value'    => $picture->welcome,
+            'icPostTo' => route( 'admin.picture.toggle-welcome', [ 'picture' => $picture ] )
+        ] );
+    }
+
+
 }

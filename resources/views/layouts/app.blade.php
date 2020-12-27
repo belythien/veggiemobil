@@ -32,6 +32,7 @@
     </main>
 </div>
 @include('inc.footer')
+
 </body>
 
 </html>

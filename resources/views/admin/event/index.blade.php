@@ -9,8 +9,10 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Label</th>
-                                <th>Seiten</th>
+                                <th>Slug</th>
+                                <th>Text</th>
+                                <th>Datum</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -18,19 +20,24 @@
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
-                                    <td>{{$model->label}}</td>
+                                    <td>{{$model->slug}}</td>
                                     <td>
-                                        <ul class="list-unstyled">
-                                            @foreach($model->pages as $page)
-                                                <li>
-                                                    <a href="{{route('admin.page.edit', ['page' => $page])}}">{{$page->title}}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
+                                        <a class="font-weight-bold"
+                                           href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
+                                        >{{$model->title}}</a>
+                                        <div>{!! $model->text !!}</div>
+                                    </td>
+                                    <td>
+                                        {{$model->date}}
+                                    </td>
+                                    <td style="max-width: 200px">
+                                        @foreach($model->pictures as $picture)
+                                            @include('inc.picture', ['image' => $picture])
+                                        @endforeach
                                     </td>
                                     <td class="text-right">
                                         <div class="btn-group">
-                                            <a href="{{route('admin.menu.edit', ['menu' => $model])}}"
+                                            <a href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
                                                class="btn btn-sm btn-success"
                                             ><i
                                                     class="fa fa-edit fa-fw"

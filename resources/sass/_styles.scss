@@ -21,10 +21,6 @@ body {
         color: $red;
         text-decoration: none;
     }
-
-    p {
-        font-size: 18px;
-    }
 }
 
 div.shadow,
@@ -62,6 +58,10 @@ div.shadow,
         background-color: $green !important;
         color: white !important;
     }
+
+    .card-body {
+        font-size: 130%;
+    }
 }
 
 .bg-dark-transparent {
@@ -92,6 +92,7 @@ footer {
 .welcome-image {
     box-shadow: $boxshadow;
     background-size: cover;
+    background-position: center center;
     height: 300px;
     position: absolute;
     width: 300px;
@@ -135,15 +136,75 @@ input[type=radio], input[type=checkbox] {
     background-color: rgba($green, 0.2);
 }
 
-.wi0 {   z-index:  9;  top: calc(0px - 12%);   left: calc(0px - 30%);  }
-.wi1 {   z-index:  6;  top: calc(0px - 36%);   left: calc(0px + 10%);  }
-.wi2 {   z-index:  8;  top: calc(0px - 29%);   left: calc(0px + 47%);  }
-.wi3 {   z-index:  9;  top: calc(0px - 17%);   left: calc(0px + 88%);  }
+.wi0 {
+    z-index: 9;
+    top: calc(0px - 12%);
+    left: calc(0px - 30%);
+}
 
-.wi4 {   z-index:  8;  top: calc(0px + 25%);   left: calc(0px + 98%);  }
-.wi5 {   z-index:  6;  top: calc(0px + 66%);   left: calc(0px + 86%);  }
+.wi1 {
+    z-index: 6;
+    top: calc(0px - 36%);
+    left: calc(0px + 10%);
+}
 
-.wi6 {   z-index:  3;  top: calc(0px + 94%);   left: calc(0px + 45%);  }
-.wi7 {   z-index:  6;  top: calc(0px + 87%);   left: calc(0px + 04%);  }
-.wi8 {   z-index:  8;  top: calc(0px + 67%);   left: calc(0px - 34%);  }
-.wi9 {   z-index:  6;  top: calc(0px + 26%);   left: calc(0px - 40%);  }
+.wi2 {
+    z-index: 8;
+    top: calc(0px - 29%);
+    left: calc(0px + 47%);
+}
+
+.wi3 {
+    z-index: 9;
+    top: calc(0px - 17%);
+    left: calc(0px + 88%);
+}
+
+.wi4 {
+    z-index: 8;
+    top: calc(0px + 25%);
+    left: calc(0px + 98%);
+}
+
+.wi5 {
+    z-index: 6;
+    top: calc(0px + 66%);
+    left: calc(0px + 86%);
+}
+
+.wi6 {
+    z-index: 3;
+    top: calc(0px + 94%);
+    left: calc(0px + 45%);
+}
+
+.wi7 {
+    z-index: 6;
+    top: calc(0px + 87%);
+    left: calc(0px + 04%);
+}
+
+.wi8 {
+    z-index: 8;
+    top: calc(0px + 67%);
+    left: calc(0px - 34%);
+}
+
+.wi9 {
+    z-index: 6;
+    top: calc(0px + 26%);
+    left: calc(0px - 40%);
+}
+
+.img-border {
+    border-radius: 2px;
+    border: 5px solid $green;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.row-alternating-direction:nth-of-type(even) {
+    flex-direction: row-reverse;
+}

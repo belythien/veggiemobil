@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\MyConfig;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 

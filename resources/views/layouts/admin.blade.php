@@ -29,12 +29,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-2 col-lg-3">
-                    <div class="container-fluid mb-3">
-                        @include('inc.admin-sidebar')
+                    <div class="container-fluid mb-5">
+                        @include('admin.sidebar')
                     </div>
                 </div>
                 <div class="col">
-                    <div class="container-fluid">
+                    <div class="container-fluid mb-5">
                         @yield('content')
                     </div>
                 </div>

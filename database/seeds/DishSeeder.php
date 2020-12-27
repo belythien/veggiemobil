@@ -45,5 +45,53 @@ class DishSeeder extends Seeder {
             'live'  => 1
         ] );
 
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'baklava',
+            'title' => 'Baklava',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'caprese',
+            'title' => 'Caprese',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'flammkuchen',
+            'title' => 'Flammkuchen',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'falafel-wrap',
+            'title' => 'Falafel-Wrap',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'kuerbis-lasagne',
+            'title' => 'Kürbis-Lasagne',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'rumpelstilzchen',
+            'title' => 'Salat »Rumpelstilzchen«',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'zwetschgen-tomaten-bruschetta',
+            'title' => 'Zwetschgen-Tomaten-Bruschetta',
+            'text'  => '',
+            'live'  => 1
+        ] );
     }
 }

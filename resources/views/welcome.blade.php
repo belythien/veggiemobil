@@ -75,7 +75,7 @@
 <div class="flex-center position-ref full-height" style="overflow: hidden">
     <div class="content" style="position:relative;">
 
-        @foreach(\App\Picture::welcome()->inRandomOrder()->limit(10)->get() as $key => $picture)
+        @foreach(\App\Picture::onWelcomePage()->inRandomOrder()->limit(10)->get() as $key => $picture)
             <div class="welcome-image wi{{$key}}" style="background-image:url('/img/{{$picture->filename}}');"></div>
         @endforeach
         {{--        <div class="welcome-image wi1" style="background-image:url('img/baklava.jpg');"></div>--}}
