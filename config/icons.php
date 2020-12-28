@@ -10,5 +10,9 @@ return [
     'logout'    => 'fa fa-sign-out-alt',
     'save'      => 'fa fa-save',
     'cancel'    => 'fa fa-times-circle',
-    'add'       => 'fa fa-plus-circle'
+    'add'       => 'fa fa-plus-circle',
+    'previous'  => 'fa fa-arrow-circle-left',
+    'next'      => 'fa fa-arrow-circle-right'
+
+
 ];

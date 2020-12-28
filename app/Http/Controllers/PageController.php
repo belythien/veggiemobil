@@ -34,7 +34,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.create', ['class' => 'page'] );
+        return view( 'admin.create', [ 'class' => 'page' ] );
     }
 
     /**
@@ -95,6 +95,15 @@ class PageController extends Controller {
     public function display( $slug ) {
         $page = Page::where( 'slug', $slug )->first();
         if( !empty( $page ) ) {
+            if( !empty( $page->external_url ) ) {
+                return redirect( url( $page->external_url ) );
+            }
+
+            if( $page->id == 3 ) { // EVENTS
+                $events = Event::orderby( 'date_from', 'desc' )->paginate( 20 );
+                return view( $page->template, [ 'page' => $page, 'events' => $events ] );
+            }
+
             return view( $page->template, [ 'page' => $page ] );
         }
         return view( '404' );

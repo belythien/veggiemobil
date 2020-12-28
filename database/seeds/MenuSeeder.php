@@ -20,5 +20,9 @@ class MenuSeeder extends Seeder {
         DB::table( 'menus' )->insert( [
             'label' => 'Footer',
         ] );
+
+        DB::table( 'menus' )->insert( [
+            'label' => 'Social Media',
+        ] );
     }
 }

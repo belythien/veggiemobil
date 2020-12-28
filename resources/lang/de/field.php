@@ -2,12 +2,19 @@
 
 return [
 
-    'live'         => 'Live',
-    'title'        => 'Titel',
-    'slug'         => 'Slug',
+    'date_from'    => 'Datum (von)',
+    'date_to'      => 'Datum (bis)',
+    'expiration'   => 'Sichtbar bis',
     'external_url' => 'Externe URL',
-    'text'         => 'Text',
+    'filesize'     => 'Dateigröße',
+    'height'       => 'Höhe',
+    'label'        => 'Label',
+    'live'         => 'Live',
     'publication'  => 'Sichtbar ab',
-    'expiration'   => 'Sichtbar bis'
+    'slug'         => 'Slug',
+    'text'         => 'Text',
+    'title'        => 'Titel',
+    'welcome'      => 'Auf Startseite anzeigen',
+    'width'        => 'Breite',
 
 ];

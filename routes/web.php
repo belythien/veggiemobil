@@ -30,5 +30,6 @@ Route::name( 'admin.' )->group( function () {
 } );
 
 Route::get( '/picture/{picture}', 'PictureController@show' )->name( 'picture.show' );
+Route::get( '/event/{event}', 'EventController@show' )->name( 'event.show' );
 
 Route::get( '/{slug}', 'PageController@display' )->name( 'page.display' );

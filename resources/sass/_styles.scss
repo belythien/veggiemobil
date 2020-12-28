@@ -208,3 +208,16 @@ input[type=radio], input[type=checkbox] {
 .row-alternating-direction:nth-of-type(even) {
     flex-direction: row-reverse;
 }
+
+.right-col-box {
+    background: lighten($green, 45%);
+    padding: 0.75em;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+span.event-picture-thumbnail img {
+    border: none !important;
+}

@@ -27,6 +27,10 @@ class Picture extends Model {
         return $this->morphedByMany(Dish::class, 'picturable');
     }
 
+    public function events() {
+        return $this->morphedByMany( Event::class, 'picturable' );
+    }
+
     /* === CRUD === */
 
     public static function createPicture( $request ) {

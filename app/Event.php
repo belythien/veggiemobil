@@ -19,10 +19,14 @@ class Event extends Model {
     public function getDateAttribute() {
         if( !empty( $this->date_to ) ) {
 //            if( $this->date_to->year() == $this->date_from->year() ) {
-                return $this->date_from->format( 'd.m.' ) . ' - ' . $this->date_to->format( 'd.m.Y' );
+            return $this->date_from->format( 'd.m.' ) . ' - ' . $this->date_to->format( 'd.m.Y' );
 //            }
         }
         return $this->date_from->format( 'd.m.Y' );
+    }
+
+    public static function getNextEvents( $limit = 3 ) {
+        return Event::where( 'date_from', '>', date( 'Y-m-d' ) )->limit( $limit )->orderby( 'date_from', 'asc' )->get();
     }
 
     /* === RELATIONS === */

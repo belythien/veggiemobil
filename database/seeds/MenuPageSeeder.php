@@ -39,5 +39,14 @@ class MenuPageSeeder extends Seeder {
             ] );
         }
 
+        $menu = Menu::where( 'label', 'Social Media' )->first();
+        foreach( Page::whereIn( 'slug', [ 'facebook' ] )->get() as $key => $page ) {
+            DB::table( 'menu_page' )->insert( [
+                'menu_id' => $menu->id,
+                'page_id' => $page->id,
+                'sort'    => ( $key + 1 ) * 10,
+            ] );
+        }
+
     }
 }

@@ -31,9 +31,18 @@
                                         <div>{{$model->text}}</div>
                                     </td>
                                     <td>
-                                        @foreach($model->dishes as $dish)
-                                            <a href="{{route('admin.dish.edit', ['dish' => $dish])}}">{{$dish->title}}</a>
-                                        @endforeach
+                                        <ul class="list-unstyled">
+                                            @foreach($model->dishes as $dish)
+                                                <li>
+                                                    <a href="{{route('admin.dish.edit', ['dish' => $dish])}}">{{$dish->title}}</a>
+                                                </li>
+                                            @endforeach
+                                            @foreach($model->events as $event)
+                                                <li>
+                                                    <a href="{{route('admin.event.edit', ['event' => $event])}}">{{$event->title}}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </td>
                                     <td class="text-center">
                                         @include('inc.boolean', [

@@ -125,5 +125,23 @@ class EventSeeder extends Seeder {
             'date_to'   => '2016-10-03',
             'live'      => 1,
         ] );
+
+        DB::table( 'events' )->insert( [
+            'slug'      => 'veggieworld-wiesbaden-2021',
+            'title'     => 'Veggieworld Wiesbaden 2021',
+            'text'      => '',
+            'date_from' => '2021-03-02',
+            'date_to'   => '2016-03-05',
+            'live'      => 1,
+        ] );
+
+        DB::table( 'events' )->insert( [
+            'slug'      => 'vegan-streetday-stuttgart-2021',
+            'title'     => 'Vegan-Streetday Stuttgart 2021',
+            'text'      => '',
+            'date_from' => '2021-06-04',
+            'date_to'   => null,
+            'live'      => 1,
+        ] );
     }
 }
