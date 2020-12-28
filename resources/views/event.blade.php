@@ -39,7 +39,7 @@
                         @include('inc.picture', ['image' => $event->pictures()->first()])
                     </div>
                     @if($event->pictures()->count() > 1)
-                        <div class="d-none d-lg-block">
+                        <div class="d-none">
                             @foreach($event->pictures as $picture)
                                 <div class="float-left" style="width:10%">
                                         <span onclick="switchPicture(this)"

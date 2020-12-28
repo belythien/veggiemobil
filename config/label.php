@@ -2,6 +2,7 @@
 
 return [
     'dashboard' => 'Dashboard',
+    'allergen'  => 'Allergen',
     'dish'      => 'Gericht',
     'event'     => 'Event',
     'page'      => 'Seite',

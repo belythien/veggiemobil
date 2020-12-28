@@ -1,6 +1,8 @@
 <?php
 
 return [
+
+    'allergen'  => 'fas fa-allergies',
     'dashboard' => 'fa fa-tachometer-alt',
     'dish'      => 'fa fa-hamburger',
     'event'     => 'far fa-calendar-alt',
@@ -12,7 +14,6 @@ return [
     'cancel'    => 'fa fa-times-circle',
     'add'       => 'fa fa-plus-circle',
     'previous'  => 'fa fa-arrow-circle-left',
-    'next'      => 'fa fa-arrow-circle-right'
-
+    'next'      => 'fa fa-arrow-circle-right',
 
 ];

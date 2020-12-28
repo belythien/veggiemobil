@@ -55,7 +55,7 @@ class DishSeeder extends Seeder {
         DB::table( 'dishes' )->insert( [
             'slug'  => 'caprese',
             'title' => 'Caprese',
-            'text'  => '',
+            'text'  => 'Tomaten, Flohzarella, Olivenöl, Balsamico und frischer Basilikum',
             'live'  => 1
         ] );
 
@@ -69,7 +69,7 @@ class DishSeeder extends Seeder {
         DB::table( 'dishes' )->insert( [
             'slug'  => 'falafel-wrap',
             'title' => 'Falafel-Wrap',
-            'text'  => '',
+            'text'  => 'selbst gemachter Falafel, Mais, Tomaten, Gurken, Blattsalat, Hummus, Möhren, Tomaten-Chili-Sauce',
             'live'  => 1
         ] );
 
@@ -83,7 +83,7 @@ class DishSeeder extends Seeder {
         DB::table( 'dishes' )->insert( [
             'slug'  => 'rumpelstilzchen',
             'title' => 'Salat »Rumpelstilzchen«',
-            'text'  => '',
+            'text'  => 'Blattsalat, rote Zwiebeln, Paprika, Möhren, Cocktail-Tomaten, gebratene Champignons und karamellisierte Walnüsse',
             'live'  => 1
         ] );
 

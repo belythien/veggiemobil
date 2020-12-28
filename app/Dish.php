@@ -19,6 +19,10 @@ class Dish extends Model {
         return $this->morphToMany( Picture::class, 'picturable' );
     }
 
+    public function allergens() {
+        return $this->belongsToMany( 'App\Allergen' );
+    }
+
     /* === CRUD === */
 
     public static function createDish( $request ) {

@@ -2,81 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b73350f-c126-47e8-8d39-55030f9e2609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/aschersleben2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aschersleben3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aschersleben4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aschersleben5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aschersleben6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt11-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt12-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt18-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt21-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt24-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt26-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt27-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt28-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt31-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt32-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt4-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt6-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/darmstadt8-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/essen1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/essen3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/essen4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gardelegen3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gardelegen5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/gardelegen6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hamburg2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hamburg3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hannover1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hannover2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hannover4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/hannover6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/magdeburg1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/magdeburg3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/magdeburg4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/magdeburg5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/magdeburg6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mannheim2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mannheim3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mannheim4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/mannheim5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oberhausen1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oberhausen2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oberhausen3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oberhausen4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oberhausen5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/oestrichwinkel1-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pullmancityharz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/quedlinburg2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wiesbaden1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wiesbaden10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wiesbaden2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wiesbaden3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wiesbaden4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wiesbaden6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/event.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/inc/right-col.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Allergen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AllergenController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_28_171100_create_allergens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_28_171231_create_allergen_dish.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AllergenDishSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AllergenSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/allergen/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/allergen/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/inc/dishes.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/inc/events.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Picture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Picture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Dish.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dish.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/icons.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/icons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/EventSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EventSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MenuPageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MenuPageSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MenuSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MenuSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PicturableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PicturableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/label.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/label.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/plural.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/plural.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DishSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DishSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PageSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/de/field.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de/field.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dish/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dish/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/event/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/event/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/form/col.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/form/col.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/page/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/page/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/picture/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/picture/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/picture/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/picture/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/picture.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/picture.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -249,18 +195,18 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\inc" />
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views" />
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\component" />
-      <recent name="C:\xampp\htdocs\veggiemobil\config" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\inc" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\template" />
       <recent name="C:\xampp\htdocs\veggiemobil\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\inc" />
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views" />
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\component" />
+      <recent name="C:\xampp\htdocs\veggiemobil\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -286,7 +232,9 @@
       <workItem from="1608709630359" duration="14288000" />
       <workItem from="1609059276915" duration="4917000" />
       <workItem from="1609074029128" duration="11160000" />
-      <workItem from="1609151729470" duration="10257000" />
+      <workItem from="1609151729470" duration="11071000" />
+      <workItem from="1609174130302" duration="952000" />
+      <workItem from="1609175439488" duration="3761000" />
     </task>
     <servers />
   </component>
@@ -305,14 +253,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608547008985" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609078619605">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609176783968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609078619605" />
-    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog" timestamp="1609153195507">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609176783968" />
+    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog" timestamp="1609176892958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609153195507" />
+    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609176892958" />
     <state x="628" y="298" key="EditFileWatcherDialog" timestamp="1608538279773">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -369,9 +317,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608558693176" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609164032573">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609178925438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609164032573" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609178925438" />
   </component>
 </project>

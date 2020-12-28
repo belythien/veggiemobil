@@ -19,14 +19,14 @@ class PageSeeder extends Seeder {
         DB::table( 'pages' )->insert( [
             'slug'  => 'catering',
             'title' => 'Catering',
-            'text'  => 'Lorem ipsum',
+            'text'  => '<p>Buchen Sie uns für Festivals, Familienfeiern, Firmenevents oder wo auch immer gutes, nachhaltiges Essen gefragt ist.</p>',
             'live'  => 1
         ] );
 
         DB::table( 'pages' )->insert( [
             'slug'  => 'events',
             'title' => 'Events',
-            'text'  => 'Lorem ipsum',
+            'text'  => '<p>Hier finden Sie Bilder zu einigen Highlights unser Truck-Touren.</p><p>Buchen auch Sie uns für Ihr Event!</p>',
             'live'  => 1
         ] );
 
@@ -124,7 +124,7 @@ E-Mail: veggiemobil@yahoo.de</p>
 <p>Mittels eines Cookies können die Informationen und Angebote auf unserer Internetseite im Sinne des Benutzers optimiert werden. Cookies ermöglichen uns, wie bereits erwähnt, die Benutzer unserer Internetseite wiederzuerkennen. Zweck dieser Wiedererkennung ist es, den Nutzern die Verwendung unserer Internetseite zu erleichtern. Der Benutzer einer Internetseite, die Cookies verwendet, muss beispielsweise nicht bei jedem Besuch der Internetseite erneut seine Zugangsdaten eingeben, weil dies von der Internetseite und dem auf dem Computersystem des Benutzers abgelegten Cookie übernommen wird. Ein weiteres Beispiel ist das Cookie eines Warenkorbes im Online-Shop. Der Online-Shop merkt sich die Artikel, die ein Kunde in den virtuellen Warenkorb gelegt hat, über ein Cookie.</p>
 <p>Die betroffene Person kann die Setzung von Cookies durch unsere Internetseite jederzeit mittels einer entsprechenden Einstellung des genutzten Internetbrowsers verhindern und damit der Setzung von Cookies dauerhaft widersprechen. Ferner können bereits gesetzte Cookies jederzeit über einen Internetbrowser oder andere Softwareprogramme gelöscht werden. Dies ist in allen gängigen Internetbrowsern möglich. Deaktiviert die betroffene Person die Setzung von Cookies in dem genutzten Internetbrowser, sind unter Umständen nicht alle Funktionen unserer Internetseite vollumfänglich nutzbar.</p>
 <p><strong>Verwendetete Cookies</strong></p>
-<p><em>hexenkuche_session</em><br>
+<p><em>veggiemobil_session</em><br>
 Dieses Cookie enthält die eindeutige ID der sog. <em>Session</em>. Es wird beim Schließen der Browser-Sitzung gelöscht.</p>
 <p><em>XSRF-Token</em><br>
 XSRF (=Cross-Site-Request-Forgery). Durch dieses Token kann sichergestellt werden, dass ein Angreifer sich nicht der Session eines legitimen Nutzers bemächtigen kann, um schädliche HTTP-Anfragen auszuführen.</p>

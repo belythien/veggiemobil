@@ -20,6 +20,7 @@ Auth::routes();
 Route::name( 'admin.' )->group( function () {
     Route::get( '/dashboard', 'DashboardController@index' )->name( 'dashboard' );
 
+    Route::resource( 'allergen', 'AllergenController' )->except(['show']);
     Route::resource( 'dish', 'DishController' );
     Route::resource( 'event', 'EventController' );
     Route::resource( 'menu', 'MenuController' );

@@ -221,3 +221,13 @@ input[type=radio], input[type=checkbox] {
 span.event-picture-thumbnail img {
     border: none !important;
 }
+
+.text-sm {
+    font-size: 80%;
+}
+
+.sup-allergen {
+    font-size: 50%;
+    vertical-align: super;
+    color: #888;
+}
