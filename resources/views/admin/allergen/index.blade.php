@@ -18,12 +18,14 @@
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
-                                    <td>{{$model->name}}</td>
+                                    <td>
+                                        <a href="{{route('admin.allergen.edit', ['allergen' => $model])}}">{{$model->name}}</a>
+                                    </td>
                                     <td>
                                         <ul class="list-unstyled">
                                             @foreach($model->dishes as $dish)
                                                 <li>
-                                                    <a href="{{route('admin.dish.edit', ['dish' => $dish])}}">{{$dish->title}}</a>
+                                                    {{$dish->title}}
                                                 </li>
                                             @endforeach
                                         </ul>

@@ -8,6 +8,12 @@ class Allergen extends Model {
 
     protected $fillable = [ 'name' ];
 
+    /* === GUI === */
+
+    public function getGuiNameAttribute() {
+        return $this->id . ') ' . $this->name;
+    }
+
     /* === RELATIONS === */
 
     public function dishes() {

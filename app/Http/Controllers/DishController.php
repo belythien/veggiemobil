@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dish;
+use App\Http\Requests\DishFormRequest;
 use Illuminate\Http\Request;
 
 class DishController extends Controller {
@@ -39,7 +40,7 @@ class DishController extends Controller {
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store( Request $request ) {
+    public function store( DishFormRequest $request ) {
         $dish = Dish::createDish( $request );
         return redirect( route( 'dish.show', [ 'dish' => $dish ] ) );
     }
@@ -71,9 +72,9 @@ class DishController extends Controller {
      * @param \App\Dish $dish
      * @return \Illuminate\Http\Response
      */
-    public function update( Request $request, Dish $dish ) {
+    public function update( DishFormRequest $request, Dish $dish ) {
         $dish->updateDish( $request );
-        return redirect( route( 'dish.show', [ 'dish' => $dish ] ) );
+        return redirect( route( 'admin.dish.index' ) );
     }
 
     /**

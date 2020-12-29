@@ -13,6 +13,12 @@ class Dish extends Model {
     protected $fillable = [ 'title', 'text', 'live', 'publication', 'expiration' ];
     protected $dates    = [ 'publication', 'expiration' ];
 
+    /* === GUI === */
+
+    public function getGuiNameAttribute() {
+        return $this->title;
+    }
+
     /* === RELATIONS === */
 
     public function pictures() {
@@ -28,12 +34,14 @@ class Dish extends Model {
     public static function createDish( $request ) {
         $dish = new Dish();
         $dish->fill( $request->input() );
+        $dish->allergens()->sync( $request->get( 'allergens' ) );
         $dish->save();
         return $dish;
     }
 
     public function updateDish( $request ) {
         $this->fill( $request->input() );
+        $this->allergens()->sync( $request->get( 'allergens' ) );
         $this->save();
     }
 

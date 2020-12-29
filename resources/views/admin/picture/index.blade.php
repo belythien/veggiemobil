@@ -12,7 +12,7 @@
                                 <th>Bild</th>
                                 <th>Slug</th>
                                 <th>Titel</th>
-                                <th></th>
+                                <th>Bezogen auf</th>
                                 <th class="text-center">Live</th>
                                 <th class="text-center">Willkommen</th>
                                 <th></th>
@@ -27,19 +27,23 @@
                                     </td>
                                     <td>{{$model->slug}}</td>
                                     <td>
-                                        <div class="font-weight-bold">{{$model->title}}</div>
+                                        <div class="font-weight-bold">
+                                            <a href="{{route('admin.picture.edit', ['picture' => $model])}}">{{$model->title}}</a>
+                                        </div>
                                         <div>{{$model->text}}</div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled">
                                             @foreach($model->dishes as $dish)
                                                 <li>
-                                                    <a href="{{route('admin.dish.edit', ['dish' => $dish])}}">{{$dish->title}}</a>
+                                                    @include('inc.icon', ['icon' => 'dish'])
+                                                    {{$dish->title}}
                                                 </li>
                                             @endforeach
                                             @foreach($model->events as $event)
                                                 <li>
-                                                    <a href="{{route('admin.event.edit', ['event' => $event])}}">{{$event->title}}</a>
+                                                    @include('inc.icon', ['icon' => 'event'])
+                                                    {{$event->title}}
                                                 </li>
                                             @endforeach
                                         </ul>

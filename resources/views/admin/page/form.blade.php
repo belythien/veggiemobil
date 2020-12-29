@@ -8,3 +8,6 @@
 @include('admin.form.col', ['field' => 'live',         'size' => 4,  'type' => 'radio' ])
 @include('admin.form.col', ['field' => 'publication',  'size' => 4,  'type' => 'date' ])
 @include('admin.form.col', ['field' => 'expiration',   'size' => 4,  'type' => 'date' ])
+
+
+@include('admin.form.col', ['field' => 'dishes',       'size' => 12, 'type' => 'checkbox', 'data' => \App\Dish::all(), 'colSize' => 'lg-4' ])

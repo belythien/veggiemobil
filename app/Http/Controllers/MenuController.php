@@ -30,7 +30,7 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.create', ['class' => 'menu'] );
+        return view( 'admin.create', [ 'class' => 'menu' ] );
     }
 
     /**
@@ -73,7 +73,7 @@ class MenuController extends Controller {
      */
     public function update( Request $request, Menu $menu ) {
         $menu->updateMenu( $request );
-        return redirect( route( 'menu.show', [ 'menu' => $menu ] ) );
+        return redirect( route( 'admin.menu.index' ) );
     }
 
     /**

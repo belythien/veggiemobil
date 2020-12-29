@@ -23,10 +23,12 @@
                                     <td>
                                         <a class="font-weight-bold"
                                            href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
-                                        >{{$model->title}}</a>
+                                        >{{$model->title}}
+                                            @include('inc.sup-allergens', ['dish' => $model])
+                                        </a>
                                         <div>{!! $model->text !!}</div>
                                     </td>
-                                    <td style="max-width: 200px">
+                                    <td style="width: 200px">
                                         @foreach($model->pictures as $picture)
                                             @include('inc.picture', ['image' => $picture])
                                         @endforeach

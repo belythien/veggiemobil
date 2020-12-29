@@ -8,9 +8,9 @@
 
         <div class="form-group">
             <label for="{{$field}}" class="font-weight-bold">{{__('field.' . $field)}}</label>
-
+{{--{{dd($errors)}}--}}
             @if(!isset($type) || $type=='text')
-                <input class="form-control"
+                <input class="form-control @if($errors->has($field)) is-invalid @endif"
                        id="{{$field}}"
                        @if(isset($readonly) && $readonly == true) readonly @endif
                        name="{{$field}}"
@@ -59,6 +59,23 @@
                        placeholder="{{$placeholder}}"
                     @endif
                 >
+
+            @elseif($type == 'checkbox')
+                @if(isset($data))
+                    <div class="row">
+                        @foreach($data as $object)
+                            <div class="@if(isset($colSize)) col-{{$colSize}} @else col-lg-2 @endif">
+                                <label>
+                                    <input type="checkbox" name="{{$field}}[{{$object->id}}]" value="{{$object->id}}"
+                                           @if(isset($model) && $model->$field->contains($object->id)) checked @endif
+                                    >
+                                    {{$object->gui_name}}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+
             @elseif($type == 'radio')
                 @if(!isset($data))
                     @php($data = [1 => 'Ja', 0 => 'Nein'])
@@ -82,6 +99,7 @@
                 </div>
 
             @endif
+
             @if(isset($help))
                 <small id="{{$field}}_help" class="form-text text-muted">{{$help}}</small>
             @endif

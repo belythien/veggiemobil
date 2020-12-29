@@ -18,12 +18,14 @@
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
-                                    <td>{{$model->label}}</td>
+                                    <td>
+                                        <a href="{{route('admin.menu.edit', ['menu' => $model])}}">{{$model->label}}</a>
+                                    </td>
                                     <td>
                                         <ul class="list-unstyled">
                                             @foreach($model->pages as $page)
                                                 <li>
-                                                    <a href="{{route('admin.page.edit', ['page' => $page])}}">{{$page->title}}</a>
+                                                    {{$page->title}}
                                                 </li>
                                             @endforeach
                                         </ul>

@@ -30,10 +30,8 @@
                                     <td>
                                         {{$model->date}}
                                     </td>
-                                    <td style="max-width: 200px">
-                                        @foreach($model->pictures as $picture)
-                                            @include('inc.picture', ['image' => $picture])
-                                        @endforeach
+                                    <td style="width: 200px">
+                                        @include('inc.picture', ['image' => $model->pictures()->first()])
                                     </td>
                                     <td class="text-right">
                                         <div class="btn-group">

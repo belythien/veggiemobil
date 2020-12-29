@@ -11,6 +11,12 @@ class Picture extends Model {
 
     protected $fillable = [ 'slug', 'title', 'text', 'live', 'welcome', 'filename', 'width', 'height' ];
 
+    /* === GUI === */
+
+    public function getGuiNameAttribute() {
+        return $this->title;
+    }
+
     /* === SCOPE === */
 
     public function scopeOnWelcomePage( $query ) {
@@ -36,12 +42,16 @@ class Picture extends Model {
     public static function createPicture( $request ) {
         $picture = new Picture();
         $picture->fill( $request->input() );
+        $picture->dishes()->sync( $request->get( 'dishes' ) );
+        $picture->events()->sync( $request->get( 'events' ) );
         $picture->save();
         return $picture;
     }
 
     public function updatePicture( $request ) {
         $this->fill( $request->input() );
+        $this->dishes()->sync( $request->get( 'dishes' ) );
+        $this->events()->sync( $request->get( 'events' ) );
         $this->save();
     }
 

@@ -35,6 +35,7 @@
                 </div>
                 <div class="col">
                     <div class="container-fluid mb-5">
+                        @include('inc.messages')
                         @yield('content')
                     </div>
                 </div>

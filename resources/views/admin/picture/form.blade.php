@@ -17,3 +17,6 @@
         @include('inc.picture', ['image' => $model])
     </div>
 @endif
+
+@include('admin.form.col', ['field' => 'dishes',       'size' => 12, 'type' => 'checkbox', 'data' => \App\Dish::all(), 'colSize' => 'lg-4' ])
+@include('admin.form.col', ['field' => 'events',       'size' => 12, 'type' => 'checkbox', 'data' => \App\Event::all(), 'colSize' => 'lg-4' ])

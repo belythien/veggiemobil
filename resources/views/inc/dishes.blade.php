@@ -4,9 +4,7 @@
             <div class="col-lg-8">
                 <h3 class="text-success font-weight-bold pt-3">
                     {{$dish->title}}
-                    @foreach($dish->allergens as $allergen)
-                        <a href="#allergene" class="sup-allergen" title="{{$allergen->name}}">{{$allergen->id}}</a>
-                    @endforeach
+                    @include('inc.sup-allergens', ['dish' => $dish])
                 </h3>
                 <p>{!! $dish->text !!}</p>
             </div>

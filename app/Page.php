@@ -13,6 +13,12 @@ class Page extends Model {
     protected $fillable = [ 'slug', 'title', 'text', 'live', 'publication', 'expiration' ];
     protected $dates    = [ 'publication', 'expiration' ];
 
+    /* === GUI === */
+
+    public function getGuiNameAttribute() {
+        return $this->title;
+    }
+
     /* === RELATIONS === */
 
     public function dishes() {

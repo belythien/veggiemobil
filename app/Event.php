@@ -16,6 +16,10 @@ class Event extends Model {
 
     /* === GUI === */
 
+    public function getGuiNameAttribute() {
+        return $this->title;
+    }
+
     public function getDateAttribute() {
         if( !empty( $this->date_to ) ) {
 //            if( $this->date_to->year() == $this->date_from->year() ) {

@@ -22,8 +22,7 @@
                                     @if(!empty($pages))
                                         @foreach($pages as $page)
                                             <div class="alternating py-2 px-3">
-                                                <a class="d-block"
-                                                   href="{{route('admin.page.edit', ['page' => $page])}}"
+                                                <a href="{{route('admin.page.edit', ['page' => $page])}}"
                                                 >{{$page->title}}</a>
                                             </div>
                                         @endforeach
@@ -45,9 +44,10 @@
                                     @if(!empty($dishes))
                                         @foreach($dishes as $dish)
                                             <div class="alternating py-2 px-3">
-                                                <a class="d-block"
-                                                   href="{{route('admin.dish.edit', ['dish' => $dish])}}"
-                                                >{{$dish->title}}</a>
+                                                <a href="{{route('admin.dish.edit', ['dish' => $dish])}}"
+                                                >{{$dish->title}}
+                                                    @include('inc.sup-allergens', ['dish' => $dish])
+                                                </a>
                                             </div>
                                         @endforeach
                                     @endif
@@ -69,8 +69,7 @@
                                     @if(!empty($events))
                                         @foreach($events as $event)
                                             <div class="alternating py-2 px-3">
-                                                <a class="d-block"
-                                                   href="{{route('admin.event.edit', ['event' => $event])}}"
+                                                <a href="{{route('admin.event.edit', ['event' => $event])}}"
                                                 >{{$event->title}}</a>
                                             </div>
                                         @endforeach
