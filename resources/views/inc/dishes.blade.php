@@ -4,9 +4,14 @@
             <div class="col-lg-8">
                 <h3 class="text-success font-weight-bold pt-3">
                     {{$dish->title}}
-                    @include('inc.sup-allergens', ['dish' => $dish])
+                    @include('inc.sup-allergens', ['obj' => $dish])
                 </h3>
                 <p>{!! $dish->text !!}</p>
+                <ul class="separated-list">
+                @foreach($dish->dips as $dip)
+                    <li>{{$dip->title}}@include('inc.sup-allergens', ['obj' => $dip])</li>
+                @endforeach
+                </ul>
             </div>
             <div class="col">
                 @foreach($dish->pictures as $picture)

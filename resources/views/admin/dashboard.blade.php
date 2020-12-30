@@ -46,7 +46,7 @@
                                             <div class="alternating py-2 px-3">
                                                 <a href="{{route('admin.dish.edit', ['dish' => $dish])}}"
                                                 >{{$dish->title}}
-                                                    @include('inc.sup-allergens', ['dish' => $dish])
+                                                    @include('inc.sup-allergens', ['obj' => $dish])
                                                 </a>
                                             </div>
                                         @endforeach

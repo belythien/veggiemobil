@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\Page;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller {
@@ -83,8 +84,17 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Menu $menu ) {
-        $name = $menu->title;
         $menu->delete();
-        return redirect()->back()->with( 'success', 'Menü <strong>' . $name . '</strong> gelöscht' );
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
+    }
+
+    public function pageMoveUp( Menu $menu, Page $page ) {
+        $menu->pageMoveUp( $page );
+        return view( 'admin.menu.pages', [ 'menu' => $menu ] );
+    }
+
+    public function pageMoveDown( Menu $menu, Page $page ) {
+        $menu->pageMoveDown( $page );
+        return view( 'admin.menu.pages', [ 'menu' => $menu ] );
     }
 }

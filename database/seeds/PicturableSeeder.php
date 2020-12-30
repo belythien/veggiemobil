@@ -210,6 +210,16 @@ class PicturableSeeder extends Seeder {
             ] );
         }
 
+        foreach( Picture::all() as $picture ) {
+            if( $picture->dishes()->count() > 0 ) {
+                $picture->title = $picture->dishes()->first()->title;
+                $picture->save();
+            }
 
+            if( $picture->events()->count() > 0 ) {
+                $picture->title = $picture->events()->first()->title;
+                $picture->save();
+            }
+        }
     }
 }

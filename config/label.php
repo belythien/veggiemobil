@@ -3,6 +3,7 @@
 return [
     'dashboard' => 'Dashboard',
     'allergen'  => 'Allergen',
+    'dip'       => 'Dip',
     'dish'      => 'Gericht',
     'event'     => 'Event',
     'page'      => 'Seite',

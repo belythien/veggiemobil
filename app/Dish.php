@@ -21,12 +21,20 @@ class Dish extends Model {
 
     /* === RELATIONS === */
 
-    public function pictures() {
-        return $this->morphToMany( Picture::class, 'picturable' );
-    }
-
     public function allergens() {
         return $this->belongsToMany( 'App\Allergen' );
+    }
+
+    public function dips() {
+        return $this->belongsToMany( 'App\Dip' );
+    }
+
+    public function pages() {
+        return $this->belongsToMany( 'App\Page' );
+    }
+
+    public function pictures() {
+        return $this->morphToMany( Picture::class, 'picturable' );
     }
 
     /* === CRUD === */
@@ -34,15 +42,31 @@ class Dish extends Model {
     public static function createDish( $request ) {
         $dish = new Dish();
         $dish->fill( $request->input() );
-        $dish->allergens()->sync( $request->get( 'allergens' ) );
         $dish->save();
+        $dish->allergens()->sync( $request->get( 'allergens' ) );
+        $dish->dips()->sync( $request->get( 'dips' ) );
+        $dish->pages()->sync( $request->get( 'pages' ) );
+
+        if( $request->has( 'filename' ) ) {
+            $picture = Picture::createPicture( $request );
+            $dish->pictures()->save( $picture );
+        }
+
         return $dish;
     }
 
     public function updateDish( $request ) {
         $this->fill( $request->input() );
-        $this->allergens()->sync( $request->get( 'allergens' ) );
         $this->save();
+        $this->allergens()->sync( $request->get( 'allergens' ) );
+        $this->dips()->sync( $request->get( 'dips' ) );
+        $this->pages()->sync( $request->get( 'pages' ) );
+
+        if( $request->has( 'filename' ) ) {
+            $picture = Picture::createPicture( $request );
+            $this->pictures()->delete();
+            $this->pictures()->save( $picture );
+        }
     }
 
     public function sluggable(): array {

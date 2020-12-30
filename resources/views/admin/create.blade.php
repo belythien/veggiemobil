@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card">
-                <form method="POST" action="{{ route('admin.' . $class . '.store') }}">
+                <form method="POST" action="{{ route('admin.' . $class . '.store') }}" enctype="multipart/form-data">
                     @csrf
                     @component('component.admin-card-header', ['class' => $class])
                         {{config('label')[$class]}} anlegen

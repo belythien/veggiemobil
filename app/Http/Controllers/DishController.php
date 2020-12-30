@@ -42,7 +42,7 @@ class DishController extends Controller {
      */
     public function store( DishFormRequest $request ) {
         $dish = Dish::createDish( $request );
-        return redirect( route( 'dish.show', [ 'dish' => $dish ] ) );
+        return redirect( route( 'admin.dish.index', [ 'dish' => $dish ] ) );
     }
 
     /**
@@ -84,8 +84,7 @@ class DishController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Dish $dish ) {
-        $name = $dish->title;
         $dish->delete();
-        return redirect()->back()->with( 'success', 'Seite <strong>' . $name . '</strong> gelöscht' );
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
     }
 }

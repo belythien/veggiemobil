@@ -22,12 +22,8 @@
                                         <a href="{{route('admin.menu.edit', ['menu' => $model])}}">{{$model->label}}</a>
                                     </td>
                                     <td>
-                                        <ul class="list-unstyled">
-                                            @foreach($model->pages as $page)
-                                                <li>
-                                                    {{$page->title}}
-                                                </li>
-                                            @endforeach
+                                        <ul class="list-unstyled" id="menu_pages_{{$model->id}}">
+                                            @include('admin.menu.pages', ['menu' => $model])
                                         </ul>
                                     </td>
                                     <td class="text-right">

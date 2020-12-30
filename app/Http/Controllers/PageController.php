@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Dish;
 use App\Event;
 use App\Page;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\View;
 
 class PageController extends Controller {
 
@@ -87,9 +86,8 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Page $page ) {
-        $name = $page->title;
         $page->delete();
-        return redirect()->back()->with( 'success', 'Seite <strong>' . $name . '</strong> gelöscht' );
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
     }
 
     public function display( $slug ) {
@@ -99,13 +97,32 @@ class PageController extends Controller {
                 return redirect( url( $page->external_url ) );
             }
 
-            if( $page->id == 3 ) { // EVENTS
-                $events = Event::orderby( 'date_from', 'desc' )->paginate( 20 );
+            if( $page->id == 4 ) { // EVENTS
+                $events = Event::live()->orderby( 'date_from', 'desc' )->paginate( 20 );
                 return view( $page->template, [ 'page' => $page, 'events' => $events ] );
             }
 
             return view( $page->template, [ 'page' => $page ] );
         }
         return view( '404' );
+    }
+
+    public function toggleLive( Page $page ) {
+        $page->live = !$page->live;
+        $page->save();
+        return view( 'inc.boolean', [
+            'value'    => $page->live,
+            'icPostTo' => route( 'admin.page.toggle-live', [ 'page' => $page ] )
+        ] );
+    }
+
+    public function dishMoveUp( Page $page, Dish $dish ) {
+        $page->dishMoveUp( $dish );
+        return view( 'admin.page.dishes', [ 'page' => $page ] );
+    }
+
+    public function dishMoveDown( Page $page, Dish $dish ) {
+        $page->dishMoveDown( $dish );
+        return view( 'admin.page.dishes', [ 'page' => $page ] );
     }
 }

@@ -15,7 +15,7 @@
                     @endauth
                 </div>
 
-                <div class="card-body">
+                <div class="card-body @if($page->slug == 'philosophie') bg-veggiemobil @endif">
                     <div class="row">
                         <div class="col-xl-9">
                             {!! $page->text !!}

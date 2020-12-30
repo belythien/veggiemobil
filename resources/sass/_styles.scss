@@ -62,6 +62,12 @@ div.shadow,
     .card-body {
         font-size: 130%;
     }
+
+    .card-body.bg-veggiemobil {
+        background: url('img/veggiemobil.jpg') bottom center no-repeat;
+        background-size: contain;
+        padding-bottom: 540px;
+    }
 }
 
 .bg-dark-transparent {
@@ -210,8 +216,23 @@ input[type=radio], input[type=checkbox] {
 }
 
 .right-col-box {
-    background: lighten($green, 45%);
+    background: $green;
+    border: 1px dashed white;
+    box-shadow: $boxshadow;
+    color: white;
+    outline: 10px solid $green;
     padding: 0.75em;
+    position: relative;
+    top: 10px;
+    right: -60px;
+
+    a {
+        color: white !important;
+    }
+}
+
+.right-col-box.bg-danger {
+    outline: 10px solid $red;
 }
 
 .cursor-pointer {
@@ -219,7 +240,15 @@ input[type=radio], input[type=checkbox] {
 }
 
 span.event-picture-thumbnail img {
-    border: none !important;
+    border-left: none;
+    border-right: none;
+    border-top: 6px solid white !important;
+    border-bottom: 6px solid white !important;
+}
+
+span.event-picture-thumbnail-selected img {
+    border-top: 6px solid $green !important;
+    border-bottom: 6px solid $green !important;
 }
 
 .text-sm {
@@ -230,4 +259,24 @@ span.event-picture-thumbnail img {
     font-size: 50%;
     vertical-align: super;
     color: #888;
+}
+
+ul.separated-list li:not(:last-child):after {
+    content: " • ";
+}
+
+ul.separated-list li {
+    display: inline;
+}
+
+ul.separated-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ic-removing,
+tr.ic-removing td {
+    opacity: 0;
+    transition: all 1s ease;
 }

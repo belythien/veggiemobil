@@ -16,6 +16,10 @@ class Allergen extends Model {
 
     /* === RELATIONS === */
 
+    public function dips() {
+        return $this->belongsToMany( 'App\Dip' );
+    }
+
     public function dishes() {
         return $this->belongsToMany( 'App\Dish' );
     }

@@ -9,6 +9,17 @@ class PageSeeder extends Seeder {
      * @return void
      */
     public function run() {
+
+        DB::table( 'pages' )->insert( [
+            'slug'  => 'philosophie',
+            'title' => 'Philosophie',
+            'text'  => '<p>Unser veggiemobil Foodtruck zeichnet sich durch seine abwechslungsreiche und wechselnde, vegane Speisekarte aus. Alle Speisen werden täglich frisch selbst gekocht. Hierbei verwenden wir nur beste Zutaten.<br>
+                          Die Zusammensetzung unserer Gerichte entwickeln wir ständig neu und selbst. Keine Fertig-Patties, keine Fertig-Soßen, keine Fertig-Dips! Bei unserem Champion-Burger zum Beispiel werden unter anderem frische Champignons, Walnüsse, Kräuter zum Bratling verarbeitet.<br>
+                          Zurzeit bieten wir zu unseren Süßkartoffel-Pommes 8 verschiedene selbstkreirte Dips an.</p>
+                          <p>Der veggiemobil Foodtruck vereint gute vegane Hausmannskost, moderne arabische und europäische Küche.</p>',
+            'live'  => 1
+        ] );
+
         DB::table( 'pages' )->insert( [
             'slug'  => 'truck-menu',
             'title' => 'Truck-Menü',
@@ -19,7 +30,7 @@ class PageSeeder extends Seeder {
         DB::table( 'pages' )->insert( [
             'slug'  => 'catering',
             'title' => 'Catering',
-            'text'  => '<p>Buchen Sie uns für Festivals, Familienfeiern, Firmenevents oder wo auch immer gutes, nachhaltiges Essen gefragt ist.</p>',
+            'text'  => '<p>Sie feiern eine Gartenparty, einen Geburtstag, eine Hochzeit, ein Firmenjubiläum oder ein anderes Event? Wir kommen gerne zu Ihnen und verwöhnen Sie ganz nach Ihren veganen Wünschen.<br>Von Montag bis Freitag kommen wir zu ausgesuchten Firmenparkplätzen, oder anderen Stellplätzen. Am Wochenende sind wir auf verschiedenen Openairs und Festivals zu finden.</p>',
             'live'  => 1
         ] );
 

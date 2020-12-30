@@ -95,6 +95,12 @@
                     >{{$page->title}}</a>
                 @endforeach
             </div>
+            <div class="d-none d-xl-block" style="position:absolute; top: 100px; right: -90px; transform: rotate(-10deg)">
+                @include('inc.extra.coming-up')
+            </div>
+            <div class="d-block d-xl-none mx-5 my-2">
+                @include('inc.extra.coming-up')
+            </div>
         </div>
     </div>
 </div>

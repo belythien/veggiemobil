@@ -15,7 +15,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody ic-target="closest tr">
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
@@ -24,9 +24,14 @@
                                         <a class="font-weight-bold"
                                            href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
                                         >{{$model->title}}
-                                            @include('inc.sup-allergens', ['dish' => $model])
+                                            @include('inc.sup-allergens', ['obj' => $model])
                                         </a>
                                         <div>{!! $model->text !!}</div>
+                                        <ul class="separated-list">
+                                            @foreach($model->dips as $dip)
+                                                <li>{{$dip->title}}@include('inc.sup-allergens', ['obj' => $dip])</li>
+                                            @endforeach
+                                        </ul>
                                     </td>
                                     <td style="width: 200px">
                                         @foreach($model->pictures as $picture)
@@ -34,16 +39,7 @@
                                         @endforeach
                                     </td>
                                     <td class="text-right">
-                                        <div class="btn-group">
-                                            <a href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
-                                               class="btn btn-sm btn-success"
-                                            ><i
-                                                    class="fa fa-edit fa-fw"
-                                                ></i></a>
-                                            <button class="btn btn-sm btn-danger"><i
-                                                    class="fa fa-trash fa-fw"
-                                                ></i></button>
-                                        </div>
+                                        @include('admin.index-buttons', ['model' => $model])
                                     </td>
                                 </tr>
                             @endforeach

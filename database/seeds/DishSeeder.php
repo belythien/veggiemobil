@@ -41,7 +41,7 @@ class DishSeeder extends Seeder {
         DB::table( 'dishes' )->insert( [
             'slug'  => 'suesskartoffel-pommes',
             'title' => 'Süßkartoffel-Pommes',
-            'text'  => 'mit selbstgemachtem Dip zur Wahl: Mayo • Aioli • Ketchup • Tomate-Chili • Barbecue • Mango-Kokos',
+            'text'  => 'mit selbstgemachtem Dip zur Wahl:',
             'live'  => 1
         ] );
 
@@ -93,5 +93,51 @@ class DishSeeder extends Seeder {
             'text'  => '',
             'live'  => 1
         ] );
+
+
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'marokkanischer-gemueseeintopf',
+            'title' => 'Marokkanischer Gemüseeintopf',
+            'text'  => '',
+            'live'  => 1
+        ] );
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'mango-linsen-curry',
+            'title' => 'Mango-Linsen-Curry',
+            'text'  => '',
+            'live'  => 1
+        ] );
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'kartoffelecken-mit-sourcreme-und-tomate-chili-dip',
+            'title' => 'Kartoffelecken mit Sourcreme und Tomate-Chili-Dip',
+            'text'  => '',
+            'live'  => 1
+        ] );
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'scharfe-schwarze-bohnensuppe-mit-avocado-und-sour-creme',
+            'title' => 'scharfe schwarze Bohnensuppe mit Avocado und Sour-Creme',
+            'text'  => '',
+            'live'  => 1
+        ] );
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'klassischer-couscous-salat',
+            'title' => 'klassischer Couscous-Salat',
+            'text'  => '',
+            'live'  => 1
+        ] );
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'fruchtiger-pfirsich-reis-salat',
+            'title' => 'fruchtiger Pfirsich-Reis-Salat',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+
+
+
+
+
+
     }
 }

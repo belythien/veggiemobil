@@ -13,8 +13,11 @@ class DatabaseSeeder extends Seeder {
         $this->call( PageSeeder::class );
         $this->call( MenuSeeder::class );
         $this->call( DishSeeder::class );
+        $this->call( DipSeeder::class );
         $this->call( AllergenSeeder::class );
         $this->call( AllergenDishSeeder::class );
+        $this->call( AllergenDipSeeder::class );
+        $this->call( DipDishSeeder::class );
         $this->call( EventSeeder::class );
         $this->call( PictureSeeder::class );
 

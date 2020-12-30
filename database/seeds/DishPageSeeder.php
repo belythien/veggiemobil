@@ -27,7 +27,7 @@ class DishPageSeeder extends Seeder {
         }
 
         $page = Page::where( 'slug', 'catering' )->first();
-        foreach( Dish::all() as $key => $dish ) {
+        foreach( Dish::inRandomOrder()->get() as $key => $dish ) {
             DB::table( 'dish_page' )->insert( [
                 'page_id' => $page->id,
                 'dish_id' => $dish->id,

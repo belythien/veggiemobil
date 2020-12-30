@@ -39,13 +39,12 @@
                         @include('inc.picture', ['image' => $event->pictures()->first()])
                     </div>
                     @if($event->pictures()->count() > 1)
-                        <div class="d-none">
-                            @foreach($event->pictures as $picture)
-                                <div class="float-left" style="width:10%">
-                                        <span onclick="switchPicture(this)"
-                                              class="event-picture-thumbnail cursor-pointer"
-                                        >@include('inc.picture', ['image' => $picture])</span>
-                                </div>
+                        <div class="d-none d-lg-flex mb-3">
+                            @foreach($event->pictures as $key => $picture)
+                                <span onclick="switchPicture(this)"
+                                      class="event-picture-thumbnail cursor-pointer d-inline-block"
+                                      thumbnail="{{$key}}"
+                                >@include('inc.picture', ['image' => $picture])</span>
                             @endforeach
                         </div>
                     @endif
@@ -67,36 +66,48 @@
     </div>
 @endsection
 
-<script>
-let picture_index = 0
+@section('script')
+    <script>
+    let picture_index = 0
+    document.querySelector('.event-picture-thumbnail').classList.add('event-picture-thumbnail-selected')
 
+    function switchPicture (span) {
+        picture_index = span.getAttribute('thumbnail')
 
-function switchPicture (span) {
-    let img_src = span.firstChild.src
-    document.getElementById('event-picture').firstChild.src = img_src
-}
+        let img_src = span.firstChild.src
+        document.querySelector('#event-picture img').src = img_src
 
-function nextPicture () {
-    let cnt_pictures = document.getElementsByClassName('event-picture-thumbnail').length
-    if (cnt_pictures > 0) {
-        if (picture_index < cnt_pictures - 1) {
-            picture_index++
-        } else {
-            picture_index = 0
+        let thumbnails = document.querySelectorAll(".event-picture-thumbnail");
+
+        for (let i = 0; i < thumbnails.length; i++) {
+            thumbnails[i].classList.remove('event-picture-thumbnail-selected')
         }
-        switchPicture(document.getElementsByClassName('event-picture-thumbnail')[ picture_index ])
-    }
-}
 
-function previousPicture () {
-    let cnt_pictures = document.getElementsByClassName('event-picture-thumbnail').length
-    if (cnt_pictures > 0) {
-        if (picture_index > 0) {
-            picture_index--
-        } else {
-            picture_index = cnt_pictures - 1
-        }
-        switchPicture(document.getElementsByClassName('event-picture-thumbnail')[ picture_index ])
+        span.classList.add('event-picture-thumbnail-selected')
     }
-}
-</script>
+
+    function nextPicture () {
+        let cnt_pictures = document.getElementsByClassName('event-picture-thumbnail').length
+        if (cnt_pictures > 0) {
+            if (picture_index < cnt_pictures - 1) {
+                picture_index++
+            } else {
+                picture_index = 0
+            }
+            switchPicture(document.getElementsByClassName('event-picture-thumbnail')[ picture_index ])
+        }
+    }
+
+    function previousPicture () {
+        let cnt_pictures = document.getElementsByClassName('event-picture-thumbnail').length
+        if (cnt_pictures > 0) {
+            if (picture_index > 0) {
+                picture_index--
+            } else {
+                picture_index = cnt_pictures - 1
+            }
+            switchPicture(document.getElementsByClassName('event-picture-thumbnail')[ picture_index ])
+        }
+    }
+    </script>
+@endsection

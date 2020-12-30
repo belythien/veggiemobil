@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Picture;
 use Illuminate\Http\Request;
 
 class EventController extends Controller {
@@ -11,6 +12,7 @@ class EventController extends Controller {
         // Middleware only applied to these methods
         $this->middleware( 'auth' )->except( [
             'show',
+            'display'
         ] );
     }
 
@@ -20,7 +22,7 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $events = Event::orderby('date_from', 'desc')->paginate( 20 );
+        $events = Event::orderby( 'date_from', 'desc' )->paginate( 20 );
         return view( 'admin.event.index', [ 'models' => $events, 'class' => 'event' ] );
     }
 
@@ -30,7 +32,7 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.create', ['class' => 'event'] );
+        return view( 'admin.create', [ 'class' => 'event' ] );
     }
 
     /**
@@ -51,7 +53,7 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Event $event ) {
-        return view( 'event', [ 'event' => $event, 'class' => 'event' ] );
+        return redirect( route( 'event.display', [ 'slug' => $event->slug, 'class' => 'event' ] ) );
     }
 
     /**
@@ -83,8 +85,29 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Event $event ) {
-        $name = $event->title;
         $event->delete();
-        return redirect()->back()->with( 'success', 'Event <strong>' . $name . '</strong> gelöscht' );
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
+    }
+
+    public function display( $slug ) {
+        $event = Event::where( 'slug', $slug )->first();
+        if( !empty( $event ) ) {
+            return view( 'event', [ 'event' => $event ] );
+        }
+        return view( '404' );
+    }
+
+    public function toggleLive( Event $event ) {
+        $event->live = !$event->live;
+        $event->save();
+        return view( 'inc.boolean', [
+            'value'    => $event->live,
+            'icPostTo' => route( 'admin.event.toggle-live', [ 'event' => $event ] )
+        ] );
+    }
+
+    public function removePicture( Event $event, Picture $picture ) {
+        $event->pictures()->detach( $picture );
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
     }
 }

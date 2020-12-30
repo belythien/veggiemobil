@@ -12,11 +12,12 @@
                                 <th>Slug</th>
                                 <th>Text</th>
                                 <th>Datum</th>
+                                <th>Live</th>
                                 <th></th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody ic-target="closest tr">
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
@@ -30,20 +31,17 @@
                                     <td>
                                         {{$model->date}}
                                     </td>
+                                    <td class="text-center">
+                                        @include('inc.boolean', [
+                                                        'value' => $model->live,
+                                                        'icPostTo' => route('admin.event.toggle-live', ['event' => $model])
+                                        ])
+                                    </td>
                                     <td style="width: 200px">
                                         @include('inc.picture', ['image' => $model->pictures()->first()])
                                     </td>
                                     <td class="text-right">
-                                        <div class="btn-group">
-                                            <a href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
-                                               class="btn btn-sm btn-success"
-                                            ><i
-                                                    class="fa fa-edit fa-fw"
-                                                ></i></a>
-                                            <button class="btn btn-sm btn-danger"><i
-                                                    class="fa fa-trash fa-fw"
-                                                ></i></button>
-                                        </div>
+                                        @include('admin.index-buttons', ['model' => $model])
                                     </td>
                                 </tr>
                             @endforeach

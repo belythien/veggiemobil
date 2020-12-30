@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                @foreach(\App\Menu::where('label', 'Topbar')->first()->pages as $page)
+                @foreach(\App\Menu::getPagesByMenuLabel('Topbar') as $page)
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('page.display', ['slug' => $page->slug])}}"
                         >{{$page->title}}</a>

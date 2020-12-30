@@ -21,7 +21,8 @@ class DishFormRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'title' => 'required|max:191'
+            'title'    => 'required|max:191',
+            'filename' => 'nullable|image|mimes:jpg,png,jpeg'
         ];
     }
 }

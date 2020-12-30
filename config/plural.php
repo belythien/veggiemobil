@@ -2,6 +2,7 @@
 
 return [
     'allergen' => 'Allergene',
+    'dip'      => 'Dips',
     'dish'     => 'Gerichte',
     'event'    => 'Events',
     'page'     => 'Seiten',

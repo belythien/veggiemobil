@@ -11,34 +11,35 @@
                                 <th>ID</th>
                                 <th>Slug</th>
                                 <th>Inhalt</th>
+                                <th class="text-center">Live</th>
+                                <th>Gerichte</th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody ic-target="closest tr">
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
                                     <td>{{$model->slug}}</td>
-                                    <td>
+                                    <td style="max-width: 200px">
                                         <a class="font-weight-bold"
                                            href="{{route('admin.' . $class . '.edit', [$class => $model])}}"
                                         >{{$model->title}}</a>
-                                        <div>{!! $model->text !!}</div>
+                                        <div>{!! $model->getTextPreview(150) !!}</div>
+                                    </td>
+                                    <td class="text-center">
+                                        @include('inc.boolean', [
+                                                        'value' => $model->live,
+                                                        'icPostTo' => route('admin.page.toggle-live', ['page' => $model])
+                                        ])
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled" id="page_dishes_{{$model->id}}">
+                                            @include('admin.page.dishes', ['page' => $model])
+                                        </ul>
                                     </td>
                                     <td class="text-right">
-                                        <div class="btn-group">
-                                            <a href="{{route('page.display', ['slug' => $model->slug])}}"
-                                               class="btn btn-sm btn-success"
-                                            ><i
-                                                    class="fa fa-eye fa-fw"
-                                                ></i></a>
-                                            <a href="{{route('admin.' . $class . '.edit', [$class => $model])}}" class="btn btn-sm btn-success"><i
-                                                    class="fa fa-edit fa-fw"
-                                                ></i></a>
-                                            <button class="btn btn-sm btn-danger"><i
-                                                    class="fa fa-trash fa-fw"
-                                                ></i></button>
-                                        </div>
+                                        @include('admin.index-buttons', ['model' => $model])
                                     </td>
                                 </tr>
                             @endforeach

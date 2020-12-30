@@ -8,7 +8,6 @@
 
         <div class="form-group">
             <label for="{{$field}}" class="font-weight-bold">{{__('field.' . $field)}}</label>
-{{--{{dd($errors)}}--}}
             @if(!isset($type) || $type=='text')
                 <input class="form-control @if($errors->has($field)) is-invalid @endif"
                        id="{{$field}}"
@@ -97,6 +96,8 @@
                         </label>
                     @endforeach
                 </div>
+            @elseif($type == 'file')
+                <input id="{{$field}}" type="file" class="form-control mb-3" name="{{$field}}" style="height: auto;">
 
             @endif
 

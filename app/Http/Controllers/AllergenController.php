@@ -28,7 +28,7 @@ class AllergenController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view( 'admin.create', ['class' => 'allergen'] );
+        return view( 'admin.create', [ 'class' => 'allergen' ] );
     }
 
     /**
@@ -38,8 +38,8 @@ class AllergenController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store( Request $request ) {
-        $allergen = Allergen::createAllergen( $request );
-        return redirect( route( 'allergen.show', [ 'allergen' => $allergen ] ) );
+        Allergen::createAllergen( $request );
+        return redirect( route( 'admin.allergen.index' ) );
     }
 
     /**
@@ -71,7 +71,7 @@ class AllergenController extends Controller {
      */
     public function update( Request $request, Allergen $allergen ) {
         $allergen->updateAllergen( $request );
-        return redirect( route( 'allergen.show', [ 'allergen' => $allergen ] ) );
+        return redirect( route( 'admin.allergen.index' ) );
     }
 
     /**
@@ -81,8 +81,7 @@ class AllergenController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Allergen $allergen ) {
-        $name = $allergen->title;
         $allergen->delete();
-        return redirect()->back()->with( 'success', 'Allergen <strong>' . $name . '</strong> gelöscht' );
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
     }
 }

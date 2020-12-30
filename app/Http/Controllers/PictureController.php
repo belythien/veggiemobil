@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PictureFormRequest;
 use App\Picture;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $pictures = Picture::paginate( 20 );
+        $pictures = Picture::orderby('title')->paginate( 20 );
         return view( 'admin.picture.index', [ 'models' => $pictures, 'class' => 'picture' ] );
     }
 
@@ -39,7 +40,7 @@ class PictureController extends Controller {
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store( Request $request ) {
+    public function store( PictureFormRequest $request ) {
         $picture = Picture::createPicture( $request );
         return redirect( route( 'picture.show', [ 'picture' => $picture ] ) );
     }
@@ -71,7 +72,7 @@ class PictureController extends Controller {
      * @param \App\Picture $picture
      * @return \Illuminate\Http\Response
      */
-    public function update( Request $request, Picture $picture ) {
+    public function update( PictureFormRequest $request, Picture $picture ) {
         $picture->updatePicture( $request );
         return redirect( route( 'picture.show', [ 'picture' => $picture ] ) );
     }
@@ -83,9 +84,9 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Picture $picture ) {
-        $name = $picture->title;
         $picture->delete();
-        return redirect()->back()->with( 'success', 'Bild <strong>' . $name . '</strong> gelöscht' );
+        $picture->deletePicture();
+        return \response( "" )->header( 'X-IC-Remove', '1s' );
     }
 
     public function toggleLive( Picture $picture ) {

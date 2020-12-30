@@ -14,7 +14,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody ic-target="closest tr">
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
@@ -25,19 +25,20 @@
                                         <ul class="list-unstyled">
                                             @foreach($model->dishes as $dish)
                                                 <li>
+                                                    @include('inc.icon', ['icon' => 'dish'])
                                                     {{$dish->title}}
+                                                </li>
+                                            @endforeach
+                                            @foreach($model->dips as $dip)
+                                                <li>
+                                                    @include('inc.icon', ['icon' => 'dip'])
+                                                    {{$dip->title}}
                                                 </li>
                                             @endforeach
                                         </ul>
                                     </td>
                                     <td class="text-right">
-                                        <div class="btn-group">
-                                            <a href="{{route('admin.allergen.edit', ['allergen' => $model])}}"
-                                               class="btn btn-sm btn-success"
-                                            ><i class="fa fa-edit fa-fw"></i></a>
-                                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash fa-fw"></i>
-                                            </button>
-                                        </div>
+                                        @include('admin.index-buttons', ['model' => $model])
                                     </td>
                                 </tr>
                             @endforeach

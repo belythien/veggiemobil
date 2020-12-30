@@ -151,6 +151,7 @@ return [
         'username'              => 'Benutzername',
         'email'                 => 'E-Mail Adresse',
         'first_name'            => 'Vorname',
+        'filename'              => 'Datei',
         'last_name'             => 'Nachname',
         'password'              => 'Passwort',
         'password_confirmation' => 'Passwort Bestätigung',

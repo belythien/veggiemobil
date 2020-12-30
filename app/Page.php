@@ -19,10 +19,31 @@ class Page extends Model {
         return $this->title;
     }
 
+    public function getTextPreview( $limit ) {
+        $search = array(
+            '@<script[^>]*?>.*?</script>@si',  // Strip out javascript
+            '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+            '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments including     CDATA );
+        );
+        $plain_text = $this->text;
+        $plain_text = preg_replace( $search, ' ', $plain_text );
+        if( strlen( $plain_text ) > $limit ) {
+            $plain_text = substr( $plain_text, 0, $limit ) . '...';
+        }
+        $plain_text = nl2br( $plain_text );
+        return $plain_text;
+    }
+
+    /* === SCOPE === */
+
+    public function scopeLive( $query ) {
+        return $query->where( 'pages.live', 1 );
+    }
+
     /* === RELATIONS === */
 
     public function dishes() {
-        return $this->belongsToMany( 'App\Dish' );
+        return $this->belongsToMany( 'App\Dish' )->withPivot( 'sort' )->orderBy( 'sort' );;
     }
 
     /* === ATTRIBUTES === */
@@ -54,5 +75,25 @@ class Page extends Model {
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function dishMoveUp( Dish $dish ) {
+        $old_sort = $this->dishes()->where( 'dish_id', $dish->id )->first()->pivot->sort;
+        $this->dishes()->updateExistingPivot( $dish, [ 'sort' => $old_sort - 15 ], true );
+        $this->updateDishSort();
+    }
+
+    public function dishMoveDown( Dish $dish ) {
+        $old_sort = $this->dishes()->where( 'dish_id', $dish->id )->first()->pivot->sort;
+        $this->dishes()->updateExistingPivot( $dish, [ 'sort' => $old_sort + 15 ], true );
+        $this->updateDishSort();
+    }
+
+    public function updateDishSort() {
+        $cnt = 10;
+        foreach( $this->dishes as $dish ) {
+            $this->dishes()->updateExistingPivot( $dish, [ 'sort' => $cnt ], false );
+            $cnt = $cnt + 10;
+        }
     }
 }

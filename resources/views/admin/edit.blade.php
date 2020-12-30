@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="card">
-                <form method="POST" action="{{ route('admin.' . $class . '.update', [$class => $model]) }}">
+                <form method="POST" action="{{ route('admin.' . $class . '.update', [$class => $model]) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     @component('component.admin-card-header', ['class' => $class])

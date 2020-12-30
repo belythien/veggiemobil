@@ -15,8 +15,7 @@ class CreateDishPage extends Migration {
             $table->bigIncrements( 'id' );
             $table->bigInteger( 'page_id' )->unsigned()->index();
             $table->bigInteger( 'dish_id' )->unsigned()->index();
-            $table->integer( 'sort' )->unsigned()->default( 0 );
-            $table->timestamps();
+            $table->integer( 'sort' )->default( 0 );
 
             $table->foreign( 'page_id' )->references( 'id' )->on( 'pages' )->onDelete( 'cascade' );
             $table->foreign( 'dish_id' )->references( 'id' )->on( 'dishes' )->onDelete( 'cascade' );

@@ -7,7 +7,7 @@
                         <small class="rights"><span>&#174;</span>
                             {{date('Y')}} Veggiemobil</small>
 
-                        @foreach(\App\Menu::where('label', 'Footer')->first()->pages as $page)
+                        @foreach(\App\Menu::getPagesByMenuLabel('Footer') as $page)
                             <a href="{{route('page.display', ['slug' => $page->slug])}}">{{$page->title}}</a>
                         @endforeach
 
