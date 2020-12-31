@@ -48,6 +48,12 @@ class Event extends Model {
         return $this->morphToMany( Picture::class, 'picturable' );
     }
 
+    /* === METHODS === */
+
+    public function getNotLinkedPicturesAttribute() {
+        return Picture::all()->diff( $this->pictures );
+    }
+
     /* === CRUD === */
 
     public static function createEvent( $request ) {

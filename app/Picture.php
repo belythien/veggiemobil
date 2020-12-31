@@ -5,6 +5,7 @@ namespace App;
 use App\Traits\ImageUpload;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -59,6 +60,19 @@ class Picture extends Model {
         $picture->events()->sync( $request->get( 'events' ) );
 
         return $picture;
+    }
+
+    public static function createPictures( $request ) {
+        $result = new Collection();
+        foreach( $request->filenames as $image ) {
+            $picture = new Picture();
+            $picture->title = $image->getClientOriginalName();
+            $picture->uploadOne( $image, $image->getClientOriginalName() );
+            $picture->filename = $image->getClientOriginalName();
+            $picture->save();
+            $result->add( $picture );
+        }
+        return $result;
     }
 
     public function updatePicture( $request ) {

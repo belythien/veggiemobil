@@ -21,7 +21,7 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $pictures = Picture::orderby('title')->paginate( 20 );
+        $pictures = Picture::orderby('created_at', 'desc')->orderby('title')->paginate( 20 );
         return view( 'admin.picture.index', [ 'models' => $pictures, 'class' => 'picture' ] );
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\Picture;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EventController extends Controller {
 
@@ -104,6 +105,33 @@ class EventController extends Controller {
             'value'    => $event->live,
             'icPostTo' => route( 'admin.event.toggle-live', [ 'event' => $event ] )
         ] );
+    }
+
+    public function addPictures( Event $event ) {
+        return view( 'admin.event.add-pictures', [ 'event' => $event, 'class' => 'event' ] );
+    }
+
+    public function linkPicture( Event $event, Picture $picture ) {
+        $event->pictures()->attach( $picture );
+        return view( 'admin.event.add-pictures-inc', [ 'event' => $event, 'class' => 'event' ] );
+    }
+
+    public function unlinkPicture( Event $event, Picture $picture ) {
+        $event->pictures()->detach( $picture );
+        return view( 'admin.event.add-pictures-inc', [ 'event' => $event, 'class' => 'event' ] );
+    }
+
+    public function uploadPictures( Event $event ) {
+        return view( 'admin.event.upload-pictures', [ 'event' => $event, 'class' => 'event' ] );
+    }
+
+    public function storePictures( Request $request, Event $event ) {
+        $pictures = Picture::createPictures( $request );
+        foreach( $pictures as $picture ) {
+            $event->pictures()->attach( $picture );
+        }
+        return redirect()->route( 'admin.event.edit', [ 'event' => $event, 'class' => 'event' ] )
+            ->with( 'success', 'Bilder hochgeladen' );
     }
 
     public function removePicture( Event $event, Picture $picture ) {

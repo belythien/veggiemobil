@@ -25,8 +25,14 @@ Route::name( 'admin.' )->group( function () {
     Route::resource( 'allergen', 'AllergenController' )->except( [ 'show' ] );
     Route::resource( 'dish', 'DishController' );
     Route::resource( 'dip', 'DipController' );
+
     Route::resource( 'event', 'EventController' );
     Route::post( 'event/{event}/toggle-live', 'EventController@toggleLive' )->name( 'event.toggle-live' );
+    Route::get( 'event/{event}/picture/add', 'EventController@addPictures' )->name( 'event.add-pictures' );
+    Route::post( 'event/{event}/picture/{picture}/link', 'EventController@linkPicture' )->name( 'event.link-picture' );
+    Route::post( 'event/{event}/picture/{picture}/unlink', 'EventController@unlinkPicture' )->name( 'event.unlink-picture' );
+    Route::get( 'event/{event}/picture/upload', 'EventController@uploadPictures' )->name( 'event.upload-pictures' );
+    Route::post( 'event/{event}/picture/upload', 'EventController@storePictures' )->name( 'event.upload-pictures' );
     Route::delete( 'event/{event}/picture/{picture}', 'EventController@removePicture' )->name( 'event.remove-picture' );
 
     Route::resource( 'menu', 'MenuController' );

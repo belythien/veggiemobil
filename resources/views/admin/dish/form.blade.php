@@ -2,7 +2,7 @@
     <div class="col-9">
         <div class="row">
             @include('admin.form.col', ['field' => 'title',        'size' => 8,  'type' => 'text' ])
-            @include('admin.form.col', ['field' => 'slug',         'size' => 4,  'type' => 'text' ])
+            @include('admin.form.col', ['field' => 'slug',         'size' => 4,  'type' => 'text', 'readonly' => true ])
 
             @include('admin.form.col', ['field' => 'filename',     'size' => 12, 'type' => 'file' ])
 
@@ -16,7 +16,7 @@
     </div>
 @else
     @include('admin.form.col', ['field' => 'title',        'size' => 8,  'type' => 'text' ])
-    @include('admin.form.col', ['field' => 'slug',         'size' => 4,  'type' => 'text' ])
+    @include('admin.form.col', ['field' => 'slug',         'size' => 4,  'type' => 'text', 'readonly' => true ])
 
     @include('admin.form.col', ['field' => 'filename',     'size' => 12, 'type' => 'file' ])
 

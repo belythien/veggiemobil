@@ -10,6 +10,7 @@ return [
     'dish'       => 'fa fa-hamburger',
     'event'      => 'far fa-calendar-alt',
     'logout'     => 'fa fa-sign-out-alt',
+    'upload'     => 'fas fa-upload',
     'menu'       => 'fa fa-bars',
     'arrow-up'   => 'fas fa-arrow-up',
     'arrow-down' => 'fas fa-arrow-down',

@@ -16,9 +16,18 @@
 @include('admin.form.col', ['field' => 'publication', 'size' => 4,  'type' => 'date' ])
 @include('admin.form.col', ['field' => 'expiration',  'size' => 4,  'type' => 'date' ])
 
-@if(isset($model))
-    <div class="col-12">
-        <h4>Bilder</h4>
+
+<div class="col-12">
+    <h4 class="my-4">
+        Bilder
+        <div class="btn-group float-right">
+            <a class="btn btn-outline-primary" href="{{route('admin.event.add-pictures', ['event' => $model])}}"
+            >@include('inc.icon', ['icon' => 'picture']) Bilder aus Mediathek hinzufügen</a>
+            <a class="btn btn-outline-primary" href="{{route('admin.event.upload-pictures', ['event' => $model])}}"
+            >@include('inc.icon', ['icon' => 'upload']) Neue Bilder hochladen</a>
+        </div>
+    </h4>
+    @if(isset($model))
         <form method="POST">
             @csrf
             <div class="row" ic-target="closest .col">
@@ -35,5 +44,6 @@
                 @endforeach
             </div>
         </form>
-    </div>
-@endif
+    @endif
+</div>
+

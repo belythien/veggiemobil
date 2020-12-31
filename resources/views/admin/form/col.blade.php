@@ -4,10 +4,20 @@
     @else
         @php($value = old($field))
     @endif
+    @if(empty($value) && isset($default))
+        @php($value = $default)
+    @endif
     <div class="col @if(isset($size)) col-lg-{{$size}}@else col-lg-12 @endif">
 
         <div class="form-group">
-            <label for="{{$field}}" class="font-weight-bold">{{__('field.' . $field)}}</label>
+            <label for="{{$field}}" class="font-weight-bold">
+                @if(isset($label))
+                    {{$label}}
+                @else
+                    {{__('field.' . $field)}}
+                @endif
+            </label>
+
             @if(!isset($type) || $type=='text')
                 <input class="form-control @if($errors->has($field)) is-invalid @endif"
                        id="{{$field}}"
@@ -97,7 +107,9 @@
                     @endforeach
                 </div>
             @elseif($type == 'file')
-                <input id="{{$field}}" type="file" class="form-control mb-3" name="{{$field}}" style="height: auto;">
+                <input id="{{$field}}" type="file" class="form-control mb-3" name="{{$field}}"
+                       @if(isset($multiple) && $multiple == true) multiple="multiple" @endif style="height: auto;"
+                >
 
             @endif
 

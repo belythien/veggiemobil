@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="container-fluid mb-5">
+                    <div class="container-fluid mb-5" id="admin-content">
                         @include('inc.messages')
                         @yield('content')
                     </div>
