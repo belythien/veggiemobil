@@ -95,16 +95,6 @@ footer {
     }
 }
 
-.welcome-image {
-    box-shadow: $boxshadow;
-    background-size: cover;
-    background-position: center center;
-    height: 300px;
-    position: absolute;
-    width: 300px;
-    z-index: 0
-}
-
 input[type=radio], input[type=checkbox] {
     width: 20px;
     height: 20px;
@@ -140,6 +130,16 @@ input[type=radio], input[type=checkbox] {
 
 .alternating:nth-of-type(even) {
     background-color: rgba($green, 0.2);
+}
+
+.welcome-image {
+    box-shadow: $boxshadow;
+    background-size: cover;
+    background-position: center center;
+    height: 300px;
+    position: absolute;
+    width: 300px;
+    z-index: 0
 }
 
 .wi0 {
@@ -222,9 +222,10 @@ input[type=radio], input[type=checkbox] {
     color: white;
     outline: 10px solid $green;
     padding: 0.75em;
-    position: relative;
-    top: 10px;
-    right: -60px;
+    //position: relative;
+    margin: 15px;
+    //top: 10px;
+    //right: -60px;
 
     a {
         color: white !important;
@@ -279,4 +280,10 @@ ul.separated-list {
 tr.ic-removing td {
     opacity: 0;
     transition: all 1s ease;
+}
+
+.anchor {
+    display: block;
+    padding-top: 100px;
+    margin-top: -100px;
 }

@@ -18,10 +18,12 @@ class DishController extends Controller {
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $dishes = Dish::paginate( 20 );
+    public function index( Request $request ) {
+        $orderby = $request->has( 'orderby' ) ? $request->get( 'orderby' ) : 'title';
+        $dishes = Dish::orderby( 'dishes.' . $orderby )->paginate( 20 );
         return view( 'admin.dish.index', [ 'models' => $dishes, 'class' => 'dish' ] );
     }
 

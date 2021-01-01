@@ -76,14 +76,14 @@
     <div class="content" style="position:relative;">
 
         @foreach(\App\Picture::onWelcomePage()->inRandomOrder()->limit(10)->get() as $key => $picture)
-            <div class="welcome-image wi{{$key}}" style="background-image:url('/img/{{$picture->filename}}');"></div>
+            <a @if(!empty($picture->dishes()->first()))
+               href="{{url('catering#' . $picture->dishes()->first()->slug)}}"
+               @endif
+               title="{{$picture->title}}"
+               class="d-block welcome-image wi{{$key}}"
+               style="background-image:url('/img/{{$picture->filename}}');"
+            ></a>
         @endforeach
-        {{--        <div class="welcome-image wi1" style="background-image:url('img/baklava.jpg');"></div>--}}
-        {{--        <div class="welcome-image wi2" style="background-image:url('img/chili-cheeze-fries.jpg');"></div>--}}
-        {{--        <div class="welcome-image wi3" style="background-image:url('img/erdbeer-prosecco-slush.jpg');"></div>--}}
-        {{--        <div class="welcome-image wi4" style="background-image:url('img/flammkuchen.jpg');"></div>--}}
-        {{--        <div class="welcome-image wi5" style="background-image:url('img/jack-teller.jpg');"></div>--}}
-        {{--        <div class="welcome-image wi6" style="background-image:url('img/power-wrap.jpg');"></div>--}}
 
         <div class="card" style="position:relative;z-index: 10;">
             <div class="title m-b-md mx-5 mt-2">
@@ -95,7 +95,9 @@
                     >{{$page->title}}</a>
                 @endforeach
             </div>
-            <div class="d-none d-xl-block" style="position:absolute; top: 100px; right: -90px; transform: rotate(-10deg)">
+            <div class="d-none d-xl-block"
+                 style="position:absolute; top: 100px; right: -90px; transform: rotate(-10deg)"
+            >
                 @include('inc.extra.coming-up')
             </div>
             <div class="d-block d-xl-none mx-5 my-2">

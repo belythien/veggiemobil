@@ -88,16 +88,6 @@ footer a:hover {
   font-weight: bold;
 }
 
-.welcome-image {
-  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.6);
-  background-size: cover;
-  background-position: center center;
-  height: 300px;
-  position: absolute;
-  width: 300px;
-  z-index: 0;
-}
-
 input[type=radio],
 input[type=checkbox] {
   width: 20px;
@@ -133,6 +123,16 @@ input[type=checkbox] {
 
 .alternating:nth-of-type(even) {
   background-color: rgba(102, 179, 49, 0.2);
+}
+
+.welcome-image {
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  background-position: center center;
+  height: 300px;
+  position: absolute;
+  width: 300px;
+  z-index: 0;
 }
 
 .wi0 {
@@ -215,9 +215,7 @@ input[type=checkbox] {
   color: white;
   outline: 10px solid #66B331;
   padding: 0.75em;
-  position: relative;
-  top: 10px;
-  right: -60px;
+  margin: 15px;
 }
 
 .right-col-box a {
@@ -272,6 +270,12 @@ ul.separated-list {
 tr.ic-removing td {
   opacity: 0;
   transition: all 1s ease;
+}
+
+.anchor {
+  display: block;
+  padding-top: 100px;
+  margin-top: -100px;
 }
 
 /*!

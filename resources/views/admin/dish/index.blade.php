@@ -8,9 +8,9 @@
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Slug</th>
-                                <th>Text</th>
+                                <th><a href="{{route('admin.dish.index', ['orderby' => 'id'])}}">ID</a></th>
+                                <th><a href="{{route('admin.dish.index', ['orderby' => 'slug'])}}">Slug</a></th>
+                                <th><a href="{{route('admin.dish.index', ['orderby' => 'title'])}}">Text</a></th>
                                 <th></th>
                                 <th></th>
                             </tr>
