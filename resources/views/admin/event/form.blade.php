@@ -28,22 +28,22 @@
         </div>
     </h4>
     @if(isset($model))
-        <form method="POST">
-            @csrf
-            <div class="row" ic-target="closest .col">
-                @foreach($model->pictures as $picture)
-                    <div class="col col-lg-2 col-md-4 col-sm-6 mb-3 position-relative">
-                        <button
-                            ic-delete-from="{{route('admin.event.remove-picture', ['event' => $model, 'picture' => $picture])}}"
-                            class="btn btn-sm btn-danger" style="position:absolute;top:0;right:15px;"
-                        >
-                            @include('inc.icon', ['icon' => 'delete'])
-                        </button>
-                        @include('inc.picture', ['image' => $picture])
-                    </div>
-                @endforeach
-            </div>
-        </form>
+        {{--        <form method="POST">--}}
+        {{--            @csrf--}}
+        <div class="row" ic-target="closest .col">
+            @foreach($model->pictures as $picture)
+                <div class="col col-lg-2 col-md-4 col-sm-6 mb-3 position-relative">
+                    <button
+                        ic-delete-from="{{route('admin.event.remove-picture', ['event' => $model, 'picture' => $picture])}}"
+                        class="btn btn-sm btn-danger" style="position:absolute;top:0;right:15px;"
+                    >
+                        @include('inc.icon', ['icon' => 'delete'])
+                    </button>
+                    @include('inc.picture', ['image' => $picture])
+                </div>
+            @endforeach
+        </div>
+        {{--        </form>--}}
     @endif
 </div>
 

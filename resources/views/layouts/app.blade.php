@@ -22,6 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<div id="bg_logo"></div>
 <div id="app" class="mb-5">
     @include('inc.topbar')
 

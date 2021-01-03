@@ -116,19 +116,19 @@ class DishSeeder extends Seeder {
         ] );
         DB::table( 'dishes' )->insert( [
             'slug'  => 'scharfe-schwarze-bohnensuppe-mit-avocado-und-sour-creme',
-            'title' => 'scharfe schwarze Bohnensuppe mit Avocado und Sour-Creme',
+            'title' => 'Scharfe schwarze Bohnensuppe mit Avocado und Sour-Creme',
             'text'  => '',
             'live'  => 1
         ] );
         DB::table( 'dishes' )->insert( [
             'slug'  => 'klassischer-couscous-salat',
-            'title' => 'klassischer Couscous-Salat',
+            'title' => 'Klassischer Couscous-Salat',
             'text'  => '',
             'live'  => 1
         ] );
         DB::table( 'dishes' )->insert( [
             'slug'  => 'fruchtiger-pfirsich-reis-salat',
-            'title' => 'fruchtiger Pfirsich-Reis-Salat',
+            'title' => 'Fruchtiger Pfirsich-Reis-Salat',
             'text'  => '',
             'live'  => 1
         ] );

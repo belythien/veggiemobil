@@ -72,12 +72,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<div id="bg_logo"></div>
 <div class="flex-center position-ref full-height" style="overflow: hidden">
     <div class="content" style="position:relative;">
 
         @foreach(\App\Picture::onWelcomePage()->inRandomOrder()->limit(10)->get() as $key => $picture)
             <a @if(!empty($picture->dishes()->first()))
-               href="{{url('catering#' . $picture->dishes()->first()->slug)}}"
+               href="{{route('dish.display', ['slug' => $picture->dishes()->first()->slug])}}"
                @endif
                title="{{$picture->title}}"
                class="d-block welcome-image wi{{$key}}"
@@ -96,7 +97,7 @@
                 @endforeach
             </div>
             <div class="d-none d-xl-block"
-                 style="position:absolute; top: 100px; right: -90px; transform: rotate(-10deg)"
+                 style="position:absolute; top: 100px; right: -160px; transform: rotate(-10deg)"
             >
                 @include('inc.extra.coming-up')
             </div>

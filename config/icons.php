@@ -5,6 +5,7 @@ return [
     'add'        => 'fa fa-plus-circle',
     'allergen'   => 'fas fa-allergies',
     'cancel'     => 'fa fa-times-circle',
+    'category'   => 'fas fa-tags',
     'dashboard'  => 'fa fa-tachometer-alt',
     'dip'        => 'fas fa-poop',
     'dish'       => 'fa fa-hamburger',

@@ -22,7 +22,7 @@ class MenuPageSeeder extends Seeder {
         }
 
         $menu = Menu::where( 'label', 'Topbar' )->first();
-        foreach( Page::whereIn( 'slug', [ 'philosophie', 'truck-menu', 'catering', 'events' ] )->get() as $key => $page ) {
+        foreach( Page::whereIn( 'slug', [ 'philosophie', 'truck-menu', 'catering', 'speisen', 'events' ] )->get() as $key => $page ) {
             DB::table( 'menu_page' )->insert( [
                 'menu_id' => $menu->id,
                 'page_id' => $page->id,

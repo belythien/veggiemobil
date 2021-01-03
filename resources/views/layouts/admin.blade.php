@@ -49,7 +49,9 @@
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 <script>
-document.querySelector('input:not([type="hidden"])').focus()
+if (document.querySelector('input:not([type="hidden"])')) {
+    document.querySelector('input:not([type="hidden"])').focus()
+}
 </script>
 
 @yield('script')

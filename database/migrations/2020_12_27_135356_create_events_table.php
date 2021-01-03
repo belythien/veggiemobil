@@ -13,7 +13,7 @@ class CreateEventsTable extends Migration {
     public function up() {
         Schema::create( 'events', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
-            $table->string( 'slug' );
+            $table->string( 'slug' )->index();
             $table->string( 'title' );
             $table->text( 'text' )->nullable();
             $table->date( 'date_from' )->nullable();

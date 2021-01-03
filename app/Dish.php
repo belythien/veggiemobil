@@ -25,6 +25,10 @@ class Dish extends Model {
         return $this->belongsToMany( 'App\Allergen' );
     }
 
+    public function categories() {
+        return $this->morphToMany( Category::class, 'categorizable' );
+    }
+
     public function dips() {
         return $this->belongsToMany( 'App\Dip' );
     }

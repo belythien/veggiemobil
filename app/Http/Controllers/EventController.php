@@ -44,7 +44,7 @@ class EventController extends Controller {
      */
     public function store( Request $request ) {
         $event = Event::createEvent( $request );
-        return redirect( route( 'event.show', [ 'event' => $event ] ) );
+        return redirect( route( 'event.display', [ 'slug' => $event->slug, 'class' => 'event' ] ) );
     }
 
     /**
@@ -76,7 +76,7 @@ class EventController extends Controller {
      */
     public function update( Request $request, Event $event ) {
         $event->updateEvent( $request );
-        return redirect( route( 'event.show', [ 'event' => $event ] ) );
+        return redirect( route( 'event.display', [ 'slug' => $event->slug, 'class' => 'event' ] ) );
     }
 
     /**

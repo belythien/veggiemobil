@@ -11,7 +11,7 @@ class Event extends Model {
 
     use Sluggable;
 
-    protected $fillable = [ 'title', 'text', 'live', 'date_from', 'date_to', 'publication', 'expiration' ];
+    protected $fillable = [ 'title', 'text', 'live', 'date_from', 'date_to', 'publication', 'expiration', 'external_url' ];
     protected $dates    = [ 'date_from', 'date_to', 'publication', 'expiration' ];
 
     /* === GUI === */
@@ -32,7 +32,7 @@ class Event extends Model {
         return null;
     }
 
-    public static function getNextEvents( $limit = 3 ) {
+    public static function getNextEvents( $limit = 2 ) {
         return Event::live()->where( 'date_from', '>', date( 'Y-m-d' ) )->limit( $limit )->orderby( 'date_from', 'asc' )->get();
     }
 

@@ -18,6 +18,7 @@ return [
     'events'       => 'Events',
     'live'         => 'Live',
     'publication'  => 'Sichtbar ab',
+    'sort'         => 'Sortierung',
     'slug'         => 'Slug',
     'text'         => 'Text',
     'title'        => 'Titel',

@@ -17,12 +17,22 @@ Auth::routes();
 
 #//Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
+Route::get( '/bild/{picture}', 'PictureController@show' )->name( 'picture.show' );
 Route::get( '/event/{slug}', 'EventController@display' )->name( 'event.display' );
+Route::get( '/kategorie/{slug}', 'CategoryController@display' )->name( 'category.display' );
+Route::get( '/speisen/{slug}', 'DishController@display' )->name( 'dish.display' );
 
 Route::name( 'admin.' )->group( function () {
     Route::get( '/dashboard', 'DashboardController@index' )->name( 'dashboard' );
 
     Route::resource( 'allergen', 'AllergenController' )->except( [ 'show' ] );
+
+    Route::resource( 'category', 'CategoryController' );
+    Route::post( 'category/{category}/dish/{dish}/move-up', 'CategoryController@dishMoveUp' )->name( 'category.dish-move-up' );
+    Route::post( 'category/{category}/dish/{dish}/move-down', 'CategoryController@dishMoveDown' )->name( 'category.dish-move-down' );
+    Route::get( 'category/{category}/dish/{dish}/move-up', 'CategoryController@dishMoveUp' )->name( 'category.dish-move-up' );
+    Route::get( 'category/{category}/dish/{dish}/move-down', 'CategoryController@dishMoveDown' )->name( 'category.dish-move-down' );
+
     Route::resource( 'dish', 'DishController' );
     Route::resource( 'dip', 'DipController' );
 
@@ -48,8 +58,6 @@ Route::name( 'admin.' )->group( function () {
     Route::post( 'picture/{picture}/toggle-live', 'PictureController@toggleLive' )->name( 'picture.toggle-live' );
     Route::post( 'picture/{picture}/toggle-welcome', 'PictureController@toggleWelcome' )->name( 'picture.toggle-welcome' );
 } );
-
-Route::get( '/picture/{picture}', 'PictureController@show' )->name( 'picture.show' );
 
 Route::get( '/{slug}', 'PageController@display' )->name( 'page.display' );
 

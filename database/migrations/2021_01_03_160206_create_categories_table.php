@@ -4,24 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePicturesTable extends Migration {
+class CreateCategoriesTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create( 'pictures', function ( Blueprint $table ) {
+        Schema::create( 'categories', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
             $table->string( 'slug' )->index();
             $table->string( 'title' )->nullable();
             $table->text( 'text' )->nullable();
-            $table->string( 'filename' );
             $table->boolean( 'live' )->default( 1 );
-            $table->boolean( 'welcome' )->default( 0 );
-            $table->integer( 'filesize' )->nullable();
-            $table->integer( 'width' )->nullable();
-            $table->integer( 'height' )->nullable();
+            $table->integer( 'sort' )->default( 0 )->nullable();
             $table->timestamps();
         } );
     }
@@ -32,6 +28,6 @@ class CreatePicturesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists( 'pictures' );
+        Schema::dropIfExists( 'categories' );
     }
 }

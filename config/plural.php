@@ -2,6 +2,7 @@
 
 return [
     'allergen' => 'Allergene',
+    'category' => 'Kategorien',
     'dip'      => 'Dips',
     'dish'     => 'Gerichte',
     'event'    => 'Events',

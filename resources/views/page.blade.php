@@ -18,9 +18,19 @@
                 <div class="card-body @if($page->slug == 'philosophie') bg-veggiemobil @endif">
                     <div class="row">
                         <div class="col-xl-9">
-                            {!! $page->text !!}
-                            @include('inc.dishes')
+                            <div class="mb-5">{!! $page->text !!}</div>
+                            @include('inc.dishes', ['dishes' => $page->dishes])
                             @include('inc.events')
+
+                            @if(in_array($page->slug,['speisen', 'catering', 'truck-menu']))
+                                <div class="row my-3 text-secondary text-sm">
+                                    <div class="col-12 font-weight-bold" id="allergene">Allergene</div>
+                                    @foreach(\App\Allergen::all() as $allergen)
+                                        <div class="col-xl-2 col-lg-4 col-md-6">{{$allergen->id}}
+                                            ) {{$allergen->name}}</div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                         @include('inc.right-col')
                     </div>

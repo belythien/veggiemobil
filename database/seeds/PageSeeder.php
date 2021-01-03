@@ -35,6 +35,14 @@ class PageSeeder extends Seeder {
         ] );
 
         DB::table( 'pages' )->insert( [
+            'slug'     => 'speisen',
+            'title'    => 'Speisen',
+            'template' => 'speisen',
+            'text'     => '<p>Uns zeichnet ein vielfältiges variierendes Angebot aus, welches wir ständig durch neue eigene Kreationen erweitern.</p><p>Für Anregungen und Wünsche sind wir immer gerne offen.</p>',
+            'live'     => 1
+        ] );
+
+        DB::table( 'pages' )->insert( [
             'slug'  => 'events',
             'title' => 'Events',
             'text'  => '<p>Hier finden Sie Bilder zu einigen Highlights unser Truck-Touren.</p><p>Buchen auch Sie uns für Ihr Event!</p>',

@@ -97,7 +97,7 @@ class PageController extends Controller {
                 return redirect( url( $page->external_url ) );
             }
 
-            if( $page->id == 4 ) { // EVENTS
+            if( $page->slug == 'events' ) {
                 $events = Event::live()->orderby( 'date_from', 'desc' )->paginate( 20 );
                 return view( $page->template, [ 'page' => $page, 'events' => $events ] );
             }

@@ -11,6 +11,7 @@ class DishController extends Controller {
     public function __construct() {
         // Middleware only applied to these methods
         $this->middleware( 'auth' )->except( [
+            'display',
             'show',
         ] );
     }
@@ -54,7 +55,8 @@ class DishController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Dish $dish ) {
-        return view( 'dish', [ 'dish' => $dish, 'class' => 'dish' ] );
+//        return view( 'dish', [ 'dish' => $dish, 'class' => 'dish' ] );
+        return redirect( route( 'dish.display', [ 'slug' => $dish->slug, 'class' => 'dish' ] ) );
     }
 
     /**
@@ -88,5 +90,13 @@ class DishController extends Controller {
     public function destroy( Dish $dish ) {
         $dish->delete();
         return \response( "" )->header( 'X-IC-Remove', '1s' );
+    }
+
+    public function display( $slug ) {
+        $dish = Dish::where( 'slug', $slug )->first();
+        if( !empty( $dish ) ) {
+            return view( 'dish', [ 'dish' => $dish ] );
+        }
+        return view( '404' );
     }
 }

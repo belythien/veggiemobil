@@ -13,7 +13,7 @@ class CreateDipsTable extends Migration {
     public function up() {
         Schema::create( 'dips', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
-            $table->string( 'slug' );
+            $table->string( 'slug' )->index();
             $table->string( 'title' );
             $table->timestamps();
         } );

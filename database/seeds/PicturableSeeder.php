@@ -1,6 +1,7 @@
 <?php
 
 use App\Dish;
+use App\Event;
 use App\Picture;
 use Illuminate\Database\Seeder;
 
@@ -19,6 +20,16 @@ class PicturableSeeder extends Seeder {
                 'picture_id'      => $picturable->picture_id,
                 'picturable_id'   => $picturable->dish_id,
                 'picturable_type' => 'App\Dish',
+            ] );
+        }
+
+        foreach( Event::join( 'pictures', 'pictures.slug', '=', 'events.slug' )
+                     ->selectRaw( 'pictures.id AS picture_id, events.id AS event_id' )
+                     ->get() as $picturable ) {
+            DB::table( 'picturables' )->insert( [
+                'picture_id'      => $picturable->picture_id,
+                'picturable_id'   => $picturable->event_id,
+                'picturable_type' => 'App\Event',
             ] );
         }
 

@@ -13,7 +13,7 @@ class CreateDishesTable extends Migration {
     public function up() {
         Schema::create( 'dishes', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
-            $table->string( 'slug' );
+            $table->string( 'slug' )->index();
             $table->string( 'title' );
             $table->text( 'text' )->nullable();
             $table->boolean( 'live' )->default( 0 );

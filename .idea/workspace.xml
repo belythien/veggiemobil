@@ -2,14 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b73350f-c126-47e8-8d39-55030f9e2609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryFormRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_160206_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_160336_create_categorizables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/CategorizableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/bg-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/logo_nur_text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/vegan-streetday-stuttgart-2021.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/veggieworld-duesseldorf-2021.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/dishes.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dish.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/template/speisen.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Dish.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dish.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DishController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DishController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/icons.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/icons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/label.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/label.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/plural.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/plural.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_21_073648_create_pages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_21_073648_create_pages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_21_074901_create_dishes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_21_074901_create_dishes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_21_102715_create_pictures_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_21_102715_create_pictures_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_22_174642_create_picturables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_22_174642_create_picturables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_27_135356_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_27_135356_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_29_182441_create_dips_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_29_182441_create_dips_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DishSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DishSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/EventSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EventSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/MenuPageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MenuPageSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PageSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PicturableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PicturableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PictureSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PictureSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/de/field.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de/field.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dish/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dish/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/event/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/event/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/inc/dishes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/dishes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/extra/coming-up.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/extra/coming-up.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/events.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/topbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +215,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/event" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -181,17 +227,17 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\template" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\inc" />
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\template" />
       <recent name="C:\xampp\htdocs\veggiemobil\public" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views" />
+      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin\event" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\inc\extra" />
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin" />
       <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin\page" />
-      <recent name="C:\xampp\htdocs\veggiemobil\resources\views\admin\menu" />
     </key>
   </component>
   <component name="RunManager">
@@ -225,6 +271,9 @@
       <workItem from="1609312666906" duration="21860000" />
       <workItem from="1609406029303" duration="8947000" />
       <workItem from="1609490477311" duration="2865000" />
+      <workItem from="1609575932184" duration="4181000" />
+      <workItem from="1609687241457" duration="3672000" />
+      <workItem from="1609701133850" duration="7161000" />
     </task>
     <servers />
   </component>
@@ -235,6 +284,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="704" y="215" key="#Images" timestamp="1609576049437">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="215" key="#Images/0.0.1920.1040@0.0.1920.1040" timestamp="1609576049437" />
     <state x="765" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1609078623442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -243,14 +296,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609326894634" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609413025946">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609703951094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609413025946" />
-    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog" timestamp="1609328387043">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609703951094" />
+    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog" timestamp="1609704152635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609328387043" />
+    <state x="92" y="92" width="1736" height="856" maximized="true" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609704152635" />
     <state x="628" y="298" key="EditFileWatcherDialog" timestamp="1608538279773">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -295,6 +348,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609159823066" />
+    <state x="715" y="327" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1609704020136">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="327" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609704020136" />
     <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1609268023973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -307,9 +364,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608558693176" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609493221643">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609708220497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609493221643" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609708220497" />
   </component>
 </project>

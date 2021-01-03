@@ -4,22 +4,22 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePicturables extends Migration {
+class CreateCategorizables extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create( 'picturables', function ( Blueprint $table ) {
+        Schema::create( 'categorizables', function ( Blueprint $table ) {
             $table->bigIncrements( 'id' );
-            $table->bigInteger( 'picture_id' )->unsigned()->index();
-            $table->bigInteger( 'picturable_id' )->unsigned()->index();
-            $table->string( 'picturable_type' )->index();
+            $table->bigInteger( 'category_id' )->unsigned()->index();
+            $table->bigInteger( 'categorizable_id' )->unsigned()->index();
+            $table->string( 'categorizable_type' )->index();
             $table->integer( 'sort' )->nullable()->default( 0 );
             $table->timestamps();
 
-            $table->foreign( 'picture_id' )->references( 'id' )->on( 'pictures' )->onDelete( 'cascade' );
+            $table->foreign( 'category_id' )->references( 'id' )->on( 'categories' )->onDelete( 'cascade' );
         } );
     }
 
@@ -29,6 +29,6 @@ class CreatePicturables extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists( 'picturables' );
+        Schema::dropIfExists( 'categorizables' );
     }
 }
