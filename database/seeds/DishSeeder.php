@@ -94,6 +94,54 @@ class DishSeeder extends Seeder {
             'live'  => 1
         ] );
 
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'hokkaido-cremesuppe-mit-zwetschgen-chutney',
+            'title' => 'Hokkaido-Cremesuppe mit Zwetschgen-Chutney',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'weisse-lasagne-mit-butternuss-kuerbis-und-spinat',
+            'title' => 'Weiße Lasagne mit Butternuss-Kürbis und Spinat',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'apfel-birnen-crumble',
+            'title' => 'Apfel-Birnen-Crumble',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'pflaumen-mohn-kuchen',
+            'title' => 'Pflaumen-Mohn-Kuchen',
+            'text'  => '',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'christmas-champion-burger',
+            'title' => 'Christmas-Champion-Burger',
+            'text'  => 'Laugenbrötchen, Apfelkompott, Zwetschgen-Chutney, Rotkohl, Rucola, Bratling aus Champignons, Walnüssen, glatter Petersilie, Kräutern und Sonnenblumenkernen',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'sweet-sauerkraut-burger',
+            'title' => 'Sweet-Sauerkraut-Burger',
+            'text'  => 'Mais-Dinkel-Brötchen, Beyond Sausage (vegane Wurst auf Erbsenproteinbasis), Senf-Mayo, Sauerkraut, Ananas, Röstzwiebeln, Paprika-Zwiebelgemüse, Tomaten-Chili-Soße',
+            'live'  => 1
+        ] );
+
+        DB::table( 'dishes' )->insert( [
+            'slug'  => 'weihnachtstraum',
+            'title' => 'Weihnachtstraum',
+            'text'  => 'Spekulatius, Kirschcreme, geröstete Mandeln',
+            'live'  => 1
+        ] );
 
 
         DB::table( 'dishes' )->insert( [

@@ -98,8 +98,9 @@ class PageController extends Controller {
             }
 
             if( $page->slug == 'events' ) {
-                $events = Event::live()->orderby( 'date_from', 'desc' )->paginate( 20 );
-                return view( $page->template, [ 'page' => $page, 'events' => $events ] );
+                $future_events = Event::live()->where( 'date_from', '>=', date( 'Y-m-d' ) )->orderby( 'date_from', 'asc' )->get();
+                $past_events = Event::live()->where( 'date_from', '<', date( 'Y-m-d' ) )->orderby( 'date_from', 'desc' )->get();
+                return view( $page->template, [ 'page' => $page, 'future_events' => $future_events, 'past_events' => $past_events ] );
             }
 
             return view( $page->template, [ 'page' => $page ] );
@@ -116,13 +117,4 @@ class PageController extends Controller {
         ] );
     }
 
-    public function dishMoveUp( Page $page, Dish $dish ) {
-        $page->dishMoveUp( $dish );
-        return view( 'admin.page.dishes', [ 'page' => $page ] );
-    }
-
-    public function dishMoveDown( Page $page, Dish $dish ) {
-        $page->dishMoveDown( $dish );
-        return view( 'admin.page.dishes', [ 'page' => $page ] );
-    }
 }

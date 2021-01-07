@@ -11,6 +11,7 @@
                                 <th><a href="{{route('admin.dish.index', ['orderby' => 'id'])}}">ID</a></th>
                                 <th><a href="{{route('admin.dish.index', ['orderby' => 'slug'])}}">Slug</a></th>
                                 <th><a href="{{route('admin.dish.index', ['orderby' => 'title'])}}">Text</a></th>
+                                <th>Kategorien</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -30,6 +31,13 @@
                                         <ul class="separated-list">
                                             @foreach($model->dips as $dip)
                                                 <li>{{$dip->title}}@include('inc.sup-allergens', ['obj' => $dip])</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            @foreach($model->categories as $category)
+                                                <li>{{$category->gui_name}}</li>
                                             @endforeach
                                         </ul>
                                     </td>

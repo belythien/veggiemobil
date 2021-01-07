@@ -97,7 +97,7 @@
                 @endforeach
             </div>
             <div class="d-none d-xl-block"
-                 style="position:absolute; top: 100px; right: -160px; transform: rotate(-10deg)"
+                 style="position:absolute; top: 100px; right: -160px; transform: rotate(-10deg);max-width:280px"
             >
                 @include('inc.extra.coming-up')
             </div>

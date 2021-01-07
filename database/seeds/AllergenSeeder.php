@@ -58,5 +58,9 @@ class AllergenSeeder extends Seeder {
             'name' => 'Hafer',
         ] );
 
+        DB::table( 'allergens' )->insert( [
+            'name' => 'Dinkel',
+        ] );
+
     }
 }

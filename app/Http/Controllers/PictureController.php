@@ -18,10 +18,14 @@ class PictureController extends Controller {
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $pictures = Picture::orderby('created_at', 'desc')->orderby('title')->paginate( 20 );
+    public function index( Request $request ) {
+        $title = $request->has( 'title' ) ? $request->get( 'title' ) : null;
+        $pictures = Picture::when( $request->has( 'title' ), function ( $query ) use ( $title ) {
+            return $query->where( 'picture.title', 'LIKE', '%' . $title . '%' );
+        } )->orderby( 'created_at', 'desc' )->orderby( 'title' )->paginate( 20 );
         return view( 'admin.picture.index', [ 'models' => $pictures, 'class' => 'picture' ] );
     }
 

@@ -126,43 +126,55 @@ class EventSeeder extends Seeder {
             'live'      => 1,
         ] );
 
+        /* ================================ */
+
         DB::table( 'events' )->insert( [
-            'slug'         => 'veggieworld-duesseldorf-2021',
-            'title'        => 'Veggieworld Düsseldorf 2021',
-            'text'         => '<h3>Herzliche Einladung zur VeggieWorld in D&uuml;sseldorf!</h3><p><strong>VeggieWorld. Die Messe f&uuml;r den veganen Lebensstil.</strong></p><p>Hallo Du! Wir sind VeggieWorld. Wir sind Messemacher mit Spa&szlig; am veganen Lebensstil. Weil alles, was wir konsumieren, Auswirkungen hat &ndash; auf unseren K&ouml;rper, auf Tiere, andere Menschen und auf die Umwelt &ndash; haben wir uns eine Messe und Plattform ausgedacht, die Lust auf einen pflanzlichen Lebensstil macht. Bei der VeggieWorld geht es also nicht um Verzicht, sondern um Gewinn. Nicht um Dogmatismus, sondern um Vielfalt. Nicht um Moralpredigten, sondern um die Freude an neuen M&ouml;glichkeiten. Hier entdeckst Du Produkte, die es in deinem Supermarkt nicht gibt und lernst veganen Genuss kennen. Angereichert mit Tipps und Tricks von Machern, Produzenten, K&ouml;chen und Gesichtern der Szene. Auch pflanzlich produzierte Kleidung und Kosmetik, die keinen Kompromiss mehr in Sachen Form, Farbe und Style machen, findest Du bei uns. Du triffst auf Einsteiger, Aussteiger, Querdenker, Anders- und M&ouml;glichmacher. Auf Menschen, die ausschlie&szlig;lich vegan leben und Leute, die sich pflanzlich ausprobieren und rantasten wollen. Auch Metzger in der 5. Generation sind bei uns willkommen. Denn wir m&ouml;chten so viele Menschen wie m&ouml;glich erreichen. Nicht nur in Deutschland. Sondern &uuml;berall. Wir sind offen f&uuml;r Neues. Du auch?</p>',
-            'date_from'    => '2021-05-15',
-            'date_to'      => '2016-05-16',
-            'external_url' => 'https://veggieworld.de/event/duesseldorf/',
+            'slug'         => 'great-barrier-run-goettingen-2021',
+            'title'        => 'Great Barrier Run • Göttingen • 2021',
+            'text'         => '<strong>Einer der spektakulärsten Hindernisläufe geht in die 6. Auflage</strong><br>Der Great Barrier Run, Südniedersachsens Hindernislauf Nummer 1 und eine der spektakulärsten Sportveranstaltungen in Mitteldeutschland geht 2021 in seine 6. Auflage.<br>Nach den Teilnehmer-Rekorden im letzten Jahr, sowohl beim Erwachsenenlauf mit über 3.000 Teilnehmern und dem Great Barrier Run KIDS mit über 450 Teilnehmern, erwarten wir auch in diesem Jahr wieder viele tausende Sportverrückte.',
+            'date_from'    => '2021-03-27',
+            'date_to'      => null,
+            'external_url' => 'https://www.great-barrier-run.de/great-barrier-run-2021/',
             'live'         => 1,
         ] );
 
         DB::table( 'events' )->insert( [
-            'slug'         => 'vegan-streetday-stuttgart-2021',
-            'title'        => 'Vegan-Streetday Stuttgart 2021',
-            'text'         => '<p>Seit &uuml;ber 10 Jahren werden zu Pfingsten die Vegan Street Days in der schw&auml;bischen Hauptstadt gefeiert. Mit mehreren tausend Besuchern, &uuml;ber 60 rein veganen Ausstellern und einem 30-st&uuml;ndigen Info- und Showprogramm ist es eines der gr&ouml;&szlig;ten veganen Stra&szlig;enfeste in Deutschland.</p><p><strong>Am 22. und 23. Mai 2021</strong>&nbsp;werden nun zum 11. Mal im Europaviertel in Stuttgart die Vegan Street Days stattfinden. Es erwarten euch Kochshows, Workshops zu Tierrechtsthemen, Live-Konzerte und die bunte Vielfalt an veganen Ausstellern und Tierrechtsorganisationen.</p><p>Und da uns zwei Tage feiern, informieren und schlemmen nicht ausreichen, findet am 24.05.2021 der 4. Stuttgarter Tierrechtstag im Alten Feuerwehrhaus am Erwin-Schoettle-Platz statt. Nutzt die M&ouml;glichkeit zur Vernetzung f&uuml;r eine starke Tierrechtsbewegung!</p>',
-            'date_from'    => '2021-05-22',
+            'slug'         => 'sportaktiv-die-sport-und-outdoormesse-2021',
+            'title'        => 'sport.aktiv • Die Sport- und Outdoormesse • 2021',
+            'text'         => 'Von Akrobatik bis Yoga.<br>Erlebe Neues, Innovatives und Trendiges für Sport und Lifestyle bei Thüringens größtem Sportevent.<br>Ob persönliche Vorliebe für ein, zwei oder doch lieber vier Räder – auf der „sport.aktiv“ findet jeder Besucher das Passende.',
+            'date_from'    => '2021-04-10',
+            'date_to'      => '2021-04-11',
+            'external_url' => 'https://www.sportaktiv-erfurt.de/',
+            'live'         => 1,
+        ] );
+
+        DB::table( 'events' )->insert( [
+            'slug'         => 'rock-den-acker-open-air-2021',
+            'title'        => 'ROCK DEN ACKER OPEN AIR 2021',
+            'text'         => 'Das Rock den Acker - Open Air ist ein kleines, gemütliches Rock und Metal Festival in familiärer Atmosphäre. Zwei Tage lang erwartet Dich allerfeinste Rockmusik von insgesamt 18 Bands. Das ausgewogene Line Up sorgt dafür, dass auch für Dich etwas dabei ist.',
+            'date_from'    => '2021-05-21',
             'date_to'      => '2021-05-23',
-            'external_url' => 'https://stuttgart.vegan-street-day.de/',
+            'external_url' => 'https://www.festival-alarm.com/Festivals-2021/Rock-den-Acker-Open-Air-Freitag-21.-Mai-2021-Nidderau',
             'live'         => 1,
         ] );
 
         DB::table( 'events' )->insert( [
-            'slug'         => 'jazz-festival-idstein-2012',
-            'title'        => 'Jazz-Festival Idstein 2021',
-            'text'         => '',
-            'date_from'    => '2021-06-24',
-            'date_to'      => '2021-06-26',
-            'external_url' => '',
+            'slug'         => 'green-world-tour-heidelberg-2021',
+            'title'        => 'Green World Tour Heidelberg 2021',
+            'text'         => 'Die Nachhaltigkeits-Messe in Heidelberg am 26. und 27. Juni 2021<br>Aussteller und Vorträge aus folgenden Bereichen erwarten dich:<br><ul><li>Ernährung & Gesundheit</li><li>Freizeit & Wohnen</li><li>Design & Mode</li><li>Studium & Karriere</li><li>Innovation & Wissenschaft</li><li>Strom & Wärme</li><li>Bauen & Sanieren</li><li>Mobilität & Logistik</li><li>Geld & Versicherungen</li><li>Gewerbe & CSR</li></ul>',
+            'date_from'    => '2021-06-26',
+            'date_to'      => '2021-06-27',
+            'external_url' => 'https://autarkia.info/green-world-tour-heidelberg/',
             'live'         => 1,
         ] );
 
         DB::table( 'events' )->insert( [
-            'slug'         => 'hexenmarkt-idstein-2012',
-            'title'        => 'Hexenmarkt Idstein 2021',
-            'text'         => '',
-            'date_from'    => '2021-07-12',
-            'date_to'      => '2021-07-13',
-            'external_url' => '',
+            'slug'         => 'trebur-open-air-2021',
+            'title'        => 'Trebur Open Air 2021',
+            'text'         => 'EINE HAND VOLL BUNT GEMISCHTEM SPASS<br>...INTERNATIONAL, REGIONAL, LAUT, LEISE, ALTE HASEN, NEWCOMER...<br>Das Trebur Open Air ist ja für seine bunt gemischte, aber stets handverlesene Auswahl an Künstlern und Künstlerinnen bekannt – hier bekommst Du nicht nur eine Übersicht über die 3 Bühnen und rund 50 MusikerInnen, sondern auch darüber, was außerhalb der Bühnen noch so passiert.<br>Denn als ob wir musikalisch nicht schon für jeden was dabei haben – drumherum passiert auch noch ganz schön viel! Ein Katzensprung ins Freibad, das über das Festivalwochenende quasi ins Trebur Open Air integriert wird! Dort gibt es allerlei zu erleben, ob Lesungen, Bier-Yoga, toalympics, Kinderarea, Bingo… ',
+            'date_from'    => '2021-08-06',
+            'date_to'      => '2021-08-08',
+            'external_url' => 'https://treburopenair.de/',
             'live'         => 1,
         ] );
     }

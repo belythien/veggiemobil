@@ -33,10 +33,6 @@ class Dish extends Model {
         return $this->belongsToMany( 'App\Dip' );
     }
 
-    public function pages() {
-        return $this->belongsToMany( 'App\Page' );
-    }
-
     public function pictures() {
         return $this->morphToMany( Picture::class, 'picturable' );
     }
@@ -49,7 +45,7 @@ class Dish extends Model {
         $dish->save();
         $dish->allergens()->sync( $request->get( 'allergens' ) );
         $dish->dips()->sync( $request->get( 'dips' ) );
-        $dish->pages()->sync( $request->get( 'pages' ) );
+        $dish->categories()->sync( $request->get( 'categories' ) );
 
         if( $request->has( 'filename' ) ) {
             $picture = Picture::createPicture( $request );
@@ -64,7 +60,7 @@ class Dish extends Model {
         $this->save();
         $this->allergens()->sync( $request->get( 'allergens' ) );
         $this->dips()->sync( $request->get( 'dips' ) );
-        $this->pages()->sync( $request->get( 'pages' ) );
+        $this->categories()->sync( $request->get( 'categories' ) );
 
         if( $request->has( 'filename' ) ) {
             $picture = Picture::createPicture( $request );

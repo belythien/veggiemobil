@@ -15,6 +15,7 @@ return [
     'dips'         => 'Dips',
     'name'         => 'Name',
     'filename'     => 'Datei',
+    'categories'   => 'Kategorien',
     'events'       => 'Events',
     'live'         => 'Live',
     'publication'  => 'Sichtbar ab',

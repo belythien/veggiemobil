@@ -42,10 +42,6 @@ class Page extends Model {
 
     /* === RELATIONS === */
 
-    public function dishes() {
-        return $this->belongsToMany( 'App\Dish' )->withPivot( 'sort' )->orderBy( 'sort' );;
-    }
-
     /* === ATTRIBUTES === */
 
     public function getTemplateAttribute() {

@@ -61,6 +61,8 @@ class CategorizableSeeder extends Seeder {
                 'marokkanischer-gemueseeintopf',
                 'mango-linsen-curry',
                 'scharfe-schwarze-bohnensuppe-mit-avocado-und-sour-creme',
+                'weisse-lasagne-mit-butternuss-kuerbis-und-spinat',
+                'hokkaido-cremesuppe-mit-zwetschgen-chutney',
             ] )->get() as $dish ) {
                 DB::table( 'categorizables' )->insert( [
                     'category_id'        => $category->id,
@@ -92,6 +94,23 @@ class CategorizableSeeder extends Seeder {
         if( !empty( $category ) ) {
             foreach( Dish::whereIn( 'slug', [
                 'baklava',
+                'apfel-birnen-crumble',
+                'pflaumen-mohn-kuchen',
+            ] )->get() as $dish ) {
+                DB::table( 'categorizables' )->insert( [
+                    'category_id'        => $category->id,
+                    'categorizable_id'   => $dish->id,
+                    'categorizable_type' => 'App\Dish',
+                ] );
+            }
+        }
+
+        // Advent / Weihnachten
+        $category = Category::where( 'slug', 'advent-weihnachten' )->first();
+        if( !empty( $category ) ) {
+            foreach( Dish::whereIn( 'slug', [
+                'christmas-champion-burger',
+                'weihnachtstraum',
             ] )->get() as $dish ) {
                 DB::table( 'categorizables' )->insert( [
                     'category_id'        => $category->id,

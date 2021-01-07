@@ -6,6 +6,7 @@ return [
     'allergen'   => 'fas fa-allergies',
     'cancel'     => 'fa fa-times-circle',
     'category'   => 'fas fa-tags',
+    'external'   => 'fas fa-external-link-alt',
     'dashboard'  => 'fa fa-tachometer-alt',
     'dip'        => 'fas fa-poop',
     'dish'       => 'fa fa-hamburger',

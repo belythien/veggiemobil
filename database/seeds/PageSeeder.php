@@ -11,8 +11,8 @@ class PageSeeder extends Seeder {
     public function run() {
 
         DB::table( 'pages' )->insert( [
-            'slug'  => 'philosophie',
-            'title' => 'Philosophie',
+            'slug'  => 'ueber-uns',
+            'title' => 'Über uns',
             'text'  => '<p>Unser veggiemobil Foodtruck zeichnet sich durch seine abwechslungsreiche und wechselnde, vegane Speisekarte aus. Alle Speisen werden täglich frisch selbst gekocht. Hierbei verwenden wir nur beste Zutaten.<br>
                           Die Zusammensetzung unserer Gerichte entwickeln wir ständig neu und selbst. Keine Fertig-Patties, keine Fertig-Soßen, keine Fertig-Dips! Bei unserem Champion-Burger zum Beispiel werden unter anderem frische Champignons, Walnüsse, Kräuter zum Bratling verarbeitet.<br>
                           Zurzeit bieten wir zu unseren Süßkartoffel-Pommes 8 verschiedene selbstkreirte Dips an.</p>
@@ -20,19 +20,19 @@ class PageSeeder extends Seeder {
             'live'  => 1
         ] );
 
-        DB::table( 'pages' )->insert( [
-            'slug'  => 'truck-menu',
-            'title' => 'Truck-Menü',
-            'text'  => '<p>Uns zeichnet ein vielfältiges variierendes Angebot aus, welches wir ständig durch neue eigene Kreationen erweitern.</p><p>Für Anregungen und Wünsche sind wir immer gerne offen.</p><p>Hier finden Sie all unsere beliebten Spezialitäten auf einen Blick.</p>',
-            'live'  => 1
-        ] );
-
-        DB::table( 'pages' )->insert( [
-            'slug'  => 'catering',
-            'title' => 'Catering',
-            'text'  => '<p>Sie feiern eine Gartenparty, einen Geburtstag, eine Hochzeit, ein Firmenjubiläum oder ein anderes Event? Wir kommen gerne zu Ihnen und verwöhnen Sie ganz nach Ihren veganen Wünschen.<br>Von Montag bis Freitag kommen wir zu ausgesuchten Firmenparkplätzen, oder anderen Stellplätzen. Am Wochenende sind wir auf verschiedenen Openairs und Festivals zu finden.</p>',
-            'live'  => 1
-        ] );
+//        DB::table( 'pages' )->insert( [
+//            'slug'  => 'truck-menu',
+//            'title' => 'Truck-Menü',
+//            'text'  => '<p>Uns zeichnet ein vielfältiges variierendes Angebot aus, welches wir ständig durch neue eigene Kreationen erweitern.</p><p>Für Anregungen und Wünsche sind wir immer gerne offen.</p><p>Hier finden Sie all unsere beliebten Spezialitäten auf einen Blick.</p>',
+//            'live'  => 1
+//        ] );
+//
+//        DB::table( 'pages' )->insert( [
+//            'slug'  => 'catering',
+//            'title' => 'Catering',
+//            'text'  => '<p>Sie feiern eine Gartenparty, einen Geburtstag, eine Hochzeit, ein Firmenjubiläum oder ein anderes Event? Wir kommen gerne zu Ihnen und verwöhnen Sie ganz nach Ihren veganen Wünschen.<br>Von Montag bis Freitag kommen wir zu ausgesuchten Firmenparkplätzen, oder anderen Stellplätzen. Am Wochenende sind wir auf verschiedenen Openairs und Festivals zu finden.</p>',
+//            'live'  => 1
+//        ] );
 
         DB::table( 'pages' )->insert( [
             'slug'     => 'speisen',
@@ -50,10 +50,25 @@ class PageSeeder extends Seeder {
         ] );
 
         DB::table( 'pages' )->insert( [
+            'slug'  => 'kontakt',
+            'title' => ' Kontakt',
+            'text'  => '<p><a href="mailto:info@veggiemobil.com">info@veggiemobil.com</a><br />mobil 0160 7744836<br />tel 06082 931144<br /><br />Birgit Jung<br />Vordergasse 10<br />65529 Waldems</p>',
+            'live'  => 1
+        ] );
+
+        DB::table( 'pages' )->insert( [
             'slug'         => 'facebook',
             'title'        => 'Facebook',
             'text'         => '',
             'external_url' => 'https://de-de.facebook.com/Veggiemobil-1058562850840870/',
+            'live'         => 1
+        ] );
+
+        DB::table( 'pages' )->insert( [
+            'slug'         => 'instagram',
+            'title'        => 'Instagram',
+            'text'         => '',
+            'external_url' => 'https://instagram.com/veggiemobil?igshid=5e3hggofsvla',
             'live'         => 1
         ] );
 

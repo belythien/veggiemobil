@@ -41,5 +41,12 @@ class CategorySeeder extends Seeder {
             'sort'  => 50,
         ] );
 
+        DB::table( 'categories' )->insert( [
+            'title' => 'Advent/Weihnachten',
+            'slug'  => 'advent-weihnachten',
+            'sort'  => 60,
+            'live'  => 0
+        ] );
+
     }
 }

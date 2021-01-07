@@ -30,4 +30,4 @@
 
 @include('admin.form.col', ['field' => 'dips',        'size' => 12, 'type' => 'checkbox', 'data' => \App\Dip::all() ])
 @include('admin.form.col', ['field' => 'allergens',   'size' => 12, 'type' => 'checkbox', 'data' => \App\Allergen::all() ])
-@include('admin.form.col', ['field' => 'pages',       'size' => 12, 'type' => 'checkbox', 'data' => \App\Page::all() ])
+@include('admin.form.col', ['field' => 'categories',   'size' => 12, 'type' => 'checkbox', 'data' => \App\Category::all() ])

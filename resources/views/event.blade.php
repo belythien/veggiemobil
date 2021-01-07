@@ -19,7 +19,10 @@
                 </div>
 
                 <div class="card-body">
-                    {!! $event->text !!}
+                    <div class="mb-3">{!! $event->text !!}</div>
+                    @if(!empty($event->external_url))
+                        <div class="mb-3"><a href="{{$event->external_url}}" target="_blank">@include('inc.icon', ['icon' => 'external']) {{$event->external_url}}</a></div>
+                    @endif
 
                     @if($event->pictures()->count() > 1)
                         <div class="mb-2">

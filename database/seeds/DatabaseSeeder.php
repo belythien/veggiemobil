@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder {
         $this->call( PictureSeeder::class );
 
         $this->call( MenuPageSeeder::class );
-        $this->call( DishPageSeeder::class );
         $this->call( PicturableSeeder::class );
         $this->call( CategorizableSeeder::class );
     }

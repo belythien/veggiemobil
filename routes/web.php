@@ -51,9 +51,8 @@ Route::name( 'admin.' )->group( function () {
 
     Route::resource( 'page', 'PageController' );
     Route::post( 'page/{page}/toggle-live', 'PageController@toggleLive' )->name( 'page.toggle-live' );
-    Route::post( 'page/{page}/dish/{dish}/move-up', 'PageController@dishMoveUp' )->name( 'page.dish-move-up' );
-    Route::post( 'page/{page}/dish/{dish}/move-down', 'PageController@dishMoveDown' )->name( 'page.dish-move-down' );
 
+    Route::post( 'picture/filter', 'PictureController@index' )->name( 'picture.index' );
     Route::resource( 'picture', 'PictureController' );
     Route::post( 'picture/{picture}/toggle-live', 'PictureController@toggleLive' )->name( 'picture.toggle-live' );
     Route::post( 'picture/{picture}/toggle-welcome', 'PictureController@toggleWelcome' )->name( 'picture.toggle-welcome' );
