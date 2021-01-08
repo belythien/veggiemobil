@@ -19,9 +19,8 @@ class CreatePagesTable extends Migration {
             $table->boolean( 'live' )->default( 0 );
             $table->string( 'template' )->nullable();
             $table->string( 'external_url' )->nullable();
-            $table->date( 'publication' )->nullable();
-            $table->date( 'expiration' )->nullable();
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 

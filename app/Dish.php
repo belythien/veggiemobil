@@ -10,7 +10,7 @@ class Dish extends Model {
 
     use Sluggable;
 
-    protected $fillable = [ 'title', 'text', 'live', 'publication', 'expiration' ];
+    protected $fillable = [ 'title', 'text', 'live' ];
     protected $dates    = [ 'publication', 'expiration' ];
 
     /* === GUI === */

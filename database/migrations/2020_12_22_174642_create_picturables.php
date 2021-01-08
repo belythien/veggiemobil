@@ -18,6 +18,7 @@ class CreatePicturables extends Migration {
             $table->string( 'picturable_type' )->index();
             $table->integer( 'sort' )->nullable()->default( 0 );
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
 
             $table->foreign( 'picture_id' )->references( 'id' )->on( 'pictures' )->onDelete( 'cascade' );
         } );

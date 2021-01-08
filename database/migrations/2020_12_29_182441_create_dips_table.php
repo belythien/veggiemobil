@@ -16,6 +16,7 @@ class CreateDipsTable extends Migration {
             $table->string( 'slug' )->index();
             $table->string( 'title' );
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 

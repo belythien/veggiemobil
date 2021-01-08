@@ -28,6 +28,6 @@
 
 @include('admin.form.col', ['field' => 'text',        'size' => 12, 'type' => 'textarea' ])
 
-@include('admin.form.col', ['field' => 'dips',        'size' => 12, 'type' => 'checkbox', 'data' => \App\Dip::all() ])
-@include('admin.form.col', ['field' => 'allergens',   'size' => 12, 'type' => 'checkbox', 'data' => \App\Allergen::all() ])
-@include('admin.form.col', ['field' => 'categories',   'size' => 12, 'type' => 'checkbox', 'data' => \App\Category::all() ])
+@include('admin.form.col', ['field' => 'dips',        'size' => 12, 'type' => 'checkbox', 'data' => \App\Dip::all(),      'colSize' => 3 ])
+@include('admin.form.col', ['field' => 'allergens',   'size' => 12, 'type' => 'checkbox', 'data' => \App\Allergen::all(), 'colSize' => 3 ])
+@include('admin.form.col', ['field' => 'categories',  'size' => 12, 'type' => 'checkbox', 'data' => \App\Category::all(), 'colSize' => 3 ])

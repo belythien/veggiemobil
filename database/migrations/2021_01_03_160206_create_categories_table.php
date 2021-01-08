@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration {
             $table->boolean( 'live' )->default( 1 );
             $table->integer( 'sort' )->default( 0 )->nullable();
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 

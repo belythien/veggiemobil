@@ -16,6 +16,8 @@ return [
     'name'         => 'Name',
     'filename'     => 'Datei',
     'categories'   => 'Kategorien',
+    'id'           => 'ID',
+    'picturable'   => 'Verknüpft mit',
     'events'       => 'Events',
     'live'         => 'Live',
     'publication'  => 'Sichtbar ab',

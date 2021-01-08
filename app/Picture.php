@@ -22,6 +22,20 @@ class Picture extends Model {
         return $this->title;
     }
 
+    public static function getPicturablesForDropdownlist() {
+        $result = [];
+        foreach( Picture::all() as $picture ) {
+            foreach( $picture->dishes as $dish ) {
+                $result[ 'App\Dish_' . $dish->id ] = $dish->gui_name;
+            }
+            foreach( $picture->events as $event ) {
+                $result[ 'App\Event_' . $event->id ] = $event->gui_name;
+            }
+        }
+        asort( $result );
+        return $result;
+    }
+
     /* === SCOPE === */
 
     public function scopeOnWelcomePage( $query ) {

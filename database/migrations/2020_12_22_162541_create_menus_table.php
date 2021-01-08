@@ -15,6 +15,7 @@ class CreateMenusTable extends Migration {
             $table->bigIncrements( 'id' );
             $table->string( 'label' )->nullable();
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 

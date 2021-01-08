@@ -16,6 +16,7 @@ class CreateMenuPage extends Migration {
             $table->bigInteger( 'menu_id' )->unsigned()->index();
             $table->bigInteger( 'page_id' )->unsigned()->index();
             $table->integer( 'sort' )->default( 0 );
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
 
             $table->foreign( 'menu_id' )->references( 'id' )->on( 'menus' )->onDelete( 'cascade' );
             $table->foreign( 'page_id' )->references( 'id' )->on( 'pages' )->onDelete( 'cascade' );

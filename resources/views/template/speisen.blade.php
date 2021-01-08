@@ -25,7 +25,7 @@
                                 <div class="mt-3">
                                     <h3 class="category-title bg-primary text-white p-3 mb-3">{{$category->title}}</h3>
                                     <div class="mb-3">{!! $category->text !!}</div>
-                                    @include('inc.dishes', ['dishes' => $category->dishes])
+                                    @include('inc.dishes', ['dishes' => $category->dishes()->where('live', 1)->get()])
                                 </div>
                             @endforeach
 

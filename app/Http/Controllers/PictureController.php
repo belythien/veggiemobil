@@ -22,11 +22,59 @@ class PictureController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index( Request $request ) {
+        $orderby = $request->has( 'orderby' ) ? $request->get( 'orderby' ) : 'title';
+        $dir = $request->has( 'dir' ) ? $request->get( 'dir' ) : 'asc';
+
+        $id = $request->has( 'id' ) ? $request->get( 'id' ) : null;
         $title = $request->has( 'title' ) ? $request->get( 'title' ) : null;
-        $pictures = Picture::when( $request->has( 'title' ), function ( $query ) use ( $title ) {
-            return $query->where( 'picture.title', 'LIKE', '%' . $title . '%' );
-        } )->orderby( 'created_at', 'desc' )->orderby( 'title' )->paginate( 20 );
-        return view( 'admin.picture.index', [ 'models' => $pictures, 'class' => 'picture' ] );
+        $live = $request->has( 'live' ) ? $request->get( 'live' ) : null;
+        $welcome = $request->has( 'welcome' ) ? $request->get( 'welcome' ) : null;
+        $picturable = $request->has( 'picturable' ) ? $request->get( 'picturable' ) : null;
+
+        $pictures = Picture::when( !empty( $title ), function ( $query ) use ( $title ) {
+            return $query->where( 'pictures.title', 'LIKE', '%' . $title . '%' );
+
+        } )->when( !empty( $id ), function ( $query ) use ( $id ) {
+            return $query->where( 'pictures.id', $id );
+
+        } )->when( !empty( $picturable ) && $picturable != 'any', function ( $query ) use ( $picturable ) {
+            $tmp = explode( '_', $picturable );
+            return $query->join( 'picturables', 'picturables.picture_id', '=', 'pictures.id' )
+                ->where( 'picturable_type', $tmp[ 0 ] )
+                ->where( 'picturable_id', $tmp[ 1 ] );
+
+        } )->when( !empty( $live ) && $live != 'any', function ( $query ) use ( $live ) {
+            return $query->when( $live == 'yes', function ( $query ) {
+                return $query->where( 'pictures.live', 1 );
+            } )->when( $live == 'no', function ( $query ) {
+                return $query->where( 'pictures.live', 0 );
+            } );
+
+        } )->when( !empty( $welcome ) && $welcome != 'any', function ( $query ) use ( $welcome ) {
+            return $query->when( $welcome == 'yes', function ( $query ) {
+                return $query->where( 'pictures.welcome', 1 );
+            } )->when( $welcome == 'no', function ( $query ) {
+                return $query->where( 'pictures.welcome', 0 );
+            } );
+
+        } )->orderby( 'pictures.created_at', 'desc' )
+            ->orderby( 'pictures.title' )
+            ->select( 'pictures.*' )
+            ->paginate( 20 );
+
+        return view( 'admin.picture.index', [
+            'models'  => $pictures,
+            'class'   => 'picture',
+            'orderby' => $orderby,
+            'filter'  => [
+                'id'         => $id,
+                'title'      => $title,
+                'live'       => $live,
+                'welcome'    => $welcome,
+                'picturable' => $picturable
+            ],
+            'dir'     => $dir
+        ] );
     }
 
     /**

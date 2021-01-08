@@ -15,6 +15,7 @@ class CreateDipDish extends Migration {
             $table->bigIncrements( 'id' );
             $table->bigInteger( 'dip_id' )->unsigned()->index();
             $table->bigInteger( 'dish_id' )->unsigned()->index();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
 
             $table->foreign( 'dip_id' )->references( 'id' )->on( 'dips' )->onDelete( 'cascade' );
             $table->foreign( 'dish_id' )->references( 'id' )->on( 'dishes' )->onDelete( 'cascade' );

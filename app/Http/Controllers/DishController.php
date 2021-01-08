@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Dish;
 use App\Http\Requests\DishFormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class DishController extends Controller {
 
@@ -24,8 +25,57 @@ class DishController extends Controller {
      */
     public function index( Request $request ) {
         $orderby = $request->has( 'orderby' ) ? $request->get( 'orderby' ) : 'title';
-        $dishes = Dish::orderby( 'dishes.' . $orderby )->paginate( 20 );
-        return view( 'admin.dish.index', [ 'models' => $dishes, 'class' => 'dish' ] );
+        $dir = $request->has( 'dir' ) ? $request->get( 'dir' ) : 'asc';
+
+        $id = $request->has( 'id' ) ? $request->get( 'id' ) : null;
+        $slug = $request->has( 'slug' ) ? $request->get( 'slug' ) : null;
+        $title = $request->has( 'title' ) ? $request->get( 'title' ) : null;
+        $live = $request->has( 'live' ) ? $request->get( 'live' ) : null;
+
+        $dishes = Dish::when( in_array( $orderby, [ 'id', 'slug', 'title', 'live' ] ), function ( $query ) use ( $orderby, $dir ) {
+            return $query->orderby( 'dishes.' . $orderby, $dir );
+
+        } )->when( $orderby == 'categories', function ( $query ) use ( $orderby, $dir ) {
+            return $query->join( 'categorizables', function ( $join ) {
+                $join->on( 'categorizables.categorizable_id', '=', 'dishes.id' )
+                    ->where( 'categorizables.categorizable_type', 'App\Dish' );
+            } )->join( 'categories', 'categories.id', '=', 'categorizables.category_id' )
+                ->orderby( 'categories.sort', $dir )
+                ->orderby( 'categories.title', $dir )
+                ->orderby( 'dishes.title', $dir );
+
+        } )->when( !empty( $id ), function ( $query ) use ( $id ) {
+            return $query->where( 'dishes.id', $id );
+
+        } )->when( !empty( $slug ), function ( $query ) use ( $slug ) {
+            return $query->where( 'dishes.slug', 'LIKE', '%' . $slug . '%' );
+
+        } )->when( !empty( $title ), function ( $query ) use ( $title ) {
+            return $query->where( 'dishes.title', 'LIKE', '%' . $title . '%' );
+
+        } )->when( !empty( $live ) && $live != 'any', function ( $query ) use ( $live ) {
+            return $query->when( $live == 'yes', function ( $query ) {
+                return $query->where( 'dishes.live', 1 );
+            } )->when( $live == 'no', function ( $query ) {
+                return $query->where( 'dishes.live', 0 );
+            } );
+
+        } )
+            ->select( 'dishes.*' )
+            ->paginate( 20 );
+
+        return view( 'admin.dish.index', [
+            'models'  => $dishes,
+            'class'   => 'dish',
+            'orderby' => $orderby,
+            'filter'  => [
+                'id'    => $id,
+                'slug'  => $slug,
+                'title' => $title,
+                'live'  => $live,
+            ],
+            'dir'     => $dir
+        ] );
     }
 
     /**
@@ -98,5 +148,14 @@ class DishController extends Controller {
             return view( 'dish', [ 'dish' => $dish ] );
         }
         return view( '404' );
+    }
+
+    public function toggleLive( Dish $dish ) {
+        $dish->live = !$dish->live;
+        $dish->save();
+        return view( 'inc.boolean', [
+            'value'    => $dish->live,
+            'icPostTo' => route( 'admin.dish.toggle-live', [ 'dish' => $dish ] )
+        ] );
     }
 }

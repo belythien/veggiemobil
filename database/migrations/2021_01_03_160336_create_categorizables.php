@@ -18,6 +18,7 @@ class CreateCategorizables extends Migration {
             $table->string( 'categorizable_type' )->index();
             $table->integer( 'sort' )->nullable()->default( 0 );
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
 
             $table->foreign( 'category_id' )->references( 'id' )->on( 'categories' )->onDelete( 'cascade' );
         } );

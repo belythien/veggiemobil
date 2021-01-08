@@ -4,6 +4,8 @@ $dark: darken($brown, 30%);
 $red: #E2023B;
 $green: #66B331;
 $primary: $green;
+$danger: $red;
+$info: $brown;
 
 * {
     font-family: 'Comfortaa', Helvetica, Arial;
@@ -302,4 +304,19 @@ tr.ic-removing td {
     margin-top: -100px;
     position: relative;
     z-index: -100;
+}
+
+.table-header {
+    background-color: $green;
+    color: white;
+    a {
+        color: white;
+    }
+    a:hover {
+        color: $brown;
+    }
+}
+
+.filter {
+    background-color: lighten($green, 25%);
 }

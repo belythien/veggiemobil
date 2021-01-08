@@ -23,6 +23,7 @@ class CreatePicturesTable extends Migration {
             $table->integer( 'width' )->nullable();
             $table->integer( 'height' )->nullable();
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 

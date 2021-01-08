@@ -17,9 +17,8 @@ class CreateDishesTable extends Migration {
             $table->string( 'title' );
             $table->text( 'text' )->nullable();
             $table->boolean( 'live' )->default( 0 );
-            $table->date( 'publication' )->nullable();
-            $table->date( 'expiration' )->nullable();
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 

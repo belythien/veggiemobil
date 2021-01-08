@@ -8,7 +8,8 @@
         @if(array_key_exists($slug, config('plural')))
             <a href="{{route('admin.' . $slug . '.index')}}" type="button"
                class="list-group-item list-group-item-action @if(Request::is($slug . '*')) active @endif"
-            >@include('inc.icon', ['icon' => $slug, 'fw' => true]) {{config('plural')[$slug]}}</a>
+            >@include('inc.icon', ['icon' => $slug, 'fw' => true]) {{config('plural')[$slug]}}
+            </a>
         @endif
     @endforeach
 

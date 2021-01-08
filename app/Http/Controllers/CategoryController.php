@@ -45,10 +45,11 @@ class CategoryController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param CategoryFormRequest $request
      * @return Response
      */
     public function store( CategoryFormRequest $request ) {
+        dd( $request );
         $category = Category::createCategory( $request );
         return redirect( route( 'admin.category.index', [ 'category' => $category ] ) );
     }
@@ -76,7 +77,7 @@ class CategoryController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param CategoryFormRequest $request
      * @param Category $category
      * @return Response
      */

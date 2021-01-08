@@ -7,16 +7,28 @@
                 @component('component.index', ['class' => $class, 'models' => $models])
                     <table class="table table-striped table-sm">
                         <thead>
-                            <tr>
-                                <th>ID</th>
+                            <tr class="table-header">
+                                <th>@include('inc.sort-link', ['field' => 'id'])</th>
                                 <th>Bild</th>
-                                <th>Slug</th>
-                                <th>Titel</th>
-                                <th>Bezogen auf</th>
-                                <th class="text-center">Live</th>
-                                <th class="text-center">Willkommen</th>
+                                <th>@include('inc.sort-link', ['field' => 'title'])</th>
+                                <th>@include('inc.sort-link', ['field' => 'picturable'])</th>
+                                <th class="text-center">@include('inc.sort-link', ['field' => 'live'])</th>
+                                <th class="text-center">@include('inc.sort-link', ['field' => 'welcome'])</th>
                                 <th></th>
                             </tr>
+                            <tr class="filter">
+                                <form action="{{route('admin.picture.filter')}}" method="POST">
+                                    @csrf
+                                    <th>@include('inc.filter', ['field' => 'id',   'type' => 'number'])</th>
+                                    <th></th>
+                                    <th>@include('inc.filter', ['field' => 'title',      'type' => 'text'])</th>
+                                    <th>@include('inc.filter', ['field' => 'picturable', 'type' => 'select', 'data' => \App\Picture::getPicturablesForDropdownlist()])</th>
+                                    <th>@include('inc.filter', ['field' => 'live',       'type' => 'select'])</th>
+                                    <th>@include('inc.filter', ['field' => 'welcome',    'type' => 'select'])</th>
+                                    <th>
+                                        @include('inc.filter-buttons', ['class' => $class])
+                                    </th>
+                                </form>
                         </thead>
                         <tbody ic-target="closest tr">
                             @foreach($models as $model)
@@ -25,7 +37,6 @@
                                     <td style="max-width: 200px">
                                         <a href="{{route('admin.picture.edit', ['picture' => $model])}}">@include('inc.picture', ['image' => $model])</a>
                                     </td>
-                                    <td>{{$model->slug}}</td>
                                     <td>
                                         <div class="font-weight-bold">
                                             <a href="{{route('admin.picture.edit', ['picture' => $model])}}">{{$model->title}}</a>

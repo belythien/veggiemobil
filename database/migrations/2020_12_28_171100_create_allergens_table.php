@@ -15,6 +15,7 @@ class CreateAllergensTable extends Migration {
             $table->bigIncrements( 'id' );
             $table->string( 'name' );
             $table->timestamps();
+            $table->timestamp( 'ts' )->default( \DB::raw( 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP' ) );
         } );
     }
 
