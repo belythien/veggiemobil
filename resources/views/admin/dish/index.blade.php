@@ -21,7 +21,7 @@
                                     <th>@include('inc.filter', ['field' => 'id',   'type' => 'number'])</th>
                                     <th>@include('inc.filter', ['field' => 'title'                   ])</th>
                                     <th style="width:80px">@include('inc.filter', ['field' => 'live', 'type' => 'select'])</th>
-                                    <th></th>
+                                    <th style="width:80px">@include('inc.filter', ['field' => 'category_id', 'type' => 'select', 'data' => \App\Category::getDataForDropdownlist()])</th>
                                     <th></th>
                                     <th>
                                         @include('inc.filter-buttons', ['class' => $class])

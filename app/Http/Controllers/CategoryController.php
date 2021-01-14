@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Dish;
 use App\Http\Requests\CategoryFormRequest;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -49,7 +50,6 @@ class CategoryController extends Controller {
      * @return Response
      */
     public function store( CategoryFormRequest $request ) {
-        dd( $request );
         $category = Category::createCategory( $request );
         return redirect( route( 'admin.category.index', [ 'category' => $category ] ) );
     }
@@ -91,6 +91,7 @@ class CategoryController extends Controller {
      *
      * @param Category $category
      * @return Response
+     * @throws Exception
      */
     public function destroy( Category $category ) {
         $category->delete();

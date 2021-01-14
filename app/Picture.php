@@ -56,6 +56,10 @@ class Picture extends Model {
         return $this->morphedByMany( Event::class, 'picturable' );
     }
 
+    public function pages() {
+        return $this->morphedByMany( Page::class, 'picturable' );
+    }
+
     /* === CRUD === */
 
     public static function createPicture( $request ) {
@@ -64,7 +68,8 @@ class Picture extends Model {
 
         if( $request->has( 'filename' ) ) {
             $image = $request->file( 'filename' );
-            $filename = Str::slug( $request->input( 'title' ) ) . '_' . time() . '.' . $image->getClientOriginalExtension();
+            $filename = Str::slug( $request->input( 'title' ) ) . '.' . $image->getClientOriginalExtension();
+//            $filename = Str::slug( $request->input( 'title' ) ) . '_' . time() . '.' . $image->getClientOriginalExtension();
             $picture->uploadOne( $image, $filename );
             $picture->filename = $filename;
         }
@@ -72,6 +77,7 @@ class Picture extends Model {
         $picture->save();
         $picture->dishes()->sync( $request->get( 'dishes' ) );
         $picture->events()->sync( $request->get( 'events' ) );
+        $picture->pages()->sync( $request->get( 'pages' ) );
 
         return $picture;
     }
@@ -94,6 +100,7 @@ class Picture extends Model {
         $this->save();
         $this->dishes()->sync( $request->get( 'dishes' ) );
         $this->events()->sync( $request->get( 'events' ) );
+        $this->pages()->sync( $request->get( 'pages' ) );
     }
 
     public function deletePicture() {

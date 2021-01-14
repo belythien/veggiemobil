@@ -9,7 +9,6 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Slug</th>
                                 <th>Text</th>
                                 <th>Datum</th>
                                 <th>Live</th>
@@ -21,12 +20,16 @@
                             @foreach($models as $model)
                                 <tr>
                                     <td>{{$model->id}}</td>
-                                    <td>{{$model->slug}}</td>
                                     <td>
                                         <a class="font-weight-bold"
                                            href="{{route('admin.'. $class . '.edit', [$class => $model])}}"
                                         >{{$model->title}}</a>
-                                        <div>{!! $model->text !!}</div>
+                                        <div>{!! $model->getTextPreview(150) !!}</div>
+                                        @if(!empty($model->external_url))
+                                            <div class="text-sm">
+                                                <a class="text-secondary" href="{{$model->external_url}}" target="_blank">@include('inc.icon', ['icon' => 'external']) {{$model->external_url}}</a>
+                                            </div>
+                                        @endif
                                     </td>
                                     <td>
                                         {{$model->date}}

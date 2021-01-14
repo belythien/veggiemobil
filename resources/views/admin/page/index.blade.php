@@ -12,7 +12,6 @@
                                 <th>Slug</th>
                                 <th>Inhalt</th>
                                 <th class="text-center">Live</th>
-                                <th>Gerichte</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -26,17 +25,17 @@
                                            href="{{route('admin.' . $class . '.edit', [$class => $model])}}"
                                         >{{$model->title}}</a>
                                         <div>{!! $model->getTextPreview(150) !!}</div>
+                                        @if(!empty($model->external_url))
+                                            <div class="text-sm">
+                                                <a class="text-secondary" href="{{$model->external_url}}" target="_blank">@include('inc.icon', ['icon' => 'external']) {{$model->external_url}}</a>
+                                            </div>
+                                        @endif
                                     </td>
                                     <td class="text-center">
                                         @include('inc.boolean', [
                                                         'value' => $model->live,
                                                         'icPostTo' => route('admin.page.toggle-live', ['page' => $model])
                                         ])
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled" id="page_dishes_{{$model->id}}">
-                                            @include('admin.page.dishes', ['page' => $model])
-                                        </ul>
                                     </td>
                                     <td class="text-right">
                                         @include('admin.index-buttons', ['model' => $model])

@@ -9,21 +9,15 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $this->call( UserSeeder::class );
-        $this->call( PageSeeder::class );
-        $this->call( MenuSeeder::class );
-        $this->call( DishSeeder::class );
-        $this->call( CategorySeeder::class );
-        $this->call( DipSeeder::class );
-        $this->call( AllergenSeeder::class );
-        $this->call( AllergenDishSeeder::class );
-        $this->call( AllergenDipSeeder::class );
-        $this->call( DipDishSeeder::class );
-        $this->call( EventSeeder::class );
-        $this->call( PictureSeeder::class );
-
-        $this->call( MenuPageSeeder::class );
-        $this->call( PicturableSeeder::class );
-        $this->call( CategorizableSeeder::class );
+        $this->call( _00_UserSeeder::class );
+        $this->call( _01_MenuSeeder::class );
+        $this->call( _02_PageSeeder::class );
+        $this->call( _03_CategorySeeder::class );
+        $this->call( _04_AllergenSeeder::class );
+        $this->call( _05_DipSeeder::class );
+        $this->call( _06_DishSeeder::class );
+        $this->call( _07_EventSeeder::class );
+        $this->call( _08_PictureSeeder::class );
+        $this->call( _09_PicturableSeeder::class );
     }
 }

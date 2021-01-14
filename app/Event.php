@@ -36,6 +36,21 @@ class Event extends Model {
         return Event::live()->where( 'date_from', '>', date( 'Y-m-d' ) )->limit( $limit )->orderby( 'date_from', 'asc' )->get();
     }
 
+    public function getTextPreview( $limit ) {
+        $search = array(
+            '@<script[^>]*?>.*?</script>@si',  // Strip out javascript
+            '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+            '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments including     CDATA );
+        );
+        $plain_text = $this->text;
+        $plain_text = preg_replace( $search, ' ', $plain_text );
+        if( strlen( $plain_text ) > $limit ) {
+            $plain_text = substr( $plain_text, 0, $limit ) . '...';
+        }
+        $plain_text = nl2br( $plain_text );
+        return $plain_text;
+    }
+
     /* === SCOPE === */
 
     public function scopeLive( $query ) {

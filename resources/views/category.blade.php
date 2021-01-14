@@ -21,6 +21,8 @@
 
                 <div class="card-body">
                     <div class="mb-3">{!! $category->text !!}</div>
+
+                    @include('inc.dishes', ['dishes' => $category->dishes()->where('live', 1)->get()])
                 </div>
 
                 <div class="card-footer">

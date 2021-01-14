@@ -1,0 +1,97 @@
++--------+-----------+-------------------------------------------+-------------------------------+------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                                       | Name                          | Action                                                                 | Middleware   |
++--------+-----------+-------------------------------------------+-------------------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                         |                               | App\Http\Controllers\WelcomeController@index                           | web          |
+|        | GET|HEAD  | allergen                                  | admin.allergen.index          | App\Http\Controllers\AllergenController@index                          | web,auth     |
+|        | POST      | allergen                                  | admin.allergen.store          | App\Http\Controllers\AllergenController@store                          | web,auth     |
+|        | GET|HEAD  | allergen/create                           | admin.allergen.create         | App\Http\Controllers\AllergenController@create                         | web,auth     |
+|        | PUT|PATCH | allergen/{allergen}                       | admin.allergen.update         | App\Http\Controllers\AllergenController@update                         | web,auth     |
+|        | DELETE    | allergen/{allergen}                       | admin.allergen.destroy        | App\Http\Controllers\AllergenController@destroy                        | web,auth     |
+|        | GET|HEAD  | allergen/{allergen}/edit                  | admin.allergen.edit           | App\Http\Controllers\AllergenController@edit                           | web,auth     |
+|        | GET|HEAD  | api/user                                  |                               | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | bild/{picture}                            | picture.show                  | App\Http\Controllers\PictureController@show                            | web          |
+|        | GET|HEAD  | category                                  | admin.category.index          | App\Http\Controllers\CategoryController@index                          | web,auth     |
+|        | POST      | category                                  | admin.category.store          | App\Http\Controllers\CategoryController@store                          | web,auth     |
+|        | GET|HEAD  | category/create                           | admin.category.create         | App\Http\Controllers\CategoryController@create                         | web,auth     |
+|        | GET|HEAD  | category/{category}                       | admin.category.show           | App\Http\Controllers\CategoryController@show                           | web          |
+|        | PUT|PATCH | category/{category}                       | admin.category.update         | App\Http\Controllers\CategoryController@update                         | web,auth     |
+|        | DELETE    | category/{category}                       | admin.category.destroy        | App\Http\Controllers\CategoryController@destroy                        | web,auth     |
+|        | POST      | category/{category}/dish/{dish}/move-down | admin.category.dish-move-down | App\Http\Controllers\CategoryController@dishMoveDown                   | web,auth     |
+|        | GET|HEAD  | category/{category}/dish/{dish}/move-down | admin.category.dish-move-down | App\Http\Controllers\CategoryController@dishMoveDown                   | web,auth     |
+|        | POST      | category/{category}/dish/{dish}/move-up   | admin.category.dish-move-up   | App\Http\Controllers\CategoryController@dishMoveUp                     | web,auth     |
+|        | GET|HEAD  | category/{category}/dish/{dish}/move-up   | admin.category.dish-move-up   | App\Http\Controllers\CategoryController@dishMoveUp                     | web,auth     |
+|        | GET|HEAD  | category/{category}/edit                  | admin.category.edit           | App\Http\Controllers\CategoryController@edit                           | web,auth     |
+|        | GET|HEAD  | dashboard                                 | admin.dashboard               | App\Http\Controllers\DashboardController@index                         | web          |
+|        | GET|HEAD  | dip                                       | admin.dip.index               | App\Http\Controllers\DipController@index                               | web,auth     |
+|        | POST      | dip                                       | admin.dip.store               | App\Http\Controllers\DipController@store                               | web,auth     |
+|        | GET|HEAD  | dip/create                                | admin.dip.create              | App\Http\Controllers\DipController@create                              | web,auth     |
+|        | GET|HEAD  | dip/{dip}                                 | admin.dip.show                | App\Http\Controllers\DipController@show                                | web,auth     |
+|        | PUT|PATCH | dip/{dip}                                 | admin.dip.update              | App\Http\Controllers\DipController@update                              | web,auth     |
+|        | DELETE    | dip/{dip}                                 | admin.dip.destroy             | App\Http\Controllers\DipController@destroy                             | web,auth     |
+|        | GET|HEAD  | dip/{dip}/edit                            | admin.dip.edit                | App\Http\Controllers\DipController@edit                                | web,auth     |
+|        | GET|HEAD  | dish                                      | admin.dish.index              | App\Http\Controllers\DishController@index                              | web,auth     |
+|        | POST      | dish                                      | admin.dish.store              | App\Http\Controllers\DishController@store                              | web,auth     |
+|        | GET|HEAD  | dish/create                               | admin.dish.create             | App\Http\Controllers\DishController@create                             | web,auth     |
+|        | POST      | dish/filter                               | admin.dish.filter             | App\Http\Controllers\DishController@index                              | web,auth     |
+|        | GET|HEAD  | dish/{dish}                               | admin.dish.show               | App\Http\Controllers\DishController@show                               | web          |
+|        | PUT|PATCH | dish/{dish}                               | admin.dish.update             | App\Http\Controllers\DishController@update                             | web,auth     |
+|        | DELETE    | dish/{dish}                               | admin.dish.destroy            | App\Http\Controllers\DishController@destroy                            | web,auth     |
+|        | GET|HEAD  | dish/{dish}/edit                          | admin.dish.edit               | App\Http\Controllers\DishController@edit                               | web,auth     |
+|        | POST      | dish/{dish}/toggle-live                   | admin.dish.toggle-live        | App\Http\Controllers\DishController@toggleLive                         | web,auth     |
+|        | GET|HEAD  | event                                     | admin.event.index             | App\Http\Controllers\EventController@index                             | web,auth     |
+|        | POST      | event                                     | admin.event.store             | App\Http\Controllers\EventController@store                             | web,auth     |
+|        | GET|HEAD  | event/create                              | admin.event.create            | App\Http\Controllers\EventController@create                            | web,auth     |
+|        | GET|HEAD  | event/{event}                             | admin.event.show              | App\Http\Controllers\EventController@show                              | web          |
+|        | PUT|PATCH | event/{event}                             | admin.event.update            | App\Http\Controllers\EventController@update                            | web,auth     |
+|        | DELETE    | event/{event}                             | admin.event.destroy           | App\Http\Controllers\EventController@destroy                           | web,auth     |
+|        | GET|HEAD  | event/{event}/edit                        | admin.event.edit              | App\Http\Controllers\EventController@edit                              | web,auth     |
+|        | GET|HEAD  | event/{event}/picture/add                 | admin.event.add-pictures      | App\Http\Controllers\EventController@addPictures                       | web,auth     |
+|        | GET|HEAD  | event/{event}/picture/upload              | admin.event.upload-pictures   | App\Http\Controllers\EventController@uploadPictures                    | web,auth     |
+|        | POST      | event/{event}/picture/upload              | admin.event.upload-pictures   | App\Http\Controllers\EventController@storePictures                     | web,auth     |
+|        | DELETE    | event/{event}/picture/{picture}           | admin.event.remove-picture    | App\Http\Controllers\EventController@removePicture                     | web,auth     |
+|        | POST      | event/{event}/picture/{picture}/link      | admin.event.link-picture      | App\Http\Controllers\EventController@linkPicture                       | web,auth     |
+|        | POST      | event/{event}/picture/{picture}/unlink    | admin.event.unlink-picture    | App\Http\Controllers\EventController@unlinkPicture                     | web,auth     |
+|        | POST      | event/{event}/toggle-live                 | admin.event.toggle-live       | App\Http\Controllers\EventController@toggleLive                        | web,auth     |
+|        | GET|HEAD  | event/{slug}                              | event.display                 | App\Http\Controllers\EventController@display                           | web          |
+|        | GET|HEAD  | kategorie/{slug}                          | category.display              | App\Http\Controllers\CategoryController@display                        | web          |
+|        | GET|HEAD  | login                                     | login                         | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                                     |                               | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | logout                                    | logout                        | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | GET|HEAD  | menu                                      | admin.menu.index              | App\Http\Controllers\MenuController@index                              | web,auth     |
+|        | POST      | menu                                      | admin.menu.store              | App\Http\Controllers\MenuController@store                              | web,auth     |
+|        | GET|HEAD  | menu/create                               | admin.menu.create             | App\Http\Controllers\MenuController@create                             | web,auth     |
+|        | GET|HEAD  | menu/{menu}                               | admin.menu.show               | App\Http\Controllers\MenuController@show                               | web          |
+|        | PUT|PATCH | menu/{menu}                               | admin.menu.update             | App\Http\Controllers\MenuController@update                             | web,auth     |
+|        | DELETE    | menu/{menu}                               | admin.menu.destroy            | App\Http\Controllers\MenuController@destroy                            | web,auth     |
+|        | GET|HEAD  | menu/{menu}/edit                          | admin.menu.edit               | App\Http\Controllers\MenuController@edit                               | web,auth     |
+|        | POST      | menu/{menu}/page/{page}/move-down         | admin.menu.page-move-down     | App\Http\Controllers\MenuController@pageMoveDown                       | web,auth     |
+|        | POST      | menu/{menu}/page/{page}/move-up           | admin.menu.page-move-up       | App\Http\Controllers\MenuController@pageMoveUp                         | web,auth     |
+|        | GET|HEAD  | page                                      | admin.page.index              | App\Http\Controllers\PageController@index                              | web,auth     |
+|        | POST      | page                                      | admin.page.store              | App\Http\Controllers\PageController@store                              | web,auth     |
+|        | GET|HEAD  | page/create                               | admin.page.create             | App\Http\Controllers\PageController@create                             | web,auth     |
+|        | GET|HEAD  | page/{page}                               | admin.page.show               | App\Http\Controllers\PageController@show                               | web          |
+|        | PUT|PATCH | page/{page}                               | admin.page.update             | App\Http\Controllers\PageController@update                             | web,auth     |
+|        | DELETE    | page/{page}                               | admin.page.destroy            | App\Http\Controllers\PageController@destroy                            | web,auth     |
+|        | GET|HEAD  | page/{page}/edit                          | admin.page.edit               | App\Http\Controllers\PageController@edit                               | web,auth     |
+|        | POST      | page/{page}/toggle-live                   | admin.page.toggle-live        | App\Http\Controllers\PageController@toggleLive                         | web,auth     |
+|        | GET|HEAD  | password/confirm                          | password.confirm              | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth     |
+|        | POST      | password/confirm                          |                               | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth     |
+|        | POST      | password/email                            | password.email                | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web          |
+|        | GET|HEAD  | password/reset                            | password.request              | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web          |
+|        | POST      | password/reset                            | password.update               | App\Http\Controllers\Auth\ResetPasswordController@reset                | web          |
+|        | GET|HEAD  | password/reset/{token}                    | password.reset                | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web          |
+|        | GET|HEAD  | picture                                   | admin.picture.index           | App\Http\Controllers\PictureController@index                           | web,auth     |
+|        | POST      | picture                                   | admin.picture.store           | App\Http\Controllers\PictureController@store                           | web,auth     |
+|        | GET|HEAD  | picture/create                            | admin.picture.create          | App\Http\Controllers\PictureController@create                          | web,auth     |
+|        | POST      | picture/filter                            | admin.picture.filter          | App\Http\Controllers\PictureController@index                           | web,auth     |
+|        | GET|HEAD  | picture/{picture}                         | admin.picture.show            | App\Http\Controllers\PictureController@show                            | web          |
+|        | PUT|PATCH | picture/{picture}                         | admin.picture.update          | App\Http\Controllers\PictureController@update                          | web,auth     |
+|        | DELETE    | picture/{picture}                         | admin.picture.destroy         | App\Http\Controllers\PictureController@destroy                         | web,auth     |
+|        | GET|HEAD  | picture/{picture}/edit                    | admin.picture.edit            | App\Http\Controllers\PictureController@edit                            | web,auth     |
+|        | POST      | picture/{picture}/toggle-live             | admin.picture.toggle-live     | App\Http\Controllers\PictureController@toggleLive                      | web,auth     |
+|        | POST      | picture/{picture}/toggle-welcome          | admin.picture.toggle-welcome  | App\Http\Controllers\PictureController@toggleWelcome                   | web,auth     |
+|        | GET|HEAD  | register                                  | register                      | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | POST      | register                                  |                               | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD  | speisen/{slug}                            | dish.display                  | App\Http\Controllers\DishController@display                            | web          |
+|        | GET|HEAD  | {slug}                                    | page.display                  | App\Http\Controllers\PageController@display                            | web          |
++--------+-----------+-------------------------------------------+-------------------------------+------------------------------------------------------------------------+--------------+

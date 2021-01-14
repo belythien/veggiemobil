@@ -73,7 +73,7 @@
                 @if(isset($data))
                     <div class="row">
                         @foreach($data as $object)
-                            <div class="@if(isset($colSize)) col-{{$colSize}} @else col-lg-2 @endif">
+                            <div class="@if(isset($colSize)) col-{{$colSize}} @else col-lg-2 @endif alternating">
                                 <label>
                                     <input type="checkbox" name="{{$field}}[{{$object->id}}]" value="{{$object->id}}"
                                            @if(isset($model) && $model->$field->contains($object->id)) checked @endif

@@ -42,6 +42,14 @@ class Page extends Model {
 
     /* === RELATIONS === */
 
+    public function menus() {
+        return $this->belongsToMany( 'App\Menu' );
+    }
+
+    public function pictures() {
+        return $this->morphToMany( Picture::class, 'picturable' );
+    }
+
     /* === ATTRIBUTES === */
 
     public function getTemplateAttribute() {

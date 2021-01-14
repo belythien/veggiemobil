@@ -34,7 +34,8 @@ Route::name( 'admin.' )->group( function () {
     Route::get( 'category/{category}/dish/{dish}/move-down', 'CategoryController@dishMoveDown' )->name( 'category.dish-move-down' );
 
     Route::resource( 'dish', 'DishController' );
-    Route::post( 'dish', 'DishController@index' )->name('dish.filter');
+    Route::post( 'dish', 'DishController@index' )->name( 'dish.filter' );
+    Route::post( 'dish/store', 'DishController@store' )->name( 'dish.store' );
     Route::post( 'dish/{dish}/toggle-live', 'DishController@toggleLive' )->name( 'dish.toggle-live' );
 
     Route::resource( 'dip', 'DipController' );
@@ -57,6 +58,7 @@ Route::name( 'admin.' )->group( function () {
 
     Route::resource( 'picture', 'PictureController' );
     Route::post( 'picture', 'PictureController@index' )->name( 'picture.filter' );
+    Route::post( 'picture/store', 'PictureController@store' )->name( 'picture.store' );
     Route::post( 'picture/{picture}/toggle-live', 'PictureController@toggleLive' )->name( 'picture.toggle-live' );
     Route::post( 'picture/{picture}/toggle-welcome', 'PictureController@toggleWelcome' )->name( 'picture.toggle-welcome' );
 } );

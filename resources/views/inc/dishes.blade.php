@@ -18,7 +18,7 @@
             </div>
         @else
             <div class="row row-alternating-direction mb-4">
-                <div class="col-lg-8">
+                <div class="col-lg-8 align-self-center">
                     <div class="anchor" id="{{$dish->slug}}"></div>
                     <h2 class="text-success font-weight-bold pt-3">
                         <a href="{{route('dish.display', ['slug' => $dish->slug])}}">{{$dish->title}}</a>
@@ -31,9 +31,9 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-lg-4">
                     @foreach($dish->pictures as $picture)
-                        @include('inc.picture', ['image' => $picture])
+                        <a href="{{route('dish.display', ['slug' => $dish->slug])}}">@include('inc.picture', ['image' => $picture])</a>
                     @endforeach
                 </div>
             </div>

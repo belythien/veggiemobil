@@ -31,6 +31,7 @@ class DishController extends Controller {
         $slug = $request->has( 'slug' ) ? $request->get( 'slug' ) : null;
         $title = $request->has( 'title' ) ? $request->get( 'title' ) : null;
         $live = $request->has( 'live' ) ? $request->get( 'live' ) : null;
+        $category_id = $request->has( 'category_id' ) ? $request->get( 'category_id' ) : null;
 
         $dishes = Dish::when( in_array( $orderby, [ 'id', 'slug', 'title', 'live' ] ), function ( $query ) use ( $orderby, $dir ) {
             return $query->orderby( 'dishes.' . $orderby, $dir );
@@ -44,6 +45,8 @@ class DishController extends Controller {
                 ->orderby( 'categories.title', $dir )
                 ->orderby( 'dishes.title', $dir );
 
+            /* === FILTER ========================================= */
+
         } )->when( !empty( $id ), function ( $query ) use ( $id ) {
             return $query->where( 'dishes.id', $id );
 
@@ -53,6 +56,12 @@ class DishController extends Controller {
         } )->when( !empty( $title ), function ( $query ) use ( $title ) {
             return $query->where( 'dishes.title', 'LIKE', '%' . $title . '%' );
 
+        } )->when( !empty( $category_id ) && $category_id != 'any', function ( $query ) use ( $category_id ) {
+            return $query->join( 'categorizables', function ( $join ) {
+                $join->on( 'categorizables.categorizable_id', '=', 'dishes.id' )
+                    ->where( 'categorizables.categorizable_type', 'App\Dish' );
+            } )->where( 'categorizables.category_id', $category_id );
+
         } )->when( !empty( $live ) && $live != 'any', function ( $query ) use ( $live ) {
             return $query->when( $live == 'yes', function ( $query ) {
                 return $query->where( 'dishes.live', 1 );
@@ -60,19 +69,20 @@ class DishController extends Controller {
                 return $query->where( 'dishes.live', 0 );
             } );
 
-        } )
-            ->select( 'dishes.*' )
-            ->paginate( 20 );
+        } )->select( 'dishes.*' )
+            ->paginate( 20 )
+            ->appends( $request->input() );
 
         return view( 'admin.dish.index', [
             'models'  => $dishes,
             'class'   => 'dish',
             'orderby' => $orderby,
             'filter'  => [
-                'id'    => $id,
-                'slug'  => $slug,
-                'title' => $title,
-                'live'  => $live,
+                'id'          => $id,
+                'slug'        => $slug,
+                'title'       => $title,
+                'live'        => $live,
+                'category_id' => $category_id
             ],
             'dir'     => $dir
         ] );

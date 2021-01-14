@@ -45,16 +45,22 @@
                                     </td>
                                     <td>
                                         <ul class="list-unstyled">
+                                            @foreach($model->pages as $page)
+                                                <li>
+                                                    @include('inc.icon', ['icon' => 'page'])
+                                                    <a class="text-secondary" href="{{route('page.display', ['slug' => $page->slug])}}">{{$page->title}}</a>
+                                                </li>
+                                            @endforeach
                                             @foreach($model->dishes as $dish)
                                                 <li>
                                                     @include('inc.icon', ['icon' => 'dish'])
-                                                    {{$dish->title}}
+                                                    <a class="text-secondary" href="{{route('dish.display', ['slug' => $dish->slug])}}">{{$dish->title}}</a>
                                                 </li>
                                             @endforeach
                                             @foreach($model->events as $event)
                                                 <li>
                                                     @include('inc.icon', ['icon' => 'event'])
-                                                    <a href="{{route('event.display', ['slug' => $event->slug])}}">{{$event->title}}</a>
+                                                    <a class="text-secondary" href="{{route('event.display', ['slug' => $event->slug])}}">{{$event->title}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>

@@ -22,5 +22,6 @@
     @include('admin.form.col', ['field' => 'welcome',      'size' => 8,  'type' => 'radio' ])
 @endif
 
-@include('admin.form.col', ['field' => 'dishes',       'size' => 12, 'type' => 'checkbox', 'data' => \App\Dish::all(), 'colSize' => 'lg-4' ])
-@include('admin.form.col', ['field' => 'events',       'size' => 12, 'type' => 'checkbox', 'data' => \App\Event::all(), 'colSize' => 'lg-4' ])
+@include('admin.form.col', ['field' => 'dishes', 'size' => 12, 'type' => 'checkbox', 'data' => \App\Dish::all(),  'colSize' => 'lg-4' ])
+@include('admin.form.col', ['field' => 'events', 'size' => 12, 'type' => 'checkbox', 'data' => \App\Event::all(), 'colSize' => 'lg-4' ])
+@include('admin.form.col', ['field' => 'pages',  'size' => 12, 'type' => 'checkbox', 'data' => \App\Page::all(),  'colSize' => 'lg-4' ])

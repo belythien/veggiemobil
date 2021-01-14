@@ -82,7 +82,7 @@
                @endif
                title="{{$picture->title}}"
                class="d-block welcome-image wi{{$key}}"
-               style="background-image:url('/img/{{$picture->filename}}');"
+               style="background-image:url('/img/thumbnail/{{$picture->filename}}');"
             ></a>
         @endforeach
 

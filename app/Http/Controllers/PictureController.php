@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PictureFormRequest;
 use App\Picture;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use function response;
 
 class PictureController extends Controller {
 
@@ -19,7 +22,7 @@ class PictureController extends Controller {
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index( Request $request ) {
         $orderby = $request->has( 'orderby' ) ? $request->get( 'orderby' ) : 'title';
@@ -57,10 +60,12 @@ class PictureController extends Controller {
                 return $query->where( 'pictures.welcome', 0 );
             } );
 
-        } )->orderby( 'pictures.created_at', 'desc' )
-            ->orderby( 'pictures.title' )
+        } )->when( in_array( $orderby, [ 'id', 'title', 'created_at' ] ), function ( $query ) use ( $orderby, $dir ) {
+            return $query->orderby( 'pictures.' . $orderby, $dir );
+        } )
             ->select( 'pictures.*' )
-            ->paginate( 20 );
+            ->paginate( 20 )
+            ->appends( $request->input() );
 
         return view( 'admin.picture.index', [
             'models'  => $pictures,
@@ -80,7 +85,7 @@ class PictureController extends Controller {
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create() {
         return view( 'admin.create', [ 'class' => 'picture' ] );
@@ -89,8 +94,8 @@ class PictureController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store( PictureFormRequest $request ) {
         $picture = Picture::createPicture( $request );
@@ -100,8 +105,8 @@ class PictureController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param \App\Picture $picture
-     * @return \Illuminate\Http\Response
+     * @param Picture $picture
+     * @return Response
      */
     public function show( Picture $picture ) {
         return view( 'picture', [ 'picture' => $picture, 'class' => 'picture' ] );
@@ -110,8 +115,8 @@ class PictureController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Picture $picture
-     * @return \Illuminate\Http\Response
+     * @param Picture $picture
+     * @return Response
      */
     public function edit( Picture $picture ) {
         return view( 'admin.edit', [ 'model' => $picture, 'class' => 'picture' ] );
@@ -120,9 +125,9 @@ class PictureController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Picture $picture
-     * @return \Illuminate\Http\Response
+     * @param PictureFormRequest $request
+     * @param Picture $picture
+     * @return Response
      */
     public function update( PictureFormRequest $request, Picture $picture ) {
         $picture->updatePicture( $request );
@@ -132,13 +137,14 @@ class PictureController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Picture $picture
-     * @return \Illuminate\Http\Response
+     * @param Picture $picture
+     * @return Response
+     * @throws Exception
      */
     public function destroy( Picture $picture ) {
         $picture->delete();
         $picture->deletePicture();
-        return \response( "" )->header( 'X-IC-Remove', '1s' );
+        return response( "" )->header( 'X-IC-Remove', '1s' );
     }
 
     public function toggleLive( Picture $picture ) {

@@ -9,12 +9,16 @@ class Category extends Model {
 
     use Sluggable;
 
-    protected $fillable = [ 'title', 'text', 'live' ];
+    protected $fillable = [ 'title', 'text', 'live', 'sort' ];
 
     /* === GUI === */
 
     public function getGuiNameAttribute() {
         return $this->title;
+    }
+
+    public static function getDataForDropdownlist() {
+        return Category::orderby( 'title' )->get()->pluck( 'title', 'id' );
     }
 
     /* === RELATIONS === */
@@ -30,6 +34,7 @@ class Category extends Model {
         $category->fill( $request->input() );
         $category->save();
         $category->dishes()->sync( $request->get( 'dishes' ) );
+        self::updateCategorySort();
         return $category;
     }
 
@@ -37,6 +42,7 @@ class Category extends Model {
         $this->fill( $request->input() );
         $this->save();
         $this->dishes()->sync( $request->get( 'dishes' ) );
+        self::updateCategorySort();
     }
 
     public function dishMoveUp( Dish $dish ) {
@@ -56,6 +62,15 @@ class Category extends Model {
         foreach( $this->dishes as $dish ) {
             $this->dishes()->updateExistingPivot( $dish, [ 'sort' => $cnt ], false );
             $cnt = $cnt + 10;
+        }
+    }
+
+    public static function updateCategorySort() {
+        $cnt = 10;
+        foreach( Category::orderby( 'sort' )->get() as $category ) {
+            $category->sort = $cnt;
+            $cnt = $cnt + 10;
+            $category->save();
         }
     }
 
