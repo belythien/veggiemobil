@@ -2,160 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b73350f-c126-47e8-8d39-55030f9e2609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/veggiemobil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/template/events.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/template/page.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/Pages/HomePage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/Pages/Page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/admin/AdminIndexTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/admin/LoginTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/console/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/page/visitBySlugTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Browser/screenshots/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/DuskTestCase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/veggiemobil.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/veggiemobil.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Dish.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dish.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DishController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DishController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/_00_UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/_00_UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/_02_PageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/_02_PageSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/veggiemobil.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/veggiemobil.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/aschersleben1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/aschersleben2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/aschersleben3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/aschersleben4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/aschersleben5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/aschersleben6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/baklava.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/caprese.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/champion-burger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/christmas-champion-burger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt10-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt11-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt12-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt13-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt16-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt17-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt18-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt19-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt21-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt23-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt24-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt26-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt27-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt28-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt30-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt31-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt32-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt4-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt5-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt6-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/darmstadt8-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/erdbeer-prosecco-slush.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/essen1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/essen3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/essen4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/falafel-wrap.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/flammkuchen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/fruchtiger-pfirsich-reis-salat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/gardelegen2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/gardelegen3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/gardelegen5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/gardelegen6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/gardelegen7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/great-barrier-run-goettingen-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/green-world-tour-heidelberg-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hamburg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hamburg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hamburg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hannover1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hannover2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hannover3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hannover4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hannover5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/hannover6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/karotte-kichererbsen-hummus.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/karotten-mango-suppe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/kartoffelecken-mit-sourcreme-und-tomate-chili-dip.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/klassischer-couscous-salat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/kraeuterseitling-auf-baerlauchcreme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/kuerbis-lasagne.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/magdeburg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/magdeburg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/magdeburg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/magdeburg4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/magdeburg5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/magdeburg6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/mango-linsen-curry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/mannheim1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/mannheim2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/mannheim3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/mannheim4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/mannheim5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/marokkanischer-gemueseeintopf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/oberhausen1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/oberhausen2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/oberhausen3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/oberhausen4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/oberhausen5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/oestrichwinkel1-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/pastinaken-rote-linsen-suppe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/pflaumen-mohn-kuchen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/power-burger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/power-wrap.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/pulled-jack-teller.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/pullmancityharz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/quedlinburg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/rock-den-acker-open-air-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/rote-beete-tartar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/salat-rumpelstilzchen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/scharfe-schwarze-bohnensuppe-mit-avocado-und-sour-creme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/sportaktiv-die-sport-und-outdoormesse-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/suesskartoffel-pommes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/sweet-chili-cheeze-fries.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/trebur-open-air-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/vegan-streetday-stuttgart-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/veggiemobil.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/veggieworld-duesseldorf-2021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/weihnachtstraum.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/weisse-lasagne-mit-butternuss-kuerbis-und-spinat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/wiesbaden1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/wiesbaden10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/wiesbaden2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/wiesbaden3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/wiesbaden4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/wiesbaden6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/winterrolls.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/zwetschgen-crumble-mit-vanilleeis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/zwetschgen-crumble.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/thumbnail/zwetschgen-tomaten-bruschetta.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/de/field.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/de/field.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/404.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/dishes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/dishes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dish/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dish/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/event/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/event/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/form/col.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/form/col.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/page/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/page/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/sort-link.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/sort-link.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/speisen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template/speisen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -380,7 +230,7 @@
       <workItem from="1610386671778" duration="1148000" />
       <workItem from="1610642213422" duration="15478000" />
       <workItem from="1610733647048" duration="5625000" />
-      <workItem from="1610786277678" duration="6141000" />
+      <workItem from="1610786277678" duration="9573000" />
     </task>
     <servers />
   </component>
@@ -473,10 +323,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608558693176" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610803863266">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610810734961">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="415" y="147" width="672" height="444" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1610790229403" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610803863266" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610810734961" />
   </component>
 </project>
