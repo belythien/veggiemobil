@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Dish;
 use App\Http\Requests\DishFormRequest;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
+use function response;
 
 class DishController extends Controller {
 
@@ -21,9 +25,10 @@ class DishController extends Controller {
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index( Request $request ) {
+
         $orderby = $request->has( 'orderby' ) ? $request->get( 'orderby' ) : 'title';
         $dir = $request->has( 'dir' ) ? $request->get( 'dir' ) : 'asc';
 
@@ -91,7 +96,7 @@ class DishController extends Controller {
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create() {
         return view( 'admin.create', [ 'class' => 'dish' ] );
@@ -100,8 +105,8 @@ class DishController extends Controller {
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store( DishFormRequest $request ) {
         $dish = Dish::createDish( $request );
@@ -111,8 +116,8 @@ class DishController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param \App\Dish $dish
-     * @return \Illuminate\Http\Response
+     * @param Dish $dish
+     * @return Response
      */
     public function show( Dish $dish ) {
 //        return view( 'dish', [ 'dish' => $dish, 'class' => 'dish' ] );
@@ -122,8 +127,8 @@ class DishController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Dish $dish
-     * @return \Illuminate\Http\Response
+     * @param Dish $dish
+     * @return Response
      */
     public function edit( Dish $dish ) {
         return view( 'admin.edit', [ 'model' => $dish, 'class' => 'dish' ] );
@@ -132,9 +137,9 @@ class DishController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Dish $dish
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Dish $dish
+     * @return Response
      */
     public function update( DishFormRequest $request, Dish $dish ) {
         $dish->updateDish( $request );
@@ -144,14 +149,18 @@ class DishController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Dish $dish
-     * @return \Illuminate\Http\Response
+     * @param Dish $dish
+     * @return Response
      */
     public function destroy( Dish $dish ) {
         $dish->delete();
-        return \response( "" )->header( 'X-IC-Remove', '1s' );
+        return response( "" )->header( 'X-IC-Remove', '1s' );
     }
 
+    /**
+     * @param $slug
+     * @return Application|Factory|View
+     */
     public function display( $slug ) {
         $dish = Dish::where( 'slug', $slug )->first();
         if( !empty( $dish ) ) {
@@ -160,6 +169,10 @@ class DishController extends Controller {
         return view( '404' );
     }
 
+    /**
+     * @param Dish $dish
+     * @return Application|Factory|View
+     */
     public function toggleLive( Dish $dish ) {
         $dish->live = !$dish->live;
         $dish->save();

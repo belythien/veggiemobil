@@ -27,6 +27,7 @@ body {
 
 h2 {
     border-bottom: 2px solid $green;
+    margin: 1em 0;
 }
 
 #bg_logo {
@@ -319,4 +320,8 @@ tr.ic-removing td {
 
 .filter {
     background-color: lighten($green, 25%);
+}
+
+.scrollbox {
+    overflow-y: scroll;
 }

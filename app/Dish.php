@@ -11,12 +11,15 @@ class Dish extends Model {
     use Sluggable;
 
     protected $fillable = [ 'title', 'text', 'live' ];
-    protected $dates    = [ 'publication', 'expiration' ];
 
     /* === GUI === */
 
     public function getGuiNameAttribute() {
         return $this->title;
+    }
+
+    public static function getDataForDropdownlist() {
+        return self::orderby( 'title' )->get()->pluck( 'title', 'id' );
     }
 
     /* === RELATIONS === */

@@ -10,9 +10,15 @@ class _00_UserSeeder extends Seeder {
      */
     public function run() {
         DB::table( 'users' )->insert( [
+            'name'     => 'Birgit Jung',
+            'email'    => 'info@veggiemobil.com',
+            'password' => Hash::make( '$w33t-$AU3rkrAUt-bUrg3r' ),
+        ]);
+
+        DB::table( 'users' )->insert( [
             'name'     => 'Sebastian Höwer',
             'email'    => 's.hoewer@gmail.com',
-            'password' => Hash::make( '123456789' ),
-        ] );
+            'password' => Hash::make( '$w33t-$AU3rkrAUt-bUrg3r' ),
+        ]);
     }
 }

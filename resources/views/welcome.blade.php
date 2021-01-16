@@ -6,6 +6,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
@@ -82,7 +84,7 @@
                @endif
                title="{{$picture->title}}"
                class="d-block welcome-image wi{{$key}}"
-               style="background-image:url('/img/thumbnail/{{$picture->filename}}');"
+               style="background-image:url('/img/{{$picture->filename}}');"
             ></a>
         @endforeach
 

@@ -11,8 +11,8 @@ class Event extends Model {
 
     use Sluggable;
 
-    protected $fillable = [ 'title', 'text', 'live', 'date_from', 'date_to', 'publication', 'expiration', 'external_url' ];
-    protected $dates    = [ 'date_from', 'date_to', 'publication', 'expiration' ];
+    protected $fillable = [ 'title', 'text', 'live', 'date_from', 'date_to', 'external_url' ];
+    protected $dates    = [ 'date_from', 'date_to' ];
 
     /* === GUI === */
 

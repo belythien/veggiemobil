@@ -54,7 +54,7 @@ class PageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Page $page ) {
-        return redirect( route( 'page.display', [ 'slug' => $page->slug, 'class' => 'page' ] ) );
+        return redirect( route( 'page.display', [ 'slug' => $page->slug ] ) );
     }
 
     /**
@@ -93,6 +93,7 @@ class PageController extends Controller {
     public function display( $slug ) {
         $page = Page::where( 'slug', $slug )->first();
         if( !empty( $page ) ) {
+
             if( !empty( $page->external_url ) ) {
                 return redirect( url( $page->external_url ) );
             }
@@ -100,10 +101,10 @@ class PageController extends Controller {
             if( $page->slug == 'events' ) {
                 $future_events = Event::live()->where( 'date_from', '>=', date( 'Y-m-d' ) )->orderby( 'date_from', 'asc' )->get();
                 $past_events = Event::live()->where( 'date_from', '<', date( 'Y-m-d' ) )->orderby( 'date_from', 'desc' )->get();
-                return view( $page->template, [ 'page' => $page, 'future_events' => $future_events, 'past_events' => $past_events ] );
+                return view( 'template.' . $page->template, [ 'page' => $page, 'future_events' => $future_events, 'past_events' => $past_events ] );
             }
 
-            return view( $page->template, [ 'page' => $page ] );
+            return view( 'template.' . $page->template, [ 'page' => $page ] );
         }
         return view( '404' );
     }

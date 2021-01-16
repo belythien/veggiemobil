@@ -14,14 +14,10 @@
                     </div>
                     <div class="col-lg-6 text-right">
                         <!-- Authentication Links -->
-                        @guest
-                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                            @endif
-                        @else
+                        @auth
                             <a href="{{route('admin.dashboard')}}">Dashboard</a>
                             <a href="{{ route('logout') }}"
+                               id="logout"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                             >
                                 {{ __('Logout') }}
@@ -31,7 +27,7 @@
                             >
                                 @csrf
                             </form>
-                        @endguest
+                        @endauth
                     </div>
                 </div>
             </div>

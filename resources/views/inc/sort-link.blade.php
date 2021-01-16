@@ -9,4 +9,6 @@
     @else
         <a href="{{route($route, ['orderby' => $field, 'dir' => $dir])}}">{{__('field.' . $field)}}</a>
     @endif
+@elseif(isset($field))
+    {{__('field.' . $field)}}
 @endif

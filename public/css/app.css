@@ -20,6 +20,7 @@ body a:hover {
 
 h2 {
   border-bottom: 2px solid #66B331;
+  margin: 1em 0;
 }
 
 #bg_logo {
@@ -74,7 +75,7 @@ div.shadow,
 }
 
 .card .card-body.bg-veggiemobil {
-  background: url(/images/veggiemobil.jpg?76a3a56428b0ed469d5d1d59b96f1cc4) bottom center no-repeat;
+  background: url(/images/veggiemobil.jpg?9f0712f86a7bb2dd2993f66e6cf55edd) bottom center no-repeat;
   background-size: contain;
   padding-bottom: 540px;
 }
@@ -309,6 +310,10 @@ tr.ic-removing td {
 
 .filter {
   background-color: #aade86;
+}
+
+.scrollbox {
+  overflow-y: scroll;
 }
 
 /*!

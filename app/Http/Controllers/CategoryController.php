@@ -30,8 +30,54 @@ class CategoryController extends Controller {
      */
     public function index( Request $request ) {
         $orderby = $request->has( 'orderby' ) ? $request->get( 'orderby' ) : 'sort';
-        $categories = Category::orderby( 'categories.' . $orderby )->paginate( 20 );
-        return view( 'admin.category.index', [ 'models' => $categories, 'class' => 'category' ] );
+        $dir = $request->has( 'dir' ) ? $request->get( 'dir' ) : 'asc';
+
+        $id = $request->has( 'id' ) ? $request->get( 'id' ) : null;
+        $title = $request->has( 'title' ) ? $request->get( 'title' ) : null;
+        $sort = $request->has( 'slug' ) ? $request->get( 'sort' ) : null;
+        $live = $request->has( 'live' ) ? $request->get( 'live' ) : null;
+        $dish_id = $request->has( 'dish_id' ) ? $request->get( 'dish_id' ) : null;
+
+        $categories = Category::when( in_array( $orderby, [ 'id', 'sort', 'title', 'live' ] ), function ( $query ) use ( $orderby, $dir ) {
+            return $query->orderby( 'categories.' . $orderby, $dir );
+
+            /* === FILTER ========================================= */
+
+        } )->when( !empty( $id ), function ( $query ) use ( $id ) {
+            return $query->where( 'categories.id', $id );
+
+        } )->when( !empty( $title ), function ( $query ) use ( $title ) {
+            return $query->where( 'categories.title', 'LIKE', '%' . $title . '%' );
+
+        } )->when( !empty( $dish_id ) && $dish_id != 'any', function ( $query ) use ( $dish_id ) {
+            return $query->join( 'categorizables', function ( $join ) {
+                $join->on( 'categorizables.category_id', '=', 'categories.id' )
+                    ->where( 'categorizables.categorizable_type', 'App\Dish' );
+            } )->where( 'categorizables.categorizable_id', $dish_id );
+
+        } )->when( !empty( $live ) && $live != 'any', function ( $query ) use ( $live ) {
+            return $query->when( $live == 'yes', function ( $query ) {
+                return $query->where( 'categories.live', 1 );
+            } )->when( $live == 'no', function ( $query ) {
+                return $query->where( 'categories.live', 0 );
+            } );
+
+        } )->select( 'categories.*' )
+            ->paginate( 20 )
+            ->appends( $request->input() );
+
+        return view( 'admin.category.index', [
+            'models'  => $categories,
+            'class'   => 'category',
+            'orderby' => $orderby,
+            'filter'  => [
+                'id'      => $id,
+                'title'   => $title,
+                'live'    => $live,
+                'dish_id' => $dish_id
+            ],
+            'dir'     => $dir
+        ] );
     }
 
     /**
@@ -124,5 +170,18 @@ class CategoryController extends Controller {
     public function dishMoveDown( Category $category, Dish $dish ) {
         $category->dishMoveDown( $dish );
         return view( 'admin.category.dishes', [ 'category' => $category ] );
+    }
+
+    /**
+     * @param Category $category
+     * @return Application|Factory|View
+     */
+    public function toggleLive( Category $category ) {
+        $category->live = !$category->live;
+        $category->save();
+        return view( 'inc.boolean', [
+            'value'    => $category->live,
+            'icPostTo' => route( 'admin.category.toggle-live', [ 'category' => $category ] )
+        ] );
     }
 }

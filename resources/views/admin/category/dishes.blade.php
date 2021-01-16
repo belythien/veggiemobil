@@ -17,7 +17,7 @@
                         @include('inc.icon', ['icon' => 'arrow-up'])
                     </button>
                 </div>
-                {{$dish->title}}
+                <a href="{{route('admin.dish.edit', ['dish' => $dish])}}" class="text-secondary text-sm">{{$dish->title}}</a>
             </li>
         @endforeach
     </form>

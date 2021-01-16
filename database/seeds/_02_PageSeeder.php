@@ -13,24 +13,27 @@ class _02_PageSeeder extends Seeder {
 
         $data = [
             [
-                'title' => 'Über uns',
-                'text'  => '<p>Unser veggiemobil Foodtruck zeichnet sich durch seine abwechslungsreiche und wechselnde, vegane Speisekarte aus. Alle Speisen werden täglich frisch selbst gekocht. Hierbei verwenden wir nur beste Zutaten.<br>
+                'title'    => 'Über uns',
+                'text'     => '<p>Unser veggiemobil Foodtruck zeichnet sich durch seine abwechslungsreiche und wechselnde, vegane Speisekarte aus. Alle Speisen werden täglich frisch selbst gekocht. Hierbei verwenden wir nur beste Zutaten.<br>
                           Die Zusammensetzung unserer Gerichte entwickeln wir ständig neu und selbst. Keine Fertig-Patties, keine Fertig-Soßen, keine Fertig-Dips! Bei unserem Champion-Burger zum Beispiel werden unter anderem frische Champignons, Walnüsse, Kräuter zum Bratling verarbeitet.</p>
                           <p>Der veggiemobil Foodtruck vereint gute vegane Hausmannskost, moderne arabische und europäische Küche.</p>',
-                'menus' => [ 1, 2 ]
+                'menus'    => [ 1, 2 ],
+                'template' => 'page'
             ], [
                 'title'    => 'Speisen',
                 'template' => 'speisen',
                 'text'     => '<p>Uns zeichnet ein vielfältiges variierendes Angebot aus, welches wir ständig durch neue eigene Kreationen erweitern.</p><p>Für Anregungen und Wünsche sind wir immer gerne offen.</p>',
                 'menus'    => [ 1, 2 ]
             ], [
-                'title' => 'Events',
-                'text'  => '<p>Hier finden Sie Bilder zu einigen Highlights unser Truck-Touren.</p><p>Buchen auch Sie uns für Ihr Event!</p>',
-                'menus' => [ 1, 2 ]
+                'title'    => 'Events',
+                'text'     => '<p>Hier finden Sie Bilder zu einigen Highlights unser Truck-Touren.</p><p>Buchen auch Sie uns für Ihr Event!</p>',
+                'menus'    => [ 1, 2 ],
+                'template' => 'events'
             ], [
-                'title' => ' Kontakt',
-                'text'  => '<p><a href="mailto:info@veggiemobil.com">info@veggiemobil.com</a><br />mobil 0160 7744836<br />tel 06082 931144<br /><br />Birgit Jung<br />Vordergasse 10<br />65529 Waldems</p>',
-                'menus' => [ 2 ]
+                'title'    => 'Kontakt',
+                'text'     => '<p><a href="mailto:info@veggiemobil.com">info@veggiemobil.com</a><br />mobil 0160 7744836<br />tel 06082 931144<br /><br />Birgit Jung<br />Vordergasse 10<br />65529 Waldems</p>',
+                'menus'    => [ 2 ],
+                'template' => 'page'
             ], [
                 'title'        => 'Facebook',
                 'text'         => '',
@@ -49,9 +52,8 @@ class _02_PageSeeder extends Seeder {
                             Vordergasse 10<br>
                             65529 Waldems<br>
                             <h3>Kontakt:</h3>
-                            <p>E-Mail: <a href="mailto:veggiemobil@yahoo.de">veggiemobil@yahoo.de</a></p>
-                            <hr class="strong-hr">
-                            <h2>Haftungsausschluss</h2>
+                            <p>E-Mail: <a href="mailto:info@veggiemobil.com">info@veggiemobil.com</a></p>
+                            <h2 class="mb-3">Haftungsausschluss</h2>
                             <h3>Haftung für Inhalte</h3>
                             <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
                             <h3>Haftung für Links</h3>
@@ -114,7 +116,7 @@ class _02_PageSeeder extends Seeder {
             65529 Waldems<br>
             Deutschland<br>
             Tel.: 06082 931144<br>
-            E-Mail: veggiemobil@yahoo.de</p>
+            E-Mail: info@veggiemobil.com</p>
             <p>Website: veggiemobil.com</p>
             <h4>3. Cookies</h4>
             <p>Die Internetseite des Veggiemobils verwendet Cookies. Cookies sind Textdateien, welche über einen Internetbrowser auf einem Computersystem abgelegt und gespeichert werden.</p>

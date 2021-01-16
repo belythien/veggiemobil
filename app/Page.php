@@ -10,8 +10,7 @@ class Page extends Model {
 
     use Sluggable;
 
-    protected $fillable = [ 'slug', 'title', 'text', 'live', 'publication', 'expiration' ];
-    protected $dates    = [ 'publication', 'expiration' ];
+    protected $fillable = [ 'slug', 'title', 'text', 'live' ];
 
     /* === GUI === */
 
@@ -54,7 +53,7 @@ class Page extends Model {
 
     public function getTemplateAttribute() {
         if( !empty( $this->attributes[ 'template' ] ) && View::exists( 'template.' . $this->attributes[ 'template' ] ) ) {
-            return 'template.' . $this->attributes[ 'template' ];
+            return $this->attributes[ 'template' ];
         }
         return 'page';
     }

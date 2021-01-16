@@ -13,7 +13,7 @@
 
 Route::get( '/', 'WelcomeController@index' );
 
-Auth::routes();
+Auth::routes( [ 'register' => false ] );
 
 #//Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
@@ -28,10 +28,11 @@ Route::name( 'admin.' )->group( function () {
     Route::resource( 'allergen', 'AllergenController' )->except( [ 'show' ] );
 
     Route::resource( 'category', 'CategoryController' );
+    Route::post( 'category', 'CategoryController@index' )->name( 'category.filter' );
+    Route::post( 'category/store', 'CategoryController@store' )->name( 'category.store' );
     Route::post( 'category/{category}/dish/{dish}/move-up', 'CategoryController@dishMoveUp' )->name( 'category.dish-move-up' );
     Route::post( 'category/{category}/dish/{dish}/move-down', 'CategoryController@dishMoveDown' )->name( 'category.dish-move-down' );
-    Route::get( 'category/{category}/dish/{dish}/move-up', 'CategoryController@dishMoveUp' )->name( 'category.dish-move-up' );
-    Route::get( 'category/{category}/dish/{dish}/move-down', 'CategoryController@dishMoveDown' )->name( 'category.dish-move-down' );
+    Route::post( 'category/{category}/toggle-live', 'CategoryController@toggleLive' )->name( 'category.toggle-live' );
 
     Route::resource( 'dish', 'DishController' );
     Route::post( 'dish', 'DishController@index' )->name( 'dish.filter' );

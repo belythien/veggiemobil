@@ -73,7 +73,7 @@
                 @if(isset($data))
                     <div class="row">
                         @foreach($data as $object)
-                            <div class="@if(isset($colSize)) col-{{$colSize}} @else col-lg-2 @endif alternating">
+                            <div class="@if(isset($colSize)) col-{{$colSize}} @else col-lg-2 @endif">
                                 <label>
                                     <input type="checkbox" name="{{$field}}[{{$object->id}}]" value="{{$object->id}}"
                                            @if(isset($model) && $model->$field->contains($object->id)) checked @endif
@@ -106,6 +106,28 @@
                         </label>
                     @endforeach
                 </div>
+
+            @elseif($type == 'select')
+                @if(!isset($data))
+                    @php($data = ['ja' => 'Ja', 'nein' => 'Nein'])
+                    @if(!isset($default))
+                        @php($default = 0)
+                    @endif
+                @endif
+
+                <div>
+                    <select name="{{$field}}" id="{{$field}}" class="form-control">
+                        @if(!isset($required) || $required == false)
+                            <option value="0">-----</option>
+                        @endif
+                        @foreach($data as $key => $option)
+                            <option value="{{$key}}"
+                                    @if($value == $key) selected @endif
+                            >{{$option}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
             @elseif($type == 'file')
                 <input id="{{$field}}" type="file" class="form-control mb-3" name="{{$field}}"
                        @if(isset($multiple) && $multiple == true) multiple="multiple" @endif style="height: auto;"

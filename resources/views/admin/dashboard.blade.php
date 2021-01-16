@@ -18,11 +18,12 @@
                                             class="fa fa-plus-circle fa-fw"
                                         ></i></a>
                                 </div>
-                                <div class="box-body">
+                                <div class="box-body scrollbox" style="max-height: 500px">
                                     @if(!empty($pages))
                                         @foreach($pages as $page)
                                             <div class="alternating py-2 px-3">
                                                 <a href="{{route('admin.page.edit', ['page' => $page])}}"
+                                                   class="d-block"
                                                 >{{$page->title}}</a>
                                             </div>
                                         @endforeach
@@ -40,7 +41,7 @@
                                             class="fa fa-plus-circle fa-fw"
                                         ></i></a>
                                 </div>
-                                <div class="box-body">
+                                <div class="box-body scrollbox" style="max-height: 500px">
                                     @if(!empty($dishes))
                                         @foreach($dishes as $dish)
                                             <div class="alternating py-2 px-3">
@@ -65,12 +66,14 @@
                                             class="fa fa-plus-circle fa-fw"
                                         ></i></a>
                                 </div>
-                                <div class="box-body">
+                                <div class="box-body scrollbox" style="max-height: 500px">
                                     @if(!empty($events))
                                         @foreach($events as $event)
                                             <div class="alternating py-2 px-3">
                                                 <a href="{{route('admin.event.edit', ['event' => $event])}}"
+                                                   class="d-block"
                                                 >{{$event->title}}</a>
+                                                <div class="text-sm">{{$event->date}}</div>
                                             </div>
                                         @endforeach
                                     @endif

@@ -19,18 +19,7 @@
                     <div class="row">
                         <div class="col-xl-9">
                             <div class="mb-5">{!! $page->text !!}</div>
-                            @if(isset($future_events))
-                                <div class="mt-3">
-                                    <h3 class="category-title bg-primary text-white p-3 mb-3">Demnächst</h3>
-                                    @include('inc.events', ['events' => $future_events])
-                                </div>
-                            @endif
-                            @if(isset($past_events))
-                                <div class="mt-3">
-                                    <h3 class="category-title bg-primary text-white p-3 mb-3">Highlights</h3>
-                                    @include('inc.events', ['events' => $past_events])
-                                </div>
-                            @endif
+                            @yield('template')
                         </div>
                         @include('inc.right-col')
                     </div>
