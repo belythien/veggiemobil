@@ -2,6 +2,23 @@
 //@import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa');
 
+$grid-breakpoints: (
+    xs: 0,
+    sm: 567px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1600px
+);
+
+$container-max-widths: (
+    sm: 567px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1600px
+);
+
 // Variables
 @import 'variables';
 @import 'styles';

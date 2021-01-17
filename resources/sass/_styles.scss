@@ -7,12 +7,16 @@ $primary: $green;
 $danger: $red;
 $info: $brown;
 
+html {
+    background: $brown;
+}
+
 * {
     font-family: 'Comfortaa', Helvetica, Arial;
 }
 
 body {
-    background: url('img/wood.jpg') fixed center center;
+    background: url('img/wood.jpg') fixed center center $brown;
     background-size: cover;
 
     a {

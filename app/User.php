@@ -6,8 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use Notifiable;
 
     /**
@@ -36,4 +35,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /* === CRUD === */
+
+    public static function createUser( $request ) {
+        $user = new User();
+        $user->fill( $request->input() );
+        $user->save();
+        return $user;
+    }
+
+    public function updateUser( $request ) {
+        $this->fill( $request->input() );
+        $this->save();
+    }
 }

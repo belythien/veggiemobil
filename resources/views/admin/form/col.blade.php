@@ -32,6 +32,21 @@
                     @endif
                 >
 
+            @elseif($type == 'password')
+                <input class="form-control @if($errors->has($field)) is-invalid @endif"
+                       type="password"
+                       id="{{$field}}"
+                       @if(isset($readonly) && $readonly == true) readonly @endif
+                       name="{{$field}}"
+                       @if(isset($help))
+                       aria-describedby="{{$field}}_help"
+                       @endif
+                       value=""
+                       @if(isset($placeholder))
+                       placeholder="{{$placeholder}}"
+                    @endif
+                >
+
             @elseif($type == 'textarea')
                 <textarea class="form-control ckeditor" name="{{$field}}" id="{{$field}}" cols="30" rows="10"
                 >{{$value}}</textarea>

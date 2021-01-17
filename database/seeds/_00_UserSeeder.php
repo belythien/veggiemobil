@@ -11,7 +11,7 @@ class _00_UserSeeder extends Seeder {
     public function run() {
         DB::table( 'users' )->insert( [
             'name'     => 'Birgit Jung',
-            'email'    => 'info@veggiemobil.com',
+            'email'    => 'veggiemobil@yahoo.de',
             'password' => Hash::make( '$w33t-$AU3rkrAUt-bUrg3r' ),
         ]);
 

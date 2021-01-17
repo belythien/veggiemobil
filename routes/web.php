@@ -62,6 +62,8 @@ Route::name( 'admin.' )->group( function () {
     Route::post( 'picture/store', 'PictureController@store' )->name( 'picture.store' );
     Route::post( 'picture/{picture}/toggle-live', 'PictureController@toggleLive' )->name( 'picture.toggle-live' );
     Route::post( 'picture/{picture}/toggle-welcome', 'PictureController@toggleWelcome' )->name( 'picture.toggle-welcome' );
+
+    Route::resource( 'user', 'UserController' )->except( [ 'show' ] );
 } );
 
 Route::get( '/{slug}', 'PageController@display' )->name( 'page.display' );

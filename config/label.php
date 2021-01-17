@@ -10,5 +10,6 @@ return [
     'page'      => 'Seite',
     'picture'   => 'Bild',
     'menu'      => 'Menü',
+    'user'      => 'Benutzer',
     'logout'    => 'Logout',
 ];

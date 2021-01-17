@@ -26,5 +26,6 @@ return [
     'sort-asc'   => 'fas fa-sort-alpha-down',
     'sort-desc'  => 'fas fa-sort-alpha-down-alt',
     'upload'     => 'fas fa-upload',
+    'user'       => 'fas fa-users'
 
 ];

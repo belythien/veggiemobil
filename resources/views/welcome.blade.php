@@ -83,14 +83,15 @@
                href="{{route('dish.display', ['slug' => $picture->dishes()->first()->slug])}}"
                @endif
                title="{{$picture->title}}"
-               class="d-block welcome-image wi{{$key}}"
+               class="d-none d-xl-block welcome-image wi{{$key}}"
                style="background-image:url('/img/{{$picture->filename}}');"
             ></a>
         @endforeach
 
         <div class="card" style="position:relative;z-index: 10;">
             <div class="title m-b-md mx-5 mt-2">
-                <img src="{{url('/img/logo_xl.png')}}" alt="{{ config('app.name', 'Laravel') }}" class="img-fluid">
+                <img src="{{url('/img/logo_xl.png')}}" alt="{{ config('app.name', 'Laravel') }}" class="img-fluid d-none d-xxl-block">
+                <img src="{{url('/img/logo_xl.png')}}" alt="{{ config('app.name', 'Laravel') }}" class="d-xxl-none d-inline" height="200">
             </div>
             <div class="d-sm-flex justify-content-around welcome-navi mb-3">
                 @foreach($pages as $page)
@@ -98,12 +99,12 @@
                     >{{$page->title}}</a>
                 @endforeach
             </div>
-            <div class="d-none d-xl-block"
+            <div class="d-none d-xxl-block"
                  style="position:absolute; top: 100px; right: -160px; transform: rotate(-10deg);max-width:280px"
             >
                 @include('inc.extra.coming-up')
             </div>
-            <div class="d-block d-xl-none mx-5 my-2">
+            <div class="d-block d-xxl-none mx-5 my-2">
                 @include('inc.extra.coming-up')
             </div>
         </div>
